@@ -1,0 +1,85 @@
+@font-face {
+	font-family: 'icomoon';
+	src:url('../fonts/icomoon/icomoon.eot');
+	src:url('../fonts/icomoon/icomoon.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/icomoon/icomoon.woff') format('woff'),
+		url('../fonts/icomoon/icomoon.ttf') format('truetype'),
+		url('../fonts/icomoon/icomoon.svg#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+meter {
+
+  margin: 1 auto;
+  
+  width: 150px;
+  height: 18px;
+  
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+
+  border: 1px solid #ccc;
+  border-radius: 1px;
+  
+  /* Firefox */
+  background: none; /* Required to get rid of the default background prop. */
+  background-color: whiteSmoke;  
+  box-shadow: 0 5px 5px -5px #333 inset;
+}
+
+meter::-webkit-meter-bar {
+  
+  background: none; /* Important to get rid of default background. */
+  background-color: whiteSmoke;
+  
+  box-shadow: 0 5px 5px -5px #333 inset;
+}
+
+meter::-webkit-meter-even-less-good-value {
+  
+  transition: width .5s;
+  box-shadow: 0 5px 5px -5px #999 inset;
+  
+  background-image: linear-gradient( 90deg, 
+                                     #f28f68 85%,
+                                     #f28f68 100%);
+  
+  background-size: 100% 100%;
+}
+
+meter::-webkit-meter-suboptimum-value {
+  
+  transition: width .5s;
+  box-shadow: 0 5px 5px -5px #999 inset;
+  
+  background-image: linear-gradient( 90deg, 
+                                     #e6d450 85%,
+                                     #e6d450 100%);
+  
+  background-size: 100% 100%;
+}
+
+meter::-webkit-meter-optimum-value {
+  
+  transition: width .5s;
+  box-shadow: 0 5px 5px -5px #999 inset;
+  
+  background-image: linear-gradient( 90deg, 
+                                     #8bcf69 85%,
+                                     #8bcf69 100%);
+  
+  background-size: 100% 100%;
+}
+
+meter::-moz-meter-bar {
+  
+  box-shadow: 0 5px 5px -5px #999 inset;
+  
+  background-image: linear-gradient( 90deg, 
+                                     #8bcf69 100%,
+                                     #8bcf69 100%);
+  
+  background-size: 100% 100%;
+}
