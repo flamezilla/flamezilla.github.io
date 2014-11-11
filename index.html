@@ -16,14 +16,18 @@
 			<div class="row">
 				<div class="col-sm-6" style="background-color:lavender;">
 					<p>
+					Level: <span id="level"></span>
+					<br>
 					Gold: <span id="gold">0</span> (+<span id=gps></span> gold/s)
 					<br>
 					HP: <span id=hpCurr></span>/<span id=hpMax></span>
 					<br>
 					<meter id="hpBar" low=".25" optimum=".85" high=".75" value="0" max="0"></meter>
-					<span id="hp">0</span>%
+					<span id="hp">0</span>% (Recover <span id="hpRate"></span>hp/s)
 					<br>
-					HP Regen Rate: <span id="hpRate"></span>/s
+					Exp: <span id=expCurr></span>/<span id=expMax></span>
+					<br>
+					<progress id="expBar" value="0" max="0"></progress>
 					<br>
 					Heros: <span id="heroes">0</span>
 					<br>
