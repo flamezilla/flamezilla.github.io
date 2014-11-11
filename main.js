@@ -25,7 +25,7 @@ function kill() {
         document.getElementById("hpBar").setAttribute('value', hp.current);
         updateHp();
     } else {
-        document.getElementById("err").innerHTML = "Not enough HP!";
+        document.getElementById("errHp").innerHTML = "Not enough HP!";
     };
 };
 
@@ -39,6 +39,8 @@ function buyHero() {
         var nextCost = Math.floor(10 * Math.pow(1.1,heroes));
         document.getElementById('heroCost').innerHTML = nextCost;
         document.getElementById('heroCost').innerHTML = nextCost;
+    } else {
+        document.getElementById("errGold").innerHTML = "Not enough Gold!";
     };
     document.getElementById('gps').innerHTML = heroes;
 };
@@ -99,7 +101,8 @@ window.setInterval(function() {
         console.log(hp.restoreRate);
         hp.current = hp.restoreRate*hp.max + hp.current;
     }
-    document.getElementById("err").innerHTML = "";
+    document.getElementById("errHp").innerHTML = "";
+    document.getElementById("errGold").innerHTML = "";
 }, 1000);
 
 window.setInterval(function() {
