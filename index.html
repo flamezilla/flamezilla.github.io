@@ -11,40 +11,54 @@
 	
 		<div class="container">
 			<h1 class="text-center">Clicker Quest</h1>
+			<div class="row">
+				<div class="col-sm-6" style="background-color:lavender;">
+					<p>
+					Gold: <span id="gold">0</span> (+<span id=gps></span> gold/s)
+					<br>
+					HP: <span id=hpCurr></span>/<span id=hpMax></span>
+					<br>
+					<meter id="hpBar" low=".25" optimum=".85" high=".75" value="0" max="0"></meter>
+					<span id="hp">0</span>%
+					<br>
+					HP Regen Rate: <span id="hpRate"></span>/s
+					<br>
+					Heros: <span id="heroes">0</span>
+					<br>
+					</p>
+				</div>
+				<div class="col-sm-6">
+					<ul id="myTab" class="nav nav-tabs">
+					   <li class="active">
+						  <a href="#battle" data-toggle="tab">
+							 Battle
+						  </a>
+						</li>
+						<li><a href="#settings" data-toggle="tab">Settings</a></li>
+					</ul>
+					<div id="myTabContent" class="tab-content">				
+						<div class="tab-pane fade in active" id="battle">
+							<p>
+							<button type="button" onClick="buyHero()">Buy hero</button>
+							Cost: <span id="heroCost"></span> gold
+							<p>
+								<button type="button" onClick="kill()">Kill Minions</button>
+								Cost: 1 hp
+								<span class="error" id="err"></span>
+							</p>
+							</p>
+						</div>
+						<div class="tab-pane fade" id="settings">
+							<button type="button" onClick="save()">Save Game</button>
+							<button type="button" onClick="load()">Load Game</button>
+							<button type="button" onClick="deleteSave()">Delete Save</button>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
 		
-		<div class="container">
-		<div class="row">
-			<div class="col-sm-6" style="background-color:lavender;">
-				<p>
-				Gold: <span id="gold">0</span> (+<span id=gps></span> gold/s)
-				<br>
-				HP: <span id=hpCurr></span>/<span id=hpMax></span>
-				<br>
-				<meter id="hpBar" low=".25" optimum=".85" high=".75" value="0" max="0"></meter>
-				<span id="hp">0</span>%
-				<br>
-				HP Regen Rate: <span id="hpRate"></span>/s
-				<br>
-				Heros: <span id="heroes">0</span>
-				<br>
-				</p>
-			</div>
-			<div class="col-sm-6" style="background-color:lavenderblush;">
-				<p>
-				<button type="button" onClick="buyHero()">Buy hero</button>
-				Cost: <span id="heroCost">10</span>gold
-				<p>
-					<button type="button" onClick="kill()">Kill Minions</button>
-					<span class="error" id="err"></span>
-				</p>
-				<button type="button" onClick="save()">Save Game</button>
-				<button type="button" onClick="load()">Load Game</button>
-				<button type="button" onClick="deleteSave()">Delete Save</button>
-				</p>
-			</div>
-		</div>
-		</div>
+		
 		<script type ="text/javascript" src="main.js"></script>
 		<!-- Optional: Include the jQuery library -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
