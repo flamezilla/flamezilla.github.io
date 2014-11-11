@@ -9,20 +9,24 @@
 	</head>
 	<body onload="javascript:load()">
 		<p><h1>Clicker Quest</h1></p>
-		Gold: <span id="gold">0</span>
+		Gold: <span id="gold">0</span> (+<span id=gps></span> gold/s)
 		<br>
-		HP: <meter id="hpBar" low=".25" optimum=".85" high=".75" value="0" max="0">100%</meter><span id="hp">0</span>%
+		HP: <span id=hpCurr></span>/<span id=hpMax></span>
+		<br>
+		<meter id="hpBar" low=".25" optimum=".85" high=".75" value="0" max="0">100%</meter>
+		<span id="hp">0</span>%
+		<br>
+		HP Regen Rate: <span id="hpRate"></span>/s
 		<br>
 		Heros: <span id="heroes">0</span>
 		<br>
 		<p>
-			<button type="button" onClick="getGold(1)">Kill Minions</button>
-		</p>
-		<p>
 			<button type="button" onClick="buyHero()">Buy hero</button>
 			Cost: <span id="heroCost">10</span>gold
 		</p>
-		<br>
+		<p>
+			<button type="button" onClick="kill()">Kill Minions</button>
+		</p>
 		<br>
 		<button type="button" onClick="save()">Save Game</button>
 		<button type="button" onClick="load()">Load Game</button>

@@ -15,6 +15,11 @@ var inTown = true;
 function getGold(number) {
     gold = gold + number;
     document.getElementById("gold").innerHTML = gold;
+};
+
+function kill() {
+    gold = gold + 1;
+    document.getElementById("gold").innerHTML = gold;
     hp.current = hp.current - 1;
     document.getElementById("hpBar").setAttribute('value', hp.current);
     updateHp();
@@ -29,7 +34,9 @@ function buyHero() {
         document.getElementById('heroes').innerHTML = heroes;
         var nextCost = Math.floor(10 * Math.pow(1.1,heroes));
         document.getElementById('heroCost').innerHTML = nextCost;
+        document.getElementById('heroCost').innerHTML = nextCost;
     };
+    document.getElementById('gps').innerHTML = heroes;
 };
 
 function save () {
@@ -58,6 +65,7 @@ function updateVars() {
     document.getElementById('heroes').innerHTML = heroes;
     heroCost = Math.floor(10 * Math.pow(1.1,heroes));
     document.getElementById('heroCost').innerHTML = heroCost;
+    document.getElementById('gps').innerHTML = heroes;
 };
 
 function updateHp() {
@@ -70,10 +78,13 @@ function updateHp() {
     document.getElementById('hpBar').setAttribute('optimum', optimum);
     document.getElementById('hpBar').setAttribute('value', hp.current);
     document.getElementById('hp').innerHTML = (hp.current/hp.max)*100;
+    document.getElementById('hpCurr').innerHTML = hp.current;
+    document.getElementById('hpMax').innerHTML = hp.max;
+    document.getElementById('hpRate').innerHTML = hp.restoreRate*100;
 }
 
 window.setInterval(function() {
-    //getGold(heroes);
+    getGold(heroes);
     updateHp();
     if(hp.current != hp.max) {
         console.log(hp.restoreRate);
