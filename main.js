@@ -4,7 +4,7 @@ var gold = 0;
 var hp = {
     current:10,
     max:10,
-    restoreRate:.05
+    restoreRate:.5
 };
 var exp = {
     current:0,
@@ -117,11 +117,13 @@ function updateHp() {
     document.getElementById('hp').innerHTML = Math.round(prettify(((hp.current*100)/(hp.max*100)))*100);
     document.getElementById('hpCurr').innerHTML = hp.current;
     document.getElementById('hpMax').innerHTML = hp.max;
-    document.getElementById('hpRate').innerHTML = hp.restoreRate*10;
+    document.getElementById('hpRate').innerHTML = hp.restoreRate;
 }
 
 function updateXp() {
     document.getElementById('expBar').setAttribute('value', exp.current);
+    document.getElementById('expBar').setAttribute('max', exp.max);
+    document.getElementById('exp').innerHTML = Math.round(prettify(((exp.current*100)/(exp.max*100)))*100);
     document.getElementById('expCurr').innerHTML = exp.current;
     document.getElementById('expMax').innerHTML = exp.max;
 }
@@ -134,9 +136,12 @@ function prettify(input){
 window.setInterval(function() {
     getGold(heroes);
     updateHp();
-    if(hp.current != hp.max) {
+    if(hp.current < hp.max) {
         console.log(hp.restoreRate);
-        hp.current = hp.restoreRate*hp.max + hp.current;
+        hp.current = hp.restoreRate + hp.current;
+        if(hp.current > hp.max) {
+            hp.current = hp.max;
+        }
     }
     document.getElementById("errHp").innerHTML = "";
     document.getElementById("errGold").innerHTML = "";
