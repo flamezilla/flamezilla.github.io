@@ -13,6 +13,39 @@ span.error {
 	color:red
 }
 
+progress {
+	width: 150px;
+	height: 18px;
+	
+	-webkit-appearance: none;
+			appearance: none;
+	
+	border: 1px solid #ccc;
+	border-radius: 1px;
+	
+	background: none;
+	background-color: whiteSmoke;  
+	box-shadow: 0 5px 5px -5px #333 inset;
+  
+}
+
+progress::-webkit-progress-bar {
+  background: none; /* Important to get rid of default background. */
+  background-color: whiteSmoke;
+  
+  box-shadow: 0 5px 5px -5px #333 inset;
+}
+
+progress::-webkit-progress-value {
+	transition: width .5s;
+	background-image: linear-gradient( 90deg, 
+                                     #8bcf69 85%,
+                                     #8bcf69 100%);
+
+    border-radius: 2px; 
+    background-size: 35px 20px, 100% 100%, 100% 100%;
+}
+
 meter {
 
   margin: 1 auto;

@@ -154,4 +154,4 @@ window.setInterval(function() {
         + currentdate.getMinutes() + ":" 
         + currentdate.getSeconds();
     console.log(datetime + " saved");
-}, 5000);
+}, 30000);
