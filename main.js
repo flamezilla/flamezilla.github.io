@@ -18,11 +18,15 @@ function getGold(number) {
 };
 
 function kill() {
-    gold = gold + 1;
-    document.getElementById("gold").innerHTML = gold;
-    hp.current = hp.current - 1;
-    document.getElementById("hpBar").setAttribute('value', hp.current);
-    updateHp();
+    if(hp.current > 1) {
+        gold = gold + 1;
+        document.getElementById("gold").innerHTML = gold;
+        hp.current = hp.current - 1;
+        document.getElementById("hpBar").setAttribute('value', hp.current);
+        updateHp();
+    } else {
+        document.getElementById("err").innerHTML = "Not enough HP!";
+    };
 };
 
 function buyHero() {
@@ -95,6 +99,7 @@ window.setInterval(function() {
         console.log(hp.restoreRate);
         hp.current = hp.restoreRate*hp.max + hp.current;
     }
+    document.getElementById("err").innerHTML = "";
 }, 1000);
 
 window.setInterval(function() {
