@@ -77,10 +77,15 @@ function updateHp() {
     document.getElementById('hpBar').setAttribute('low', low);
     document.getElementById('hpBar').setAttribute('optimum', optimum);
     document.getElementById('hpBar').setAttribute('value', hp.current);
-    document.getElementById('hp').innerHTML = (hp.current/hp.max)*100;
+    document.getElementById('hp').innerHTML = Math.round(prettify(((hp.current*100)/(hp.max*100)))*100);
     document.getElementById('hpCurr').innerHTML = hp.current;
     document.getElementById('hpMax').innerHTML = hp.max;
     document.getElementById('hpRate').innerHTML = hp.restoreRate*100;
+}
+
+function prettify(input){
+    var output = Math.round(input * 1000000)/1000000;
+	return output;
 }
 
 window.setInterval(function() {
