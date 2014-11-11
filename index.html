@@ -36,19 +36,18 @@
 							 Battle
 						  </a>
 						</li>
+						<li><a href="#market" data-toggle="tab">Market</a></li>
 						<li><a href="#settings" data-toggle="tab">Settings</a></li>
 					</ul>
 					<div id="myTabContent" class="tab-content">				
 						<div class="tab-pane fade in active" id="battle">
-							<p>
+							<button type="button" onClick="kill()">Kill Minions</button>
+							Cost: 1 hp
+							<span class="error" id="err"></span>
+						</div>
+						<div class="tab-pane fade" id="market">
 							<button type="button" onClick="buyHero()">Buy hero</button>
 							Cost: <span id="heroCost"></span> gold
-							<p>
-								<button type="button" onClick="kill()">Kill Minions</button>
-								Cost: 1 hp
-								<span class="error" id="err"></span>
-							</p>
-							</p>
 						</div>
 						<div class="tab-pane fade" id="settings">
 							<button type="button" onClick="save()">Save Game</button>
