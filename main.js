@@ -11,10 +11,28 @@ var exp = {
     max:10
 };
 var level = 1;
+var charClass = 0;
 var heroes = 0;
 var heroCost = 10;
 var inTown = true;
+var upgrades = {
+    restoreRateLvl:0,
+    restoreRateCost:300,
+    goldRate:0,
+    goldRateCost:300
+};
 
+function getClass(classN) {
+    var className = "";
+    switch(classN) {
+        case 0: className = "Apprentice";
+        case 1: className = "Warrior";
+        case 2: className = "Mage";
+        case 3: className = "Assassin";
+        default: className = "Apprentice";
+    }
+    document.getElementById('className').innerHTML = className;
+}
 
 function getGold(number) {
     gold = gold + number;
@@ -42,6 +60,21 @@ function kill() {
     };
 };
 
+function buyUpgrade(upgrade) {
+    restoreRateCost = (upgrades.restoreRateLvl+1)*300;
+    if(upgrade == "restoreRate" && gold >= restoreRateCost) {
+        gold -= (upgrades.restoreRateLvl+1)*300;
+        upgrades.restoreRateLvl++;
+        hp.restoreRate = hp.restoreRate + upgrades.restoreRateLvl*.1;
+        document.getElementById('hpRate').innerHTML = prettify(hp.restoreRate);
+        var nextCost = (upgrades.restoreRateLvl+1)*300;
+        document.getElementById('restoreRateC').innerHTML = nextCost;
+    } else {
+        document.getElementById('errUpgrade').innerHTML = "Not enough Gold!";
+    }
+
+};
+
 function buyHero() {
     heroCost = Math.floor(10 * Math.pow(1.1,heroes));
     if(gold >= heroCost) {
@@ -50,7 +83,6 @@ function buyHero() {
         document.getElementById('gold').innerHTML = gold;
         document.getElementById('heroes').innerHTML = heroes;
         var nextCost = Math.floor(10 * Math.pow(1.1,heroes));
-        document.getElementById('heroCost').innerHTML = nextCost;
         document.getElementById('heroCost').innerHTML = nextCost;
     } else {
         document.getElementById('errGold').innerHTML = "Not enough Gold!";
@@ -67,7 +99,13 @@ function save () {
         expCurr: exp.current,
         expMax: exp.max,
         hpCurr: hp.current,
-        hpMax: hp.max        
+        hpMax: hp.max,
+        hpRest: hp.restoreRate,
+        charClass: charClass,
+        restoreRateLvl: upgrades.restoreRateLvl,
+        restoreRateCost: upgrades.restoreRateCost,
+        goldRate: upgrades.goldRate,
+        goldRateC: upgrades.goldRateC
     }
     localStorage.setItem("save",JSON.stringify(save));
 };
@@ -83,6 +121,12 @@ function load() {
         if (typeof savegame.expMax !== "undefined") exp.max = savegame.expMax;
         if (typeof savegame.hpCurr !== "undefined") hp.current = savegame.hpCurr;
         if (typeof savegame.hpMax !== "undefined") hp.max = savegame.hpMax;
+        if (typeof savegame.hpRest !== "undefined") hp.restoreRate = savegame.hpRest;
+        if (typeof savegame.charClass !== "undefined") charClass = savegame.charClass;
+        if (typeof savegame.restoreRateLvl !== "undefined") upgrades.restoreRateLvl = savegame.restoreRateLvl;
+        if (typeof savegame.restoreRateCost !== "undefined") upgrades.restoreRateCost = savegame.restoreRateCost;
+        if (typeof savegame.goldRate !== "undefined") upgrades.goldRate = savegame.goldRate;
+        if (typeof savegame.goldRateCost !== "undefined") upgrades.goldRateC = savegame.goldRateCost;
     };
     updateVars();
     updateXp();
@@ -103,6 +147,11 @@ function updateVars() {
     document.getElementById('level').innerHTML = level;
     document.getElementById('expCurr').innerHTML = exp.current;
     document.getElementById('expMax').innerHTML = exp.max;
+    //hp.restoreRate = hp.restoreRate + upgrades.restoreRateLvl*.1;
+    document.getElementById('hpRate').innerHTML = prettify(hp.restoreRate);
+    restoreRateCost = (upgrades.restoreRateLvl+1)*300;
+    document.getElementById('restoreRateC').innerHTML = restoreRateCost;
+    getClass(charClass);
 };
 
 function updateHp() {
@@ -115,9 +164,9 @@ function updateHp() {
     document.getElementById('hpBar').setAttribute('optimum', optimum);
     document.getElementById('hpBar').setAttribute('value', hp.current);
     document.getElementById('hp').innerHTML = Math.round(prettify(((hp.current*100)/(hp.max*100)))*100);
-    document.getElementById('hpCurr').innerHTML = hp.current;
+    document.getElementById('hpCurr').innerHTML = prettify(hp.current);
     document.getElementById('hpMax').innerHTML = hp.max;
-    document.getElementById('hpRate').innerHTML = hp.restoreRate;
+    document.getElementById('hpRate').innerHTML = prettify(hp.restoreRate);
 }
 
 function updateXp() {
@@ -143,9 +192,13 @@ window.setInterval(function() {
             hp.current = hp.max;
         }
     }
+}, 1000);
+
+window.setInterval(function() {
     document.getElementById("errHp").innerHTML = "";
     document.getElementById("errGold").innerHTML = "";
-}, 1000);
+    document.getElementById("errUpgrade").innerHTML = "";
+}, 5000);
 
 window.setInterval(function() {
     save();

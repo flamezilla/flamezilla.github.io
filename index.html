@@ -15,8 +15,10 @@
 			<h1 class="text-center">Clicker Quest</h1>
 			<div class="row">
 				<div class="col-sm-6" style="background-color:lavender;">
+					<h4>Character</h4>
 					<p>
-					Level: <span id="level"></span>
+					Level: <span id="level"></span> 
+					<span id="className"></span>
 					<br>
 					Gold: <span id="gold">0</span> (+<span id=gps></span> gold/s)
 					<br>
@@ -51,9 +53,16 @@
 							<span class="error" id="errHp"></span>
 						</div>
 						<div class="tab-pane fade" id="market">
-							<button type="button" onClick="buyHero()">Buy hero</button>
+							<button type="button" onClick="buyHero()">Hire a Mercenary</button>
 							(Heroes increase your gold/s by 1) Cost: <span id="heroCost"></span> gold
 							<span class="error" id="errGold"></span>
+							<br>
+							<button type="button" onClick="buyUpgrade('restoreRate')">Buy Senzu Bean</button>
+							(Increases HP recovery rate) Cost: <span id="restoreRateC"></span> gold
+							<span class="error" id="errUpgrade"></span>
+						</div>
+						<div class="tab-pane fade" id="ability">
+							<button type="button" onClick="ability('party')">Unlock Party</button>
 						</div>
 						<div class="tab-pane fade" id="settings">
 							<button type="button" onClick="save()">Save Game</button>
