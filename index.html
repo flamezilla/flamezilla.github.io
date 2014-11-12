@@ -34,6 +34,7 @@
 					<br>
 					Heroes: <span id="heroes">0</span>
 					<br>
+					Party: <span id="currPartySize"></span>/<span id="maxPartySize"></span>
 					</p>
 				</div>
 				<div class="col-sm-6">
@@ -44,6 +45,7 @@
 						  </a>
 						</li>
 						<li><a href="#market" data-toggle="tab">Market</a></li>
+						<li><a href="#ability" data-toggle="tab">Abilities</a></li>
 						<li><a href="#settings" data-toggle="tab">Settings</a></li>
 					</ul>
 					<div id="myTabContent" class="tab-content">				
@@ -62,7 +64,8 @@
 							<span class="error" id="errUpgrade"></span>
 						</div>
 						<div class="tab-pane fade" id="ability">
-							<button type="button" onClick="ability('party')">Unlock Party</button>
+							<button type="button" id="partyB" onClick="unlockAbility('party')">Unlock Party</button>
+							(Allows you to hire up to 4 Mercenaries)
 						</div>
 						<div class="tab-pane fade" id="settings">
 							<button type="button" onClick="save()">Save Game</button>

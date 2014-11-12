@@ -21,6 +21,11 @@ var upgrades = {
     goldRate:0,
     goldRateCost:300
 };
+var party = {
+    maxSize:1,
+    currSize:1
+};
+
 
 function getClass(classN) {
     var className = "";
@@ -90,6 +95,13 @@ function buyHero() {
     document.getElementById('gps').innerHTML = heroes;
 };
 
+function unlockAbility(ability) {
+    if(ability == "party") {
+        party.maxSize = 5;
+        updateVars();
+    };
+};
+
 function save () {
     var save = {
         gold: gold,
@@ -105,7 +117,9 @@ function save () {
         restoreRateLvl: upgrades.restoreRateLvl,
         restoreRateCost: upgrades.restoreRateCost,
         goldRate: upgrades.goldRate,
-        goldRateC: upgrades.goldRateC
+        goldRateC: upgrades.goldRateC,
+        partyMaxSize: party.maxSize,
+        partyCurrSize: party.currSize
     }
     localStorage.setItem("save",JSON.stringify(save));
 };
@@ -127,6 +141,8 @@ function load() {
         if (typeof savegame.restoreRateCost !== "undefined") upgrades.restoreRateCost = savegame.restoreRateCost;
         if (typeof savegame.goldRate !== "undefined") upgrades.goldRate = savegame.goldRate;
         if (typeof savegame.goldRateCost !== "undefined") upgrades.goldRateC = savegame.goldRateCost;
+        if (typeof savegame.partyMaxSize !== "undefined") party.maxSize = savegame.partyMaxSize;
+        if (typeof savegame.partyCurrSize !== "undefined") party.currSize = savegame.partyCurrSize;
     };
     updateVars();
     updateXp();
@@ -151,6 +167,8 @@ function updateVars() {
     document.getElementById('hpRate').innerHTML = prettify(hp.restoreRate);
     restoreRateCost = (upgrades.restoreRateLvl+1)*300;
     document.getElementById('restoreRateC').innerHTML = restoreRateCost;
+    document.getElementById('maxPartySize').innerHTML = party.maxSize;
+    document.getElementById('currPartySize').innerHTML = party.currSize;
     getClass(charClass);
 };
 
