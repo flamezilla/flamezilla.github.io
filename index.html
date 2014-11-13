@@ -14,31 +14,45 @@
 		<div class="container">
 			<h1 class="text-center">Clicker Quest</h1>
 			<div class="row">
-				<div class="col-sm-6" style="background-color:lavender;">
-					<h4>Character</h4>
-					<p>
-					Level: <span id="level"></span> 
-					<span id="className"></span>
-					<br>
-					Gold: <span id="gold">0</span> (+<span id=gps></span> gold/s)
-					<br>
-					HP: <span id=hpCurr></span>/<span id=hpMax></span>
-					<br>
-					<meter id="hpBar" low=".25" optimum=".85" high=".75" value="0" max="0"></meter>
-					<span id="hp">0</span>% (Recover <span id="hpRate"></span>hp/s)
-					<br>
-					Exp: <span id=expCurr></span>/<span id=expMax></span>
-					<br>
-					<progress id="expBar" value="0" max="0"></progress>
-					<span id="exp"></span>%
-					<br>
-					Heroes: <span id="heroes">0</span>
-					<br>
-					Party: <span id="currPartySize"></span>/<span id="maxPartySize"></span>
-					</p>
+				<div class="col-sm-4">
+					<ul id="tab2" class="nav nav-tabs">
+					   <li class="active">
+						  <a href="#character" data-toggle="tab">
+							 Character
+						  </a>
+						</li>
+						<li><a href="#party" data-toggle="tab">Party</a></li>
+					</ul>
+					<div id="tab2Content" class="tab-content">				
+						<div class="tab-pane fade in active" id="character">
+							<h4>Character</h4>
+							<p>
+							Level: <span id="level"></span> 
+							<span id="className"></span>
+							<br>
+							Gold: <span id="gold">0</span> (+<span id=gps></span> gold/s)
+							<br>
+							HP: <span id=hpCurr></span>/<span id=hpMax></span>
+							<br>
+							<meter id="hpBar" low=".25" optimum=".85" high=".75" value="0" max="0"></meter>
+							<span id="hp">0</span>% (Recover <span id="hpRate"></span>hp/s)
+							<br>
+							Exp: <span id=expCurr></span>/<span id=expMax></span>
+							<br>
+							<progress id="expBar" value="0" max="0"></progress>
+							<span id="exp"></span>%
+							<br>
+							Heroes: <span id="heroes">0</span>
+							<br>
+							Party: <span id="currPartySize"></span>/<span id="maxPartySize"></span>
+							</p>
+						</div>
+						<div class="tab-pane fade" id="party">
+						</div>
+					</div>
 				</div>
-				<div class="col-sm-6">
-					<ul id="myTab" class="nav nav-tabs">
+				<div class="col-sm-4">
+					<ul id="tab2" class="nav nav-tabs">
 					   <li class="active">
 						  <a href="#battle" data-toggle="tab">
 							 Battle
@@ -48,7 +62,7 @@
 						<li><a href="#ability" data-toggle="tab">Abilities</a></li>
 						<li><a href="#settings" data-toggle="tab">Settings</a></li>
 					</ul>
-					<div id="myTabContent" class="tab-content">				
+					<div id="tab2Content" class="tab-content">				
 						<div class="tab-pane fade in active" id="battle">
 							<button type="button" onClick="kill()">Kill Minions</button>
 							Cost: 1 hp

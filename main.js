@@ -25,7 +25,10 @@ var party = {
     maxSize:1,
     currSize:1
 };
-
+var pet = {
+    level:0,
+    hp:0
+}
 
 function getClass(classN) {
     var className = "";

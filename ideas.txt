@@ -1,5 +1,6 @@
 Clicker Quest
-start out as a hero
+start out as an apprentice
+-at lvl 10 you can choose a class
 go hunting in the wild to gain exp, gold, loot
 chance to capture wild monsters
 different zones with different types of monsters
