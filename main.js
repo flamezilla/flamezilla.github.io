@@ -55,11 +55,11 @@ function kill(zone) {
         hp.current = hp.current - 1;
         document.getElementById('hpBar').setAttribute('value', hp.current);
         updateHp();
-        exp.current = exp.current + 1;
+        exp.current = exp.current + zoneDamage;
         if(exp.current == exp.max) {
             exp.current = 0;
             level = level + 1;
-            exp.max = Math.floor(level*.5) + exp.max + zoneDamage;
+            exp.max = Math.floor(level*.5) + exp.max + 1;
             hp.max = Math.ceil(Math.log(hp.max) + hp.max);
             document.getElementById('level').innerHTML = level;
         };
