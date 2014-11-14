@@ -21,37 +21,42 @@
 							 Character
 						  </a>
 						</li>
-						<li><a href="#party" data-toggle="tab">Party</a></li>
+						<li class="disabled"><a href="#">Party</a></li>
+						<li class="disabled"><a href="#">Pets</a></li>
 					</ul>
 					<div id="tab2Content" class="tab-content">				
 						<div class="tab-pane fade in active" id="character">
-							<h4>Character</h4>
-							<p>
-							Level: <span id="level"></span> 
-							<span id="className"></span>
-							<br>
-							Gold: <span id="gold">0</span> (+<span id=gps></span> gold/s)
-							<br>
-							HP: <span id=hpCurr></span>/<span id=hpMax></span>
-							<br>
-							<meter id="hpBar" low=".25" optimum=".85" high=".75" value="0" max="0"></meter>
-							<span id="hp">0</span>% (Recover <span id="hpRate"></span>hp/s)
-							<br>
-							Exp: <span id=expCurr></span>/<span id=expMax></span>
-							<br>
-							<progress id="expBar" value="0" max="0"></progress>
-							<span id="exp"></span>%
-							<br>
-							Heroes: <span id="heroes">0</span>
-							<br>
-							Party: <span id="currPartySize"></span>/<span id="maxPartySize"></span>
-							</p>
+							<div class="well">
+								<h4>Character</h4>
+								<p>
+								Level: <span id="level"></span> 
+								<span id="className"></span>
+								<br>
+								Gold: <span id="gold">0</span> (+<span id=gps></span> gold/s)
+								<br>
+								HP: <span id=hpCurr></span>/<span id=hpMax></span>
+								<br>
+								<meter id="hpBar" low=".25" optimum=".85" high=".75" value="0" max="0"></meter>
+								<span id="hp">0</span>% (Recover <span id="hpRate"></span>hp/s)
+								<br>
+								Exp: <span id=expCurr></span>/<span id=expMax></span>
+								<br>
+								<progress id="expBar" value="0" max="0"></progress>
+								<span id="exp"></span>%
+								<br>
+								Heroes: <span id="heroes">0</span>
+								<br>
+								Party: <span id="currPartySize"></span>/<span id="maxPartySize"></span>
+								</p>
+							</div>
 						</div>
 						<div class="tab-pane fade" id="party">
+							<div class="well">
+							</div>
 						</div>
 					</div>
 				</div>
-				<div class="col-sm-4">
+				<div class="col-sm-6">
 					<ul id="tab2" class="nav nav-tabs">
 					   <li class="active">
 						  <a href="#battle" data-toggle="tab">
@@ -62,29 +67,57 @@
 						<li><a href="#ability" data-toggle="tab">Abilities</a></li>
 						<li><a href="#settings" data-toggle="tab">Settings</a></li>
 					</ul>
-					<div id="tab2Content" class="tab-content">				
+					<div id="tab2Content" class="tab-content">
 						<div class="tab-pane fade in active" id="battle">
-							<button type="button" onClick="kill()">Kill Minions</button>
-							Cost: 1 hp
-							<span class="error" id="errHp"></span>
+							<div class="well">
+								<span class="error" id="errHp"></span>
+								<div class="table-responsive">
+									<table class="table table-bordered table-striped table-condensed">
+										<tr>
+											<th class="col-xs-1">#</th>
+											<th class="col-xs-6 text-center">Zone</th>
+											<th class="col-xs-1">Level</th>
+											<th class="col-xs-4"></th>
+										</tr>
+										<tr>
+											<td>1</td>
+											<td>Village Outskirts</td>
+											<td>1</td>
+											<td><button class="btn btn-danger btn-xs" onClick="kill()">Kill Minions</button></td>
+										</tr>
+										<tr>
+											<td>2</td>
+											<td>Forest</td>
+											<td>3</td>
+											<td><button class="btn btn-danger btn-xs" onClick="kill()">Kill Minions</button></td>
+										</tr>
+									</table>
+								</div>
+							</div>
 						</div>
 						<div class="tab-pane fade" id="market">
-							<button type="button" onClick="buyHero()">Hire a Mercenary</button>
-							(Heroes increase your gold/s by 1) Cost: <span id="heroCost"></span> gold
-							<span class="error" id="errGold"></span>
-							<br>
-							<button type="button" onClick="buyUpgrade('restoreRate')">Buy Senzu Bean</button>
-							(Increases HP recovery rate) Cost: <span id="restoreRateC"></span> gold
-							<span class="error" id="errUpgrade"></span>
+							<div class="well">	
+								<button type="button" onClick="buyHero()">Hire a Mercenary</button>
+								(Heroes increase your gold/s by 1) Cost: <span id="heroCost"></span> gold
+								<span class="error" id="errGold"></span>
+								<br>
+								<button type="button" onClick="buyUpgrade('restoreRate')">Buy Senzu Bean</button>
+								(Increases HP recovery rate) Cost: <span id="restoreRateC"></span> gold
+								<span class="error" id="errUpgrade"></span>
+							</div>
 						</div>
 						<div class="tab-pane fade" id="ability">
-							<button type="button" id="partyB" onClick="unlockAbility('party')">Unlock Party</button>
-							(Allows you to hire up to 4 Mercenaries)
+							<div class="well">
+								<button type="button" id="partyB" onClick="unlockAbility('party')">Unlock Party</button>
+								(Allows you to hire up to 4 Mercenaries)
+							</div>
 						</div>
 						<div class="tab-pane fade" id="settings">
+							<div class="well">	
 							<button type="button" onClick="save()">Save Game</button>
 							<button type="button" onClick="load()">Load Game</button>
 							<button type="button" onClick="deleteSave()">Delete Save</button>
+							</div>
 						</div>
 					</div>
 				</div>
