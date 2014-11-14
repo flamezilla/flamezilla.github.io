@@ -47,7 +47,8 @@ function getGold(number) {
     document.getElementById('gold').innerHTML = gold;
 };
 
-function kill() {
+function kill(zone) {
+    var zoneDamage = zone*1.5;
     if(hp.current > 1) {
         gold = gold + 1;
         document.getElementById('gold').innerHTML = gold;
@@ -58,7 +59,7 @@ function kill() {
         if(exp.current == exp.max) {
             exp.current = 0;
             level = level + 1;
-            exp.max = Math.floor(level*.5) + exp.max + 1;
+            exp.max = Math.floor(level*.5) + exp.max + zoneDamage;
             hp.max = Math.ceil(Math.log(hp.max) + hp.max);
             document.getElementById('level').innerHTML = level;
         };
