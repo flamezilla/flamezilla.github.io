@@ -56,12 +56,13 @@ function kill(zone) {
         document.getElementById('hpBar').setAttribute('value', hp.current);
         updateHp();
         exp.current = exp.current + zoneDamage;
-        if(exp.current == exp.max) {
+        if(exp.current >= exp.max) {
             exp.current = 0;
             level = level + 1;
             exp.max = Math.floor(level*.5) + exp.max + 1;
             hp.max = Math.ceil(Math.log(hp.max) + hp.max);
             document.getElementById('level').innerHTML = level;
+            printToCombatLog("Level up!");
         };
         updateXp();
     } else {
@@ -105,6 +106,23 @@ function unlockAbility(ability) {
         updateVars();
     };
 };
+
+function printToCombatLog(text) {
+    var $newLine = $(document.createElement("li"));
+    $newLine.attr({
+        class: "list-group-item"
+    });
+
+    var currentdate = new Date(); 
+    var datetime = currentdate.getHours() + ":"  
+        + currentdate.getMinutes() + ":" 
+        + currentdate.getSeconds();
+    $newLine.html(datetime + ": " + text);
+
+    $("#log").append($newLine);
+
+    $("#log").scrollTop($("#log")[0].scrollHeight);
+}
 
 function save () {
     var save = {
@@ -154,6 +172,7 @@ function load() {
 
 function deleteSave() {
     localStorage.removeItem("save");
+    location.reload();
 };
 
 function updateVars() {

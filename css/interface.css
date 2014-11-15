@@ -9,6 +9,11 @@
 	font-style: normal;
 }
 
+#log {
+	height: 150px;
+	overflow-y: scroll;
+}
+
 span.error {
 	color:red
 }

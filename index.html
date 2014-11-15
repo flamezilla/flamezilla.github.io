@@ -14,8 +14,8 @@
 		<div class="container">
 			<h1 class="text-center">Clicker Quest</h1>
 			<div class="row">
-				<div class="col-sm-4">
-					<ul id="tab2" class="nav nav-tabs">
+				<div class="col-xs-4 col-lg-3">
+					<ul id="tab1" class="nav nav-tabs">
 					   <li class="active">
 						  <a href="#character" data-toggle="tab">
 							 Character
@@ -56,7 +56,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="col-sm-6">
+				<div class="col-xs-5 col-lg-5">
 					<ul id="tab2" class="nav nav-tabs">
 					   <li class="active">
 						  <a href="#battle" data-toggle="tab">
@@ -116,7 +116,26 @@
 							<div class="well">	
 							<button type="button" onClick="save()">Save Game</button>
 							<button type="button" onClick="load()">Load Game</button>
-							<button type="button" onClick="deleteSave()">Delete Save</button>
+							<button type="button" onClick="deleteSave()">Reset Game</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-xs-4 col-lg-5">
+					<ul id="tab3" class="nav nav-tabs">
+						<li class="active">
+						  <a href="#logTab" data-toggle="tab">
+							 Log
+						  </a>
+						</li>
+					</ul>
+					<div id="tab2Content" class="tab-content">
+						<div class="tab-pane fade in active" id="logTab">
+							<div class="well">
+								<div class="panel panel-default" id="logPanel" style="max-height: 10">
+									<ul class="list-group" id="log">
+									<ul>
+								</div>
 							</div>
 						</div>
 					</div>
