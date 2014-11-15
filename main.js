@@ -47,27 +47,32 @@ function getGold(number) {
     document.getElementById('gold').innerHTML = gold;
 };
 
-function kill(zone) {
-    var zoneDamage = zone*1.5;
-    if(hp.current > 1) {
-        gold = gold + 1;
-        document.getElementById('gold').innerHTML = gold;
-        hp.current = hp.current - 1;
-        document.getElementById('hpBar').setAttribute('value', hp.current);
-        updateHp();
-        exp.current = exp.current + zoneDamage;
-        if(exp.current >= exp.max) {
-            exp.current = 0;
-            level = level + 1;
-            exp.max = Math.floor(level*.5) + exp.max + 1;
-            hp.max = Math.ceil(Math.log(hp.max) + hp.max);
-            document.getElementById('level').innerHTML = level;
-            printToCombatLog("Level up!");
+function kill(zoneLvl) {
+    var zoneDamage = Math.ceil(zoneLvl*0.7);
+    var zoneExp = Math.round((zoneLvl*1.5) - Math.pow(level,1.2) + level);
+    if(level >= zoneLvl) {
+        if(hp.current > zoneDamage) {
+            gold += zoneLvl;
+            document.getElementById('gold').innerHTML = gold;
+            hp.current -= zoneDamage;
+            document.getElementById('hpBar').setAttribute('value', hp.current);
+            updateHp();
+            exp.current += Math.max(0,zoneExp);
+            if(exp.current >= exp.max) {
+                exp.current = 0;
+                level = level + 1;
+                exp.max = Math.floor(level*.5) + exp.max + 1;
+                hp.max = Math.ceil(Math.log(hp.max) + hp.max);
+                document.getElementById('level').innerHTML = level;
+                printToLog("Level up!");
+            };
+            updateXp();
+        } else {
+            document.getElementById('errHp').innerHTML = "Not enough HP!";
         };
-        updateXp();
     } else {
-        document.getElementById('errHp').innerHTML = "Not enough HP!";
-    };
+        document.getElementById('errHp').innerHTML = "Not high enough Level!";
+    }
 };
 
 function buyUpgrade(upgrade) {
@@ -107,7 +112,7 @@ function unlockAbility(ability) {
     };
 };
 
-function printToCombatLog(text) {
+function printToLog(text) {
     var $newLine = $(document.createElement("li"));
     $newLine.attr({
         class: "list-group-item"
