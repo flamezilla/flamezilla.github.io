@@ -48,7 +48,7 @@ function getGold(number) {
 };
 
 function kill(zoneLvl) {
-    var zoneDamage = Math.ceil(zoneLvl*0.7);
+    var zoneDamage = Math.ceil(zoneLvl*0.25);
     var zoneExp = Math.round((zoneLvl*1.5) - Math.pow(level,1.2) + level);
     if(level >= zoneLvl) {
         if(hp.current > zoneDamage) {
