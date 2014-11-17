@@ -66,6 +66,9 @@ function kill(zoneLvl) {
                 document.getElementById('level').innerHTML = level;
                 printToLog("Level up!");
             };
+            if(level >= 10) {
+                toggleChooseStats(true);
+            }
             updateXp();
         } else {
             document.getElementById('errHp').innerHTML = "Not enough HP!";
@@ -111,6 +114,27 @@ function unlockAbility(ability) {
         updateVars();
     };
 };
+
+function pickClass(id) {
+    if(charClass == 0) {
+        charClass = id;
+        document.getElementById('className').innerHTML = className;
+        document.getElementById('classPick').style.display = 'none';
+    }
+}
+
+function toggleChooseStats(state) {
+    if(charClass == 0) {
+        document.getElementById('classPick').style.display = 'block';
+    } else {
+        document.getElementById('classPick').style.display = 'none';
+    }
+    if(state) {
+        document.getElementById('statBox').style.display = 'block';
+    } else {
+        document.getElementById('statBox').style.display = 'none';
+    }
+}
 
 function printToLog(text) {
     var $newLine = $(document.createElement("li"));
@@ -253,4 +277,5 @@ window.setInterval(function() {
         + currentdate.getMinutes() + ":"
         + currentdate.getSeconds();
     console.log(datetime + " saved");
+    printToLog("auto save");
 }, 30000);
