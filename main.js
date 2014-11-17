@@ -118,9 +118,9 @@ function printToLog(text) {
         class: "list-group-item"
     });
 
-    var currentdate = new Date(); 
-    var datetime = currentdate.getHours() + ":"  
-        + currentdate.getMinutes() + ":" 
+    var currentdate = new Date();
+    var datetime = currentdate.getHours() + ":"
+        + currentdate.getMinutes() + ":"
         + currentdate.getSeconds();
     $newLine.html(datetime + ": " + text);
 
@@ -248,9 +248,9 @@ window.setInterval(function() {
 
 window.setInterval(function() {
     save();
-    var currentdate = new Date(); 
-    var datetime = currentdate.getHours() + ":"  
-        + currentdate.getMinutes() + ":" 
+    var currentdate = new Date();
+    var datetime = currentdate.getHours() + ":"
+        + currentdate.getMinutes() + ":"
         + currentdate.getSeconds();
     console.log(datetime + " saved");
 }, 30000);
