@@ -28,16 +28,29 @@ var party = {
 var pet = {
     level:0,
     hp:0
-}
+};
+var statPoints = {
+    used: 0,
+    free: 0
+};
 
 function getClass(classN) {
     var className = "";
     switch(classN) {
-        case 0: className = "Apprentice";
-        case 1: className = "Warrior";
-        case 2: className = "Mage";
-        case 3: className = "Assassin";
-        default: className = "Apprentice";
+        case 0:
+            className = "Apprentice";
+            break;
+        case 1:
+            className = "Warrior";
+            break;
+        case 2:
+            className = "Mage";
+            break;
+        case 3:
+            className = "Assassin";
+            break;
+        default:
+            className = "Apprentice";
     }
     document.getElementById('className').innerHTML = className;
 }
@@ -118,17 +131,23 @@ function unlockAbility(ability) {
 function pickClass(id) {
     if(charClass == 0) {
         charClass = Number(id);
-        getClass(id);
+        getClass(charClass);
         document.getElementById('classPick').style.display = 'none';
+        document.getElementById('classtext').innerHTML = "";
     }
 }
 
-function toggleChooseStats(state) {
-    if(charClass == 0) {
+function checkClass() {
+    if(charClass == 0 && level >= 10) {
         document.getElementById('classPick').style.display = 'block';
+        document.getElementById('classtext').innerHTML = "Pick a class!";
     } else {
         document.getElementById('classPick').style.display = 'none';
-    }
+        document.getElementById('classtext').innerHTML = "";
+    };
+}
+
+function toggleChooseStats(state) {
     if(state) {
         document.getElementById('statBox').style.display = 'block';
     } else {
@@ -256,7 +275,6 @@ window.setInterval(function() {
     getGold(heroes);
     updateHp();
     if(hp.current < hp.max) {
-        console.log(hp.restoreRate);
         hp.current = hp.restoreRate + hp.current;
         if(hp.current > hp.max) {
             hp.current = hp.max;

@@ -21,7 +21,7 @@
 							 Character
 						  </a>
 						</li>
-						<li><a href="#stats" data-toggle="tab">Stats</a></li>
+						<li><a href="#stats" data-toggle="tab" onClick="checkClass()">Stats</a></li>
 						<li class="disabled"><a href="#">Party</a></li>
 						<li class="disabled"><a href="#">Pets</a></li>
 					</ul>
@@ -55,16 +55,15 @@
 							<div class="well">
 								<h4>Stats</h4>
 								<p>
-								Level: <span id="level"></span>
-								<span id="className"></span>
-								<br>
+								<span class="error" id="classtext"></span>
 								<div class="btn-group btn-group-sm" id="classPick">
-									<button type="button" onClick="pickClass(1)" class="btn btn-default">W</button>
-									<button type="button" onClick="pickClass(2)" class="btn btn-default">M</button>
-									<button type="button" onClick="pickClass(3)" class="btn btn-default">A</button>
+									<button type="button" onClick="pickClass(1)" class="btn btn-success">Warrior</button>
+									<button type="button" onClick="pickClass(2)" class="btn btn-primary">Mage</button>
+									<button type="button" onClick="pickClass(3)" class="btn btn-danger">Assassin</button>
 								</div>
 								<ul class="list-group" id="statBox">
 								<ul>
+								<br>
 								</p>
 							</div>
 						</div>
