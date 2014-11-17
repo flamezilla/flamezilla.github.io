@@ -117,8 +117,8 @@ function unlockAbility(ability) {
 
 function pickClass(id) {
     if(charClass == 0) {
-        charClass = parseInt(id);
-        document.getElementById('className').innerHTML = className;
+        charClass = Number(id);
+        getClass(id);
         document.getElementById('classPick').style.display = 'none';
     }
 }
