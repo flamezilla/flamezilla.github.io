@@ -33,6 +33,15 @@ var statPoints = {
     used: 0,
     free: 0
 };
+//attributes
+var atkPwr = 0,
+matkPwr = 0,
+crit = 0,
+def = 0,
+mdef = 0,
+str = 0,
+inte = 0,
+agi = 0;
 
 function getClass(classN) {
     var className = "";
