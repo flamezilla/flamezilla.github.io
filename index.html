@@ -30,30 +30,48 @@
 							<div class="well">
 								<h4>Character</h4>
 								<p>
-								Level: <span id="level"></span>
-								<span id="className"></span>
-								<br>
-								Gold: <span id="gold">0</span> (+<span id=gps></span> gold/s)
-								<br>
-								HP: <span id=hpCurr></span>/<span id=hpMax></span>
-								<br>
-								<meter id="hpBar" low=".25" optimum=".85" high=".75" value="0" max="0"></meter>
-								<span id="hp">0</span>% (Recover <span id="hpRate"></span>hp/s)
-								<br>
-								Exp: <span id=expCurr></span>/<span id=expMax></span>
-								<br>
-								<progress id="expBar" value="0" max="0"></progress>
-								<span id="exp"></span>%
-								<br>
-								Heroes: <span id="heroes">0</span>
-								<br>
-								Party: <span id="currPartySize"></span>/<span id="maxPartySize"></span>
+									Level: <span id="level"></span>
+									<span id="className"></span>
+									<br>
+									Gold: <span id="gold">0</span> (+<span id=gps></span> gold/s)
+									<br>
+									HP: <span id=hpCurr></span>/<span id=hpMax></span>
+									<br>
+									<meter id="hpBar" low=".25" optimum=".85" high=".75" value="0" max="0"></meter>
+									<span id="hp">0</span>% (Recover <span id="hpRate"></span>hp/s)
+									<br>
+									Exp: <span id=expCurr></span>/<span id=expMax></span>
+									<br>
+									<progress id="expBar" value="0" max="0"></progress>
+									<span id="exp"></span>%
+									<br>
+									Heroes: <span id="heroes">0</span>
+									<br>
+									Party: <span id="currPartySize"></span>/<span id="maxPartySize"></span>
 								</p>
 							</div>
 						</div>
 						<div class="tab-pane fade" id="stats">
 							<div class="well">
 								<h4>Stats</h4>
+								<table class="table table-bordered table-striped table-condensed">
+								<tr>
+									<td>Attack Power:</td>
+								</tr>
+								<tr>
+									<td>Magic Attack Power:</td>
+								</tr>
+								<tr>
+									<td>Defense:</td>
+								</tr>
+								<tr>
+									<td>Magic Defense:</td>
+								</tr>
+								</table>
+								<h5>Basic</h5>
+									Str: <span id="str"></span>
+									Int: <span id="int"></span>
+									Agi: <span id="agi"></span>
 								<p>
 								<span class="error" id="classtext"></span>
 								<div class="btn-group btn-group-sm" id="classPick">
