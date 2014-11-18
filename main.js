@@ -34,14 +34,14 @@ var statPoints = {
     free: 0
 };
 //attributes
-var atkPwr = 0,
-matkPwr = 0,
-crit = 0,
-def = 0,
-mdef = 0,
-str = 0,
-inte = 0,
-agi = 0;
+var atkPwr = 10,
+matkPwr = 10,
+crit = 10,
+def = 10,
+mdef = 10,
+str = 10,
+inte = 10,
+agi = 10;
 
 function getClass(classN) {
     var className = "";
@@ -249,6 +249,17 @@ function updateVars() {
     document.getElementById('restoreRateC').innerHTML = restoreRateCost;
     document.getElementById('maxPartySize').innerHTML = party.maxSize;
     document.getElementById('currPartySize').innerHTML = party.currSize;
+    
+    //stats
+    document.getElementById('atk').innerHTML = atkPwr;
+    document.getElementById('matk').innerHTML = matkPwr;
+    document.getElementById('def').innerHTML = def;
+    document.getElementById('mdef').innerHTML = mdef;
+    document.getElementById('crit').innerHTML = crit;
+    document.getElementById('str').innerHTML = str;
+    document.getElementById('int').innerHTML = inte;
+    document.getElementById('agi').innerHTML = agi;
+    
     getClass(charClass);
 };
 
