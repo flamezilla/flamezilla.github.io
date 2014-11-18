@@ -9,6 +9,11 @@
 	font-style: normal;
 }
 
+thead { display:block; margin:0px; cell-spacing:0px; left:0px; }
+tbody { display:block; overflow:auto; height:150px; }
+th { height:25px;}
+td { height:25px;}
+
 #log {
 	height: 150px;
 	overflow-y: scroll;

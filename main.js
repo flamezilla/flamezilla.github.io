@@ -169,15 +169,12 @@ function printToLog(text) {
     $newLine.attr({
         class: "list-group-item"
     });
-
     var currentdate = new Date();
     var datetime = currentdate.getHours() + ":"
         + currentdate.getMinutes() + ":"
         + currentdate.getSeconds();
     $newLine.html(datetime + ": " + text);
-
     $("#log").append($newLine);
-
     $("#log").scrollTop($("#log")[0].scrollHeight);
 }
 
