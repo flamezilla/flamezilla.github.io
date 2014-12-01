@@ -90,16 +90,24 @@
 										<span style="float:right;" id="agi">0</span>
 									</li>
 								</ul>
+								<span class="error" id="statText"></span>
+								Stat Points : <span id="statPoints">0</span>
 								<p>
-								<span class="error" id="classtext"></span>
-								<div class="btn-group btn-group-sm" id="classPick">
-									<button type="button" onClick="pickClass(1)" class="btn btn-success">Warrior</button>
-									<button type="button" onClick="pickClass(2)" class="btn btn-primary">Mage</button>
-									<button type="button" onClick="pickClass(3)" class="btn btn-danger">Assassin</button>
-								</div>
-								<ul class="list-group" id="statBox">
-								<ul>
-								<br>
+									<div class="btn-group btn-group-sm" id="statBox" data-toggle="buttons">
+										<button type="button" onClick="pickStat(1)" class="btn btn-warning">+ STR</button>
+										<button type="button" onClick="pickStat(2)" class="btn btn-warning">+ INT</button>
+										<button type="button" onClick="pickStat(3)" class="btn btn-warning">+ AGI</button>
+									</div>
+									<br>
+								</p>
+								<p>
+									<span class="error" id="classtext"></span>
+									<div class="btn-group btn-group-sm" id="classPick" data-toggle="buttons">
+										<button type="button" onClick="pickClass(1)" class="btn btn-success">Warrior</button>
+										<button type="button" onClick="pickClass(2)" class="btn btn-primary">Mage</button>
+										<button type="button" onClick="pickClass(3)" class="btn btn-danger">Assassin</button>
+									</div>
+									<br>
 								</p>
 							</div>
 						</div>
@@ -339,7 +347,7 @@
 						</div>
 						<div class="tab-pane fade" id="settings">
 							<div class="well">
-							<button type="button" onClick="save()">Save Game</button>
+							<button type="button" onClick="save(); printToLog('Saved Game!')">Save Game</button>
 							<button type="button" onClick="load()">Load Game</button>
 							<button type="button" onClick="deleteSave()">Reset Game</button>
 							</div>

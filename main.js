@@ -30,7 +30,9 @@ var pet = {
     hp:0
 };
 var statPoints = {
-    used: 0,
+    str: 0,
+    inte: 0,
+    agi:0,
     free: 0
 };
 //attributes
@@ -70,7 +72,7 @@ function getGold(number) {
 };
 
 function kill(zoneLvl) {
-    var zoneDamage = Math.ceil(zoneLvl*0.25);
+    var zoneDamage = Math.ceil(zoneLvl*1.25);
     var zoneExp = Math.round((zoneLvl*10.5) - Math.pow(level,1.2) + level);
     if(level >= zoneLvl) {
         if(hp.current > zoneDamage) {
@@ -84,15 +86,16 @@ function kill(zoneLvl) {
                 exp.current = 0;
                 level = level + 1;
                 exp.max = Math.floor(level*.5) + exp.max + 1;
-                hp.max = Math.ceil(Math.log(hp.max) + hp.max);
-                updateHp();
                 updateStats();
+                updateHp();
                 document.getElementById('level').innerHTML = level;
                 printToLog("Congratulations, you leveled up to " + level);
+                if(level >= 10) {
+                    statPoints.free += 3;
+                    document.getElementById('statPoints').innerHTML = statPoints.free;
+                    toggleChooseStats(true);
+                };
             };
-            if(level >= 10) {
-                toggleChooseStats(true);
-            }
             updateXp();
         } else {
             document.getElementById('errHp').innerHTML = "Not enough HP!";
@@ -167,6 +170,11 @@ function pickClass(id) {
 }
 
 function checkClass() {
+    if(statPoints.free != 0) {  //check for unused stat points
+        toggleChooseStats(true);
+    } else {
+        toggleChooseStats(false);
+    };
     if(charClass == 0 && level >= 10) {
         document.getElementById('classPick').style.display = 'block';
         document.getElementById('classtext').innerHTML = "Pick a class!";
@@ -176,10 +184,37 @@ function checkClass() {
     };
 }
 
+function pickStat(id) {
+    if(id == 1) {
+        str++;
+        statPoints.str++;
+        statPoints.free--;
+        document.getElementById('statPoints').innerHTML = statPoints.free;
+    };
+    if(id == 2) {
+        inte++;
+        statPoints.inte++;
+        statPoints.free--;
+        document.getElementById('statPoints').innerHTML = statPoints.free;
+    };
+    if(id == 3) {
+        agi++;
+        statPoints.agi++;
+        statPoints.free--;
+        document.getElementById('statPoints').innerHTML = statPoints.free;
+    };
+    if(statPoints.free <= 0) {
+        toggleChooseStats(false);
+    }
+    updateStats();
+}
+
 function toggleChooseStats(state) {
     if(state) {
+        document.getElementById('classtext').innerHTML = "You have unused Stat Points!";
         document.getElementById('statBox').style.display = 'block';
     } else {
+        document.getElementById('classtext').innerHTML = "";
         document.getElementById('statBox').style.display = 'none';
     }
 }
@@ -203,10 +238,11 @@ function updateStats() {
             document.getElementById('agi').innerHTML = agi;
             break;
         case 1:
-            str = Math.floor(level*2.7);
-            inte = level;
-            agi = level;
+            str = Math.floor(level*2.7) + statPoints.str;
+            inte = level + statPoints.inte;
+            agi = level + statPoints.agi;
             hp.max = Math.floor((level*str) - 200);
+            hp.restoreRate = Math.floor(level / 3);
             atkPwr = (level * 3) + (str * 2.5) - 50;
             matkPwr = level + inte * 1.2;
             crit = ((agi * 25) / (level)) - 24;
@@ -215,15 +251,16 @@ function updateStats() {
             document.getElementById('def').innerHTML = def;
             document.getElementById('mdef').innerHTML = mdef;
             document.getElementById('crit').innerHTML = crit;
-            document.getElementById('str').innerHTML = str;
-            document.getElementById('int').innerHTML = inte;
-            document.getElementById('agi').innerHTML = agi;
+            document.getElementById('str').innerHTML = str + " (+" + statPoints.str + ")";
+            document.getElementById('int').innerHTML = inte + " (+" + statPoints.inte + ")";
+            document.getElementById('agi').innerHTML = agi + " (+" + statPoints.agi + ")";
             break;
         case 2:
-            str = level;
-            inte = Math.floor(level*2.7);
-            agi = level;
+            str = level + statPoints.str;
+            inte = Math.floor(level*2.7) + statPoints.inte;;
+            agi = level + statPoints.agi;
             hp.max = Math.floor((level * str * .7) + (inte * 4.5) - 100);
+            hp.restoreRate = Math.floor(level / 3);
             atkPwr = level * 1.5;
             matkPwr = (level * 1.5) + (inte * 3.7);
             crit = Math.floor(((agi * 25) / (level)) - 25);
@@ -232,15 +269,16 @@ function updateStats() {
             document.getElementById('def').innerHTML = def;
             document.getElementById('mdef').innerHTML = mdef;
             document.getElementById('crit').innerHTML = prettify(crit);
-            document.getElementById('str').innerHTML = str;
-            document.getElementById('int').innerHTML = inte;
-            document.getElementById('agi').innerHTML = agi;
+            document.getElementById('str').innerHTML = str + " (+" + statPoints.str + ")";
+            document.getElementById('int').innerHTML = inte + " (+" + statPoints.inte + ")";
+            document.getElementById('agi').innerHTML = agi + " (+" + statPoints.agi + ")";
             break;
         case 3:
-            str = level;
-            inte = level;
-            agi = Math.floor(level*2.7);
+            str = level + statPoints.str;
+            inte = level + statPoints.inte;;
+            agi = Math.floor(level*2.7) + statPoints.agi;
             hp.max = Math.floor((level * str * .95) + ((agi + level) * 29) - 1150);
+            hp.restoreRate = Math.floor(level / 3);
             atkPwr = ((level + str) * 2.5) + ((agi + level) * 2.3) - 100;
             matkPwr = level + inte * 1.3;
             crit = Math.floor(((agi * 25) / (level)) - 65);
@@ -249,12 +287,13 @@ function updateStats() {
             document.getElementById('def').innerHTML = def;
             document.getElementById('mdef').innerHTML = mdef;
             document.getElementById('crit').innerHTML = crit;
-            document.getElementById('str').innerHTML = str;
-            document.getElementById('int').innerHTML = inte;
-            document.getElementById('agi').innerHTML = agi;
+            document.getElementById('str').innerHTML = str + " (+" + statPoints.str + ")";
+            document.getElementById('int').innerHTML = inte + " (+" + statPoints.inte + ")";
+            document.getElementById('agi').innerHTML = agi + " (+" + statPoints.agi + ")";
             break;
         default:
-    }
+    };
+    document.getElementById('statPoints').innerHTML = statPoints.free;
 }
 
 function printToLog(text) {
@@ -291,7 +330,11 @@ function save () {
         partyCurrSize: party.currSize,
         str: str,
         inte: inte,
-        agi: agi
+        agi: agi,
+        spStr: statPoints.str,
+        spInt: statPoints.inte,
+        spAgi: statPoints.agi,
+        spF: statPoints.free
     }
     localStorage.setItem("save",JSON.stringify(save));
 };
@@ -318,6 +361,10 @@ function load() {
         if (typeof savegame.str !== "undefined") str = savegame.str;
         if (typeof savegame.inte !== "undefined") inte = savegame.inte;
         if (typeof savegame.agi !== "undefined") agi = savegame.agi;
+        if (typeof savegame.spStr !== "undefined") statPoints.str = savegame.spStr;
+        if (typeof savegame.spInt !== "undefined") statPoints.inte = savegame.spInt;
+        if (typeof savegame.spAgi !== "undefined") statPoints.agi = savegame.spAgi;
+        if (typeof savegame.spF !== "undefined") statPoints.free = savegame.spF;
     };
     updateVars();
     updateXp();
