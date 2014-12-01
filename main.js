@@ -34,14 +34,14 @@ var statPoints = {
     free: 0
 };
 //attributes
-var atkPwr = 10,
-matkPwr = 10,
-crit = 10,
-def = 10,
-mdef = 10,
-str = 10,
-inte = 10,
-agi = 10;
+var atkPwr = 0,
+matkPwr = 0,
+crit = 0,
+def = 0,
+mdef = 0,
+str = 0,
+inte = 0,
+agi = 0;
 
 function getClass(classN) {
     var className = "";
@@ -80,13 +80,15 @@ function kill(zoneLvl) {
             document.getElementById('hpBar').setAttribute('value', hp.current);
             updateHp();
             exp.current += Math.max(0,zoneExp);
-            if(exp.current >= exp.max) {
+            if(exp.current >= exp.max) {    //Level Up
                 exp.current = 0;
                 level = level + 1;
                 exp.max = Math.floor(level*.5) + exp.max + 1;
                 hp.max = Math.ceil(Math.log(hp.max) + hp.max);
+                updateHp();
+                updateStats();
                 document.getElementById('level').innerHTML = level;
-                printToLog("Level up!");
+                printToLog("Congratulations, you leveled up to " + level);
             };
             if(level >= 10) {
                 toggleChooseStats(true);
@@ -99,6 +101,23 @@ function kill(zoneLvl) {
         document.getElementById('errHp').innerHTML = "Not high enough Level!";
     }
 };
+
+function calcHp() {
+    switch(charClass) {
+        case 0:
+            break;
+        case 1:
+            
+            break;
+        case 2:
+            
+            break;
+        case 3:
+            
+            break;
+        default:
+    }
+}
 
 function buyUpgrade(upgrade) {
     restoreRateCost = (upgrades.restoreRateLvl+1)*300;
@@ -143,6 +162,7 @@ function pickClass(id) {
         getClass(charClass);
         document.getElementById('classPick').style.display = 'none';
         document.getElementById('classtext').innerHTML = "";
+        updateStats();
     }
 }
 
@@ -161,6 +181,79 @@ function toggleChooseStats(state) {
         document.getElementById('statBox').style.display = 'block';
     } else {
         document.getElementById('statBox').style.display = 'none';
+    }
+}
+
+function updateStats() {
+    switch(charClass) {
+        case 0:
+            hp.max = (level*6)+4;
+            str = level;
+            inte = level;
+            agi = level;
+            atkPwr = level*1.2;
+            matkPwr = level*1.2;
+            document.getElementById('atk').innerHTML = prettify(atkPwr);
+            document.getElementById('matk').innerHTML = prettify(matkPwr);
+            document.getElementById('def').innerHTML = def;
+            document.getElementById('mdef').innerHTML = mdef;
+            document.getElementById('crit').innerHTML = crit;
+            document.getElementById('str').innerHTML = str;
+            document.getElementById('int').innerHTML = inte;
+            document.getElementById('agi').innerHTML = agi;
+            break;
+        case 1:
+            str = Math.floor(level*2.7);
+            inte = level;
+            agi = level;
+            hp.max = Math.floor((level*str) - 200);
+            atkPwr = (level * 3) + (str * 2.5) - 50;
+            matkPwr = level + inte * 1.2;
+            crit = ((agi * 25) / (level)) - 24;
+            document.getElementById('atk').innerHTML = prettify(atkPwr);
+            document.getElementById('matk').innerHTML = prettify(matkPwr);
+            document.getElementById('def').innerHTML = def;
+            document.getElementById('mdef').innerHTML = mdef;
+            document.getElementById('crit').innerHTML = crit;
+            document.getElementById('str').innerHTML = str;
+            document.getElementById('int').innerHTML = inte;
+            document.getElementById('agi').innerHTML = agi;
+            break;
+        case 2:
+            str = level;
+            inte = Math.floor(level*2.7);
+            agi = level;
+            hp.max = Math.floor((level * str * .7) + (inte * 4.5) - 100);
+            atkPwr = level * 1.5;
+            matkPwr = (level * 1.5) + (inte * 3.7);
+            crit = Math.floor(((agi * 25) / (level)) - 25);
+            document.getElementById('atk').innerHTML = prettify(atkPwr);
+            document.getElementById('matk').innerHTML = prettify(matkPwr);
+            document.getElementById('def').innerHTML = def;
+            document.getElementById('mdef').innerHTML = mdef;
+            document.getElementById('crit').innerHTML = prettify(crit);
+            document.getElementById('str').innerHTML = str;
+            document.getElementById('int').innerHTML = inte;
+            document.getElementById('agi').innerHTML = agi;
+            break;
+        case 3:
+            str = level;
+            inte = level;
+            agi = Math.floor(level*2.7);
+            hp.max = Math.floor((level * str * .95) + ((agi + level) * 29) - 1150);
+            atkPwr = ((level + str) * 2.5) + ((agi + level) * 2.3) - 100;
+            matkPwr = level + inte * 1.3;
+            crit = Math.floor(((agi * 25) / (level)) - 65);
+            document.getElementById('atk').innerHTML = prettify(atkPwr);
+            document.getElementById('matk').innerHTML = prettify(matkPwr);
+            document.getElementById('def').innerHTML = def;
+            document.getElementById('mdef').innerHTML = mdef;
+            document.getElementById('crit').innerHTML = crit;
+            document.getElementById('str').innerHTML = str;
+            document.getElementById('int').innerHTML = inte;
+            document.getElementById('agi').innerHTML = agi;
+            break;
+        default:
     }
 }
 
@@ -195,7 +288,10 @@ function save () {
         goldRate: upgrades.goldRate,
         goldRateC: upgrades.goldRateC,
         partyMaxSize: party.maxSize,
-        partyCurrSize: party.currSize
+        partyCurrSize: party.currSize,
+        str: str,
+        inte: inte,
+        agi: agi
     }
     localStorage.setItem("save",JSON.stringify(save));
 };
@@ -219,9 +315,13 @@ function load() {
         if (typeof savegame.goldRateCost !== "undefined") upgrades.goldRateC = savegame.goldRateCost;
         if (typeof savegame.partyMaxSize !== "undefined") party.maxSize = savegame.partyMaxSize;
         if (typeof savegame.partyCurrSize !== "undefined") party.currSize = savegame.partyCurrSize;
+        if (typeof savegame.str !== "undefined") str = savegame.str;
+        if (typeof savegame.inte !== "undefined") inte = savegame.inte;
+        if (typeof savegame.agi !== "undefined") agi = savegame.agi;
     };
     updateVars();
     updateXp();
+    updateStats();
 }
 
 function deleteSave() {
@@ -298,6 +398,11 @@ window.setInterval(function() {
         }
     }
 }, 1000);
+
+//Buff duration
+window.setInterval(function() {
+    var dec = 5;//every 5 seconds
+}, 5000);
 
 window.setInterval(function() {
     document.getElementById("errHp").innerHTML = "";
