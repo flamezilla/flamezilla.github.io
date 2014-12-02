@@ -76,7 +76,7 @@ var equipment = {
 
 //items
 var dagger = {
-    name: 'dagger',
+    name: 'Dagger',
     img: 'images/dagger_bronze.png',
     equip: 'hand',
     atkPwr: 5,
@@ -86,7 +86,7 @@ var dagger = {
     agi: 0
 },
 sword = {
-    name: 'sword',
+    name: 'Sword',
     img: 'images/sword_bronze.png',
     equip: 'hand',
     atkPwr: 10,
@@ -364,6 +364,7 @@ function addInvTable() {
     var tableBody = document.createElement('TBODY');
     
     tableDiv.className = "table-responsive";
+    table.className = "table table-bordered table-striped";
     
     table.appendChild(tableBody);
     
@@ -376,10 +377,12 @@ function addInvTable() {
         for (j = 0; j < 7; j++) {
             var th = document.createElement('TH');
             if(items[k]) {
-                var x = document.createElement("IMG");
+                var x = document.createElement("INPUT");
                 var xloc = items[k].img;
+                x.setAttribute("type", "image");
                 x.setAttribute("src", xloc);
-                x.setAttribute("alt", items[k].name);
+                x.setAttribute("name", items[k].name);
+                x.setAttribute("class", "btn");
                 th.setAttribute("width", "75");
                 th.appendChild(x);
             };
@@ -483,9 +486,9 @@ function load() {
     inventory.items[4] = dagger;
     inventory.items[5] = dagger;
     inventory.items[6] = dagger;
-    inventory.items[7] = dagger;
-    inventory.items[8] = dagger;
-    inventory.items[9] = dagger;
+    inventory.items[7] = sword;
+    inventory.items[8] = sword;
+    inventory.items[9] = sword;
     addInvTable();
 }
 
