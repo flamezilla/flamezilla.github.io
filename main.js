@@ -44,6 +44,57 @@ mdef = 0,
 str = 0,
 inte = 0,
 agi = 0;
+//item bonus
+var itemBonus = {
+    atkPwr: 0,
+    matkPwr: 0,
+    crit: 0,
+    def: 0,
+    mdef: 0,
+    str: 0,
+    inte: 0,
+    agi: 0
+}
+
+//inventory
+var inventory = {
+    items: [],
+    maxSize: 21
+}
+
+//equipped
+var equipment = {
+    hand: {},
+    offhand: {},
+    head: {},
+    torso: {},
+    legs: {},
+    feet: {},
+    hands: {},
+    neck: {}
+};
+
+//items
+var dagger = {
+    name: 'dagger',
+    img: 'images/dagger_bronze.png',
+    equip: 'hand',
+    atkPwr: 5,
+    matkPwr: 0,
+    str: 0,
+    inte: 0,
+    agi: 0
+},
+sword = {
+    name: 'sword',
+    img: 'images/sword_bronze.png',
+    equip: 'hand',
+    atkPwr: 10,
+    matkPwr: 0,
+    str: 0,
+    inte: 0,
+    agi: 0
+};
 
 function getClass(classN) {
     var className = "";
@@ -152,6 +203,17 @@ function buyHero() {
     document.getElementById('gps').innerHTML = heroes;
 };
 
+function equip(itemName) { //equips item
+    var equipTo = itemName.equip;
+    equipment[equipTo] = itemName;
+    getEquipStats();
+    updateStats();
+}
+
+function getEquipStats() { //Calculates and adds stats from equipped
+    itemBonus.atkPwr = equipment.hand.atkPwr;
+}
+
 function unlockAbility(ability) {
     if(ability == "party") {
         party.maxSize = 5;
@@ -226,7 +288,7 @@ function updateStats() {
             str = level;
             inte = level;
             agi = level;
-            atkPwr = level*1.2;
+            atkPwr = level*1.2 + itemBonus.atkPwr;
             matkPwr = level*1.2;
             document.getElementById('atk').innerHTML = prettify(atkPwr);
             document.getElementById('matk').innerHTML = prettify(matkPwr);
@@ -296,6 +358,39 @@ function updateStats() {
     document.getElementById('statPoints').innerHTML = statPoints.free;
 }
 
+function addInvTable() {
+    var tableDiv = document.getElementById("inv_table");
+    var table = document.createElement('TABLE');
+    var tableBody = document.createElement('TBODY');
+    
+    tableDiv.className = "table-responsive";
+    
+    table.appendChild(tableBody);
+    
+    var items = inventory.items;
+    
+    var k = 0; //index for items array
+    for (i = 0; i < 3; i++) {
+        var tr = document.createElement('TR');
+        tr.style.height = "60px";
+        for (j = 0; j < 7; j++) {
+            var th = document.createElement('TH');
+            if(items[k]) {
+                var x = document.createElement("IMG");
+                var xloc = items[k].img;
+                x.setAttribute("src", xloc);
+                x.setAttribute("alt", items[k].name);
+                th.setAttribute("width", "75");
+                th.appendChild(x);
+            };
+            tr.appendChild(th);
+            k++;
+        }
+        tableBody.appendChild(tr);
+    }
+    tableDiv.appendChild(table);
+}
+
 function printToLog(text) {
     var $newLine = $(document.createElement("li"));
     $newLine.attr({
@@ -334,7 +429,9 @@ function save () {
         spStr: statPoints.str,
         spInt: statPoints.inte,
         spAgi: statPoints.agi,
-        spF: statPoints.free
+        spF: statPoints.free,
+        equipment: equipment,
+        inventory: inventory
     }
     localStorage.setItem("save",JSON.stringify(save));
 };
@@ -365,10 +462,31 @@ function load() {
         if (typeof savegame.spInt !== "undefined") statPoints.inte = savegame.spInt;
         if (typeof savegame.spAgi !== "undefined") statPoints.agi = savegame.spAgi;
         if (typeof savegame.spF !== "undefined") statPoints.free = savegame.spF;
+        if (typeof savegame.equipment.hand !== "undefined") equipment.hand = savegame.equipment.hand;
+        if (typeof savegame.equipment.offhand !== "undefined") equipment.offhand = savegame.equipment.offhand;
+        if (typeof savegame.equipment.head !== "undefined") equipment.head = savegame.equipment.head;
+        if (typeof savegame.equipment.torso !== "undefined") equipment.torso = savegame.equipment.torso;
+        if (typeof savegame.equipment.legs !== "undefined") equipment.legs = savegame.equipment.legs;
+        if (typeof savegame.equipment.feet !== "undefined") equipment.feet = savegame.equipment.feet;
+        if (typeof savegame.equipment.hands !== "undefined") equipment.hands = savegame.equipment.hands;
+        if (typeof savegame.equipment.neck !== "undefined") equipment.neck = savegame.equipment.neck;
+        if (typeof savegame.inventory.items !== "undefined") inventory.items = savegame.inventory.items;
+        if (typeof savegame.inventory.maxSize !== "undefined") inventory.maxSize = savegame.inventory.maxSize;
     };
     updateVars();
     updateXp();
     updateStats();
+    inventory.items[0] = dagger;
+    inventory.items[1] = dagger;
+    inventory.items[2] = dagger;
+    inventory.items[3] = dagger;
+    inventory.items[4] = dagger;
+    inventory.items[5] = dagger;
+    inventory.items[6] = dagger;
+    inventory.items[7] = dagger;
+    inventory.items[8] = dagger;
+    inventory.items[9] = dagger;
+    addInvTable();
 }
 
 function deleteSave() {
