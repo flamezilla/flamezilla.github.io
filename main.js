@@ -75,9 +75,11 @@ var equipment = {
 };
 
 //items
-var dagger = {
-    name: 'Dagger',
+var bronze_dagger = {
+    name: 'Bronze Dagger',
     img: 'images/dagger_bronze.png',
+    type: 'weapon',
+    quality: 'text-muted',
     equip: 'hand',
     atkPwr: 5,
     matkPwr: 0,
@@ -85,9 +87,11 @@ var dagger = {
     inte: 0,
     agi: 0
 },
-sword = {
-    name: 'Sword',
+bronze_sword = {
+    name: 'Bronze Sword',
     img: 'images/sword_bronze.png',
+    type: 'weapon',
+    quality: 'text-muted',
     equip: 'hand',
     atkPwr: 10,
     matkPwr: 0,
@@ -202,6 +206,39 @@ function buyHero() {
     };
     document.getElementById('gps').innerHTML = heroes;
 };
+
+
+function addToInv(itemName, amount) {
+    if(amount >= (inventory.maxSize - inventory.items.length)) {
+        var d = document.createElement('DIV');
+        d.className = "alert alert-warning";
+        var a = document.createElement("A");
+        a.setAttribute("href", "#");
+        a.setAttribute("data-dismiss", "alert");
+        a.className = "close";
+        var t = document.createTextNode("x");
+        var text = document.createTextNode("Not enough inventory space!");
+        d.appendChild(a);
+        a.appendChild(t);
+        d.appendChild(text);
+        document.getElementById("tab3Content").appendChild(d);
+    } else {
+        if(amount <= inventory.maxSize - inventory.items.length) {
+            for(i = 0; i < amount; i++) {
+                inventory.items.push(itemName);
+            }
+        }
+        updateInvTable();
+    }
+    
+}
+
+function useItem(itemName) {
+    if(itemName.type == 'weapon') {
+        equip(itemName);
+        return;
+    };
+}
 
 function equip(itemName) { //equips item
     var equipTo = itemName.equip;
@@ -358,9 +395,21 @@ function updateStats() {
     document.getElementById('statPoints').innerHTML = statPoints.free;
 }
 
-function addInvTable() {
+function updateInvTable() {
+    var parent = document.getElementById("inventoryT");
+    parent.removeChild(parent.firstChild);
+    var s = document.createTextNode("Inventory (" + inventory.items.length + "/" + inventory.maxSize + ")");
+    parent.appendChild(s);
+    
+    parent = document.getElementById("inv_table");
+    while (parent.hasChildNodes()) {
+        parent.removeChild(parent.firstChild);
+    }
+    
+    
     var tableDiv = document.getElementById("inv_table");
     var table = document.createElement('TABLE');
+    table.setAttribute("id", "table1");
     var tableBody = document.createElement('TBODY');
     
     tableDiv.className = "table-responsive";
@@ -376,6 +425,7 @@ function addInvTable() {
         tr.style.height = "60px";
         for (j = 0; j < 7; j++) {
             var th = document.createElement('TH');
+            th.setAttribute("width", "75");
             if(items[k]) {
                 var x = document.createElement("INPUT");
                 var xloc = items[k].img;
@@ -383,8 +433,43 @@ function addInvTable() {
                 x.setAttribute("src", xloc);
                 x.setAttribute("name", items[k].name);
                 x.setAttribute("class", "btn");
-                th.setAttribute("width", "75");
+                x.setAttribute("id", "item" + k);
+                x.setAttribute("data-toggle", "modal");
+                x.setAttribute("data-target", "#itemM" + k);
+                
+                var div = document.createElement('DIV');
+                div.className = "modal fade";
+                div.setAttribute("id", "itemM" + k);
+                div.setAttribute("tabindex", "-1");
+                div.setAttribute("role", "dialog");
+                div.setAttribute("aria-labelledby", "mySmallModalLabel");
+                div.setAttribute("aria-hidden", "true");
+                
+                var div2 = document.createElement('DIV');
+                div2.className = "modal-dialog modal-sm";
+                div.appendChild(div2);
+                
+                var modal = document.createElement('DIV');
+                modal.className = "modal-content";
+                div2.appendChild(modal);
+                
+                var modalHeader = document.createElement('DIV');
+                modalHeader.className = "modal-header";
+                modal.appendChild(modalHeader);
+                
+                var header = document.createElement('H4');
+                header.className = "modal-title";
+                var t = document.createTextNode(items[k].name);
+                header.className = items[k].quality;
+                header.appendChild(t);
+                modalHeader.appendChild(header);
+                
+                var modalBody = document.createElement('DIV');
+                modalBody.className = "modal-body";
+                modal.appendChild(modalBody);
+                
                 th.appendChild(x);
+                th.appendChild(div);
             };
             tr.appendChild(th);
             k++;
@@ -479,17 +564,9 @@ function load() {
     updateVars();
     updateXp();
     updateStats();
-    inventory.items[0] = dagger;
-    inventory.items[1] = dagger;
-    inventory.items[2] = dagger;
-    inventory.items[3] = dagger;
-    inventory.items[4] = dagger;
-    inventory.items[5] = dagger;
-    inventory.items[6] = dagger;
-    inventory.items[7] = sword;
-    inventory.items[8] = sword;
-    inventory.items[9] = sword;
-    addInvTable();
+    updateInvTable();
+    addToInv(bronze_dagger, 1);
+    addToInv(bronze_sword, 1);
 }
 
 function deleteSave() {
