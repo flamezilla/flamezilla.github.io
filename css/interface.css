@@ -16,6 +16,9 @@ th {
 }
 td { height:25px;}
 
+table { table-layout: fixed; }
+table th, table td { overflow: hidden; }
+
 #log {
 	height: 150px;
 	overflow-y: scroll;

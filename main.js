@@ -15,6 +15,7 @@ var charClass = 0;
 var heroes = 0;
 var heroCost = 10;
 var inTown = true;
+var starterPack = false;
 var upgrades = {
     restoreRateLvl:0,
     restoreRateCost:300,
@@ -59,7 +60,7 @@ var itemBonus = {
 //inventory
 var inventory = {
     items: [],
-    maxSize: 21
+    maxSize: 24
 }
 
 //equipped
@@ -76,8 +77,8 @@ var equipment = {
 
 //items
 var bronze_dagger = {
-    name: 'Bronze Dagger',
-    img: 'images/dagger_bronze.png',
+    name: 'Dagger',
+    img: 'images/new/W_Dagger001.png',
     type: 'weapon',
     quality: 'text-muted',
     equip: 'hand',
@@ -85,11 +86,13 @@ var bronze_dagger = {
     matkPwr: 0,
     str: 0,
     inte: 0,
-    agi: 0
+    agi: 0,
+    disc: 'A shitty dagger',
+    moniker: 'bronze_dagger'
 },
 bronze_sword = {
-    name: 'Bronze Sword',
-    img: 'images/sword_bronze.png',
+    name: 'Sword',
+    img: 'images/new/W_Sword001.png',
     type: 'weapon',
     quality: 'text-muted',
     equip: 'hand',
@@ -97,7 +100,18 @@ bronze_sword = {
     matkPwr: 0,
     str: 0,
     inte: 0,
-    agi: 0
+    agi: 0,
+    disc: 'A shitty sword',
+    moniker: 'bronze_sword'
+};
+hp_potion = {
+    name: 'Health Potion',
+    img: 'images/new/P_Red03.png',
+    type: 'potion',
+    quality: 'text-muted',
+    equip: 'mouth',
+    disc: 'Recovers 50 HP',
+    moniker: 'hp_potion'
 };
 
 function getClass(classN) {
@@ -209,7 +223,7 @@ function buyHero() {
 
 
 function addToInv(itemName, amount) {
-    if(amount >= (inventory.maxSize - inventory.items.length)) {
+    if(amount > (inventory.maxSize - inventory.items.length)) {
         var d = document.createElement('DIV');
         d.className = "alert alert-warning";
         var a = document.createElement("A");
@@ -233,10 +247,27 @@ function addToInv(itemName, amount) {
     
 }
 
+function removeFromInv(itemName) {
+    inventory.items.splice(inventory.items.indexOf(itemName), 1);
+}
+
 function useItem(itemName) {
-    if(itemName.type == 'weapon') {
+    if(itemName.type == 'weapon' || itemName.type == 'armor') {
         equip(itemName);
         return;
+    };
+    if(itemName.type == 'potion') {
+        if(hp.current < hp.max) {
+            var restore = Math.floor(hp.max * .3);
+            hp.current += restore;
+            if(hp.current > hp.max) {
+                hp.current = hp.max;
+            }
+            updateHp();
+            removeFromInv(itemName);
+            updateInvTable();
+            printToLog("Used " + itemName.name + "!");
+        }
     };
 }
 
@@ -245,6 +276,7 @@ function equip(itemName) { //equips item
     equipment[equipTo] = itemName;
     getEquipStats();
     updateStats();
+    printToLog("Equipped " + itemName.name + "!");
 }
 
 function getEquipStats() { //Calculates and adds stats from equipped
@@ -319,6 +351,7 @@ function toggleChooseStats(state) {
 }
 
 function updateStats() {
+    getEquipStats();
     switch(charClass) {
         case 0:
             hp.max = (level*6)+4;
@@ -342,7 +375,7 @@ function updateStats() {
             agi = level + statPoints.agi;
             hp.max = Math.floor((level*str) - 200);
             hp.restoreRate = Math.floor(level / 3);
-            atkPwr = (level * 3) + (str * 2.5) - 50;
+            atkPwr = (level * 3) + (str * 2.5) - 50 + itemBonus.atkPwr;
             matkPwr = level + inte * 1.2;
             crit = ((agi * 25) / (level)) - 24;
             document.getElementById('atk').innerHTML = prettify(atkPwr);
@@ -360,7 +393,7 @@ function updateStats() {
             agi = level + statPoints.agi;
             hp.max = Math.floor((level * str * .7) + (inte * 4.5) - 100);
             hp.restoreRate = Math.floor(level / 3);
-            atkPwr = level * 1.5;
+            atkPwr = level * 1.5 + itemBonus.atkPwr;
             matkPwr = (level * 1.5) + (inte * 3.7);
             crit = Math.floor(((agi * 25) / (level)) - 25);
             document.getElementById('atk').innerHTML = prettify(atkPwr);
@@ -378,7 +411,7 @@ function updateStats() {
             agi = Math.floor(level*2.7) + statPoints.agi;
             hp.max = Math.floor((level * str * .95) + ((agi + level) * 29) - 1150);
             hp.restoreRate = Math.floor(level / 3);
-            atkPwr = ((level + str) * 2.5) + ((agi + level) * 2.3) - 100;
+            atkPwr = ((level + str) * 2.5) + ((agi + level) * 2.3) - 100 + itemBonus.atkPwr;
             matkPwr = level + inte * 1.3;
             crit = Math.floor(((agi * 25) / (level)) - 65);
             document.getElementById('atk').innerHTML = prettify(atkPwr);
@@ -420,12 +453,13 @@ function updateInvTable() {
     var items = inventory.items;
     
     var k = 0; //index for items array
-    for (i = 0; i < 3; i++) {
+    for (i = 0; i < Math.ceil(inventory.maxSize/6); i++) {
         var tr = document.createElement('TR');
         tr.style.height = "60px";
-        for (j = 0; j < 7; j++) {
+        for (j = 0; j < 6; j++) {
             var th = document.createElement('TH');
-            th.setAttribute("width", "75");
+            th.setAttribute("width", "77");
+            //th.style.width = "14%";
             if(items[k]) {
                 var x = document.createElement("INPUT");
                 var xloc = items[k].img;
@@ -467,6 +501,35 @@ function updateInvTable() {
                 var modalBody = document.createElement('DIV');
                 modalBody.className = "modal-body";
                 modal.appendChild(modalBody);
+                modalBody.appendChild(document.createTextNode(items[k].disc));
+                
+                var modalFooter = document.createElement('DIV');
+                modalFooter.className = "modal-footer";
+                modal.appendChild(modalFooter);
+                var cbutton = document.createElement('BUTTON');
+                if(items[k].type == ("weapon" || "armor")) {
+                    var button = document.createElement('BUTTON');
+                    button.setAttribute("type", "button");
+                    button.setAttribute("onClick", "useItem(" + items[k].moniker + ")");
+                    button.className = "btn btn-success";
+                    button.setAttribute("data-dismiss", "modal");
+                    modalFooter.appendChild(button);
+                    button.appendChild(document.createTextNode("Equip"));
+                } else {
+                    var button = document.createElement('BUTTON');
+                    button.setAttribute("type", "button");
+                    button.setAttribute("onClick", "useItem(" + items[k].moniker + ")");
+                    button.className = "btn btn-primary";
+                    button.setAttribute("data-dismiss", "modal");
+                    modalFooter.appendChild(button);
+                    button.appendChild(document.createTextNode("Use"));
+                
+                };
+                cbutton.setAttribute("type", "button");
+                cbutton.setAttribute("class", "btn btn-default");
+                cbutton.setAttribute("data-dismiss", "modal");
+                modalFooter.appendChild(cbutton);
+                cbutton.appendChild(document.createTextNode("Close"));
                 
                 th.appendChild(x);
                 th.appendChild(div);
@@ -519,7 +582,8 @@ function save () {
         spAgi: statPoints.agi,
         spF: statPoints.free,
         equipment: equipment,
-        inventory: inventory
+        inventory: inventory,
+        starterPack: starterPack
     }
     localStorage.setItem("save",JSON.stringify(save));
 };
@@ -560,13 +624,22 @@ function load() {
         if (typeof savegame.equipment.neck !== "undefined") equipment.neck = savegame.equipment.neck;
         if (typeof savegame.inventory.items !== "undefined") inventory.items = savegame.inventory.items;
         if (typeof savegame.inventory.maxSize !== "undefined") inventory.maxSize = savegame.inventory.maxSize;
+        if (typeof savegame.starterPack !== "undefined") starterPack = savegame.starterPack;
     };
     updateVars();
     updateXp();
     updateStats();
     updateInvTable();
-    addToInv(bronze_dagger, 1);
-    addToInv(bronze_sword, 1);
+    giveStarterPack();
+}
+
+function giveStarterPack() {
+    if(!starterPack) {
+        addToInv(bronze_dagger, 1);
+        addToInv(bronze_sword, 1);
+        addToInv(hp_potion, 5);
+        starterPack = true;
+    }
 }
 
 function deleteSave() {

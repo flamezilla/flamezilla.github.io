@@ -1,9 +1,8 @@
 Clicker Quest
--at lvl 10 you can choose a class
+-add battle system
 -add monsters
 -add items
--add stats
 -chance to capture wild monsters
--add more zones
 -recruit party members to fight for you
 -create a guild to have multiple parties, each party can go to a different zone
+-item upgrading
