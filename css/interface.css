@@ -24,6 +24,14 @@ table th, table td { overflow: hidden; }
 	overflow-y: scroll;
 }
 
+.gear {
+	position:relative;
+}.gear-over {
+	position:absolute;
+	margin: -34px 0 0 0;
+	z-index:100;
+}
+
 span.error {
 	color:red
 }

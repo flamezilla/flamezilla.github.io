@@ -71,7 +71,7 @@ var equipment = {
     torso: {},
     legs: {},
     feet: {},
-    hands: {},
+    gloves: {},
     neck: {}
 };
 
@@ -103,6 +103,20 @@ bronze_sword = {
     agi: 0,
     disc: 'A shitty sword',
     moniker: 'bronze_sword'
+};
+bronze_chestpiece = {
+    name: 'Bronze Chestpiece',
+    img: 'images/new/A_Armour01.png',
+    type: 'armor',
+    quality: 'text-muted',
+    equip: 'torso',
+    atkPwr: 0,
+    matkPwr: 0,
+    str: 0,
+    inte: 0,
+    agi: 0,
+    disc: 'Shitty chest armor',
+    moniker: 'bronze_chestpiece'
 };
 hp_potion = {
     name: 'Health Potion',
@@ -276,11 +290,64 @@ function equip(itemName) { //equips item
     equipment[equipTo] = itemName;
     getEquipStats();
     updateStats();
+    updateEquipment();
     printToLog("Equipped " + itemName.name + "!");
 }
 
+function updateEquipment(){ 
+    var hand = document.getElementById("equipHand");
+    var offhand = document.getElementById("equipOffhand");
+    var head = document.getElementById("equipHead");
+    var torso = document.getElementById("equipTorso");
+    var legs = document.getElementById("equipLegs");
+    var feet = document.getElementById("equipFeet");
+    var gloves = document.getElementById("equipGloves");
+    var neck = document.getElementById("equipNeck");
+    
+    if(hand.hasChildNodes()) hand.removeChild(hand.firstChild);
+    var img = document.createElement('IMG');
+    if(typeof equipment.hand.img != "undefined") img.setAttribute("src", equipment.hand.img);
+    hand.appendChild(img);
+    
+    if(offhand.hasChildNodes()) offhand.removeChild(offhand.firstChild);
+    img = document.createElement('IMG');
+    if(typeof equipment.offhand.img != "undefined") img.setAttribute("src", equipment.offhand.img);
+    offhand.appendChild(img);
+    
+    if(head.hasChildNodes()) head.removeChild(head.firstChild);
+    img = document.createElement('IMG');
+    if(typeof equipment.head.img != "undefined") img.setAttribute("src", equipment.head.img);
+    head.appendChild(img);
+    
+    if(torso.hasChildNodes()) torso.removeChild(torso.firstChild);
+    img = document.createElement('IMG');
+    if(typeof equipment.torso.img != "undefined") img.setAttribute("src", equipment.torso.img);
+    torso.appendChild(img);
+    
+    if(legs.hasChildNodes()) legs.removeChild(legs.firstChild);
+    img = document.createElement('IMG');
+    if(typeof equipment.legs.img != "undefined") img.setAttribute("src", equipment.legs.img);
+    legs.appendChild(img);
+    
+    if(gloves.hasChildNodes()) gloves.removeChild(gloves.firstChild);
+    img = document.createElement('IMG');
+    if(typeof equipment.gloves.img != "undefined") img.setAttribute("src", equipment.gloves.img);
+    gloves.appendChild(img);
+    
+    if(feet.hasChildNodes()) feet.removeChild(feet.firstChild);
+    img = document.createElement('IMG');
+    if(typeof equipment.feet.img != "undefined") img.setAttribute("src", equipment.feet.img);
+    feet.appendChild(img);
+    
+    if(neck.hasChildNodes()) neck.removeChild(neck.firstChild);
+    img = document.createElement('IMG');
+    if(typeof equipment.neck.img != "undefined") img.setAttribute("src", equipment.neck.img);
+    neck.appendChild(img);
+    
+}
+
 function getEquipStats() { //Calculates and adds stats from equipped
-    itemBonus.atkPwr = equipment.hand.atkPwr;
+    if(typeof equipment.hand.atkPwr != "undefined") itemBonus.atkPwr = equipment.hand.atkPwr;
 }
 
 function unlockAbility(ability) {
@@ -501,13 +568,18 @@ function updateInvTable() {
                 var modalBody = document.createElement('DIV');
                 modalBody.className = "modal-body";
                 modal.appendChild(modalBody);
-                modalBody.appendChild(document.createTextNode(items[k].disc));
+                var p = document.createElement('P');
+                p.className = "text-muted small";
+                var em = document.createElement('EM');
+                em.appendChild(document.createTextNode(items[k].disc));
+                p.appendChild(em);
+                modalBody.appendChild(p);
                 
                 var modalFooter = document.createElement('DIV');
                 modalFooter.className = "modal-footer";
                 modal.appendChild(modalFooter);
                 var cbutton = document.createElement('BUTTON');
-                if(items[k].type == ("weapon" || "armor")) {
+                if(items[k].type == "weapon" || items[k].type == "armor") {
                     var button = document.createElement('BUTTON');
                     button.setAttribute("type", "button");
                     button.setAttribute("onClick", "useItem(" + items[k].moniker + ")");
@@ -620,7 +692,7 @@ function load() {
         if (typeof savegame.equipment.torso !== "undefined") equipment.torso = savegame.equipment.torso;
         if (typeof savegame.equipment.legs !== "undefined") equipment.legs = savegame.equipment.legs;
         if (typeof savegame.equipment.feet !== "undefined") equipment.feet = savegame.equipment.feet;
-        if (typeof savegame.equipment.hands !== "undefined") equipment.hands = savegame.equipment.hands;
+        if (typeof savegame.equipment.gloves !== "undefined") equipment.gloves = savegame.equipment.gloves;
         if (typeof savegame.equipment.neck !== "undefined") equipment.neck = savegame.equipment.neck;
         if (typeof savegame.inventory.items !== "undefined") inventory.items = savegame.inventory.items;
         if (typeof savegame.inventory.maxSize !== "undefined") inventory.maxSize = savegame.inventory.maxSize;
@@ -630,6 +702,7 @@ function load() {
     updateXp();
     updateStats();
     updateInvTable();
+    updateEquipment();
     giveStarterPack();
 }
 
@@ -638,6 +711,7 @@ function giveStarterPack() {
         addToInv(bronze_dagger, 1);
         addToInv(bronze_sword, 1);
         addToInv(hp_potion, 5);
+        addToInv(bronze_chestpiece, 1);
         starterPack = true;
     }
 }
