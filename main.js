@@ -84,9 +84,11 @@ var bronze_dagger = {
     equip: 'hand',
     atkPwr: 5,
     matkPwr: 0,
-    str: 0,
+    str: 10,
     inte: 0,
     agi: 0,
+    upgrade: 0,
+    equipD: 'One-Hand',
     disc: 'A shitty dagger',
     moniker: 'bronze_dagger'
 },
@@ -98,9 +100,11 @@ bronze_sword = {
     equip: 'hand',
     atkPwr: 10,
     matkPwr: 0,
-    str: 0,
-    inte: 0,
-    agi: 0,
+    str: 30,
+    inte: 20,
+    agi: 10,
+    upgrade: 2,
+    equipD: 'One-Hand',
     disc: 'A shitty sword',
     moniker: 'bronze_sword'
 };
@@ -110,11 +114,13 @@ bronze_chestpiece = {
     type: 'armor',
     quality: 'text-muted',
     equip: 'torso',
-    atkPwr: 0,
-    matkPwr: 0,
+    def: 10,
+    mdef: 10,
     str: 0,
     inte: 0,
     agi: 0,
+    upgrade: 10,
+    equipD: 'Chest',
     disc: 'Shitty chest armor',
     moniker: 'bronze_chestpiece'
 };
@@ -127,6 +133,9 @@ hp_potion = {
     disc: 'Recovers 50 HP',
     moniker: 'hp_potion'
 };
+
+//monsters
+
 
 function getClass(classN) {
     var className = "";
@@ -187,23 +196,6 @@ function kill(zoneLvl) {
         document.getElementById('errHp').innerHTML = "Not high enough Level!";
     }
 };
-
-function calcHp() {
-    switch(charClass) {
-        case 0:
-            break;
-        case 1:
-            
-            break;
-        case 2:
-            
-            break;
-        case 3:
-            
-            break;
-        default:
-    }
-}
 
 function buyUpgrade(upgrade) {
     restoreRateCost = (upgrades.restoreRateLvl+1)*300;
@@ -303,7 +295,33 @@ function updateEquipment(){
     var feet = document.getElementById("equipFeet");
     var gloves = document.getElementById("equipGloves");
     var neck = document.getElementById("equipNeck");
+    var equipList = [];
+    equipList.push(hand);
+    equipList.push(offhand);
+    equipList.push(head);
+    equipList.push(torso);
+    equipList.push(legs);
+    equipList.push(feet);
+    equipList.push(gloves);
+    equipList.push(neck);
+    var equipList2 = [];
+    equipList2.push("hand");
+    equipList2.push("offhand");
+    equipList2.push("head");
+    equipList2.push("torso");
+    equipList2.push("legs");
+    equipList2.push("feet");
+    equipList2.push("gloves");
+    equipList2.push("neck");
     
+    
+    for(i = 0; i < 8; i++) {
+        if(equipList[i].hasChildNodes()) equipList[i].removeChild(equipList[i].firstChild);
+        var img = document.createElement('IMG');
+        if(typeof equipment[equipList2[i]].img != "undefined") img.setAttribute("src", equipment[equipList2[i]].img);
+        equipList[i].appendChild(img);
+    }
+    /*
     if(hand.hasChildNodes()) hand.removeChild(hand.firstChild);
     var img = document.createElement('IMG');
     if(typeof equipment.hand.img != "undefined") img.setAttribute("src", equipment.hand.img);
@@ -342,12 +360,16 @@ function updateEquipment(){
     if(neck.hasChildNodes()) neck.removeChild(neck.firstChild);
     img = document.createElement('IMG');
     if(typeof equipment.neck.img != "undefined") img.setAttribute("src", equipment.neck.img);
-    neck.appendChild(img);
+    neck.appendChild(img);*/
     
 }
 
 function getEquipStats() { //Calculates and adds stats from equipped
     if(typeof equipment.hand.atkPwr != "undefined") itemBonus.atkPwr = equipment.hand.atkPwr;
+    if(typeof equipment.hand.matkPwr != "undefined") itemBonus.matkPwr = equipment.hand.matkPwr;
+    if(typeof equipment.hand.str != "undefined") itemBonus.str = equipment.hand.str;
+    if(typeof equipment.hand.inte != "undefined") itemBonus.inte = equipment.hand.inte;
+    if(typeof equipment.hand.agi != "undefined") itemBonus.agi = equipment.hand.agi;
 }
 
 function unlockAbility(ability) {
@@ -422,11 +444,11 @@ function updateStats() {
     switch(charClass) {
         case 0:
             hp.max = (level*6)+4;
-            str = level;
-            inte = level;
-            agi = level;
+            str = level + itemBonus.str;
+            inte = level + itemBonus.inte;
+            agi = level + itemBonus.agi;
             atkPwr = level*1.2 + itemBonus.atkPwr;
-            matkPwr = level*1.2;
+            matkPwr = level*1.2 + itemBonus.matkPwr;
             document.getElementById('atk').innerHTML = prettify(atkPwr);
             document.getElementById('matk').innerHTML = prettify(matkPwr);
             document.getElementById('def').innerHTML = def;
@@ -437,14 +459,14 @@ function updateStats() {
             document.getElementById('agi').innerHTML = agi;
             break;
         case 1:
-            str = Math.floor(level*2.7) + statPoints.str;
-            inte = level + statPoints.inte;
-            agi = level + statPoints.agi;
+            str = Math.floor(level*2.7) + statPoints.str + itemBonus.str;
+            inte = level + statPoints.inte + itemBonus.inte;
+            agi = level + statPoints.agi + itemBonus.agi;
             hp.max = Math.floor((level*str) - 200);
             hp.restoreRate = Math.floor(level / 3);
             atkPwr = (level * 3) + (str * 2.5) - 50 + itemBonus.atkPwr;
-            matkPwr = level + inte * 1.2;
-            crit = ((agi * 25) / (level)) - 24;
+            matkPwr = level + inte * 1.2 + itemBonus.matkPwr;
+            crit = Math.floor(((agi * 25) / (level)) - 24);
             document.getElementById('atk').innerHTML = prettify(atkPwr);
             document.getElementById('matk').innerHTML = prettify(matkPwr);
             document.getElementById('def').innerHTML = def;
@@ -455,13 +477,13 @@ function updateStats() {
             document.getElementById('agi').innerHTML = agi + " (+" + statPoints.agi + ")";
             break;
         case 2:
-            str = level + statPoints.str;
-            inte = Math.floor(level*2.7) + statPoints.inte;;
-            agi = level + statPoints.agi;
+            str = level + statPoints.str + itemBonus.str;
+            inte = Math.floor(level*2.7) + statPoints.inte + itemBonus.inte;
+            agi = level + statPoints.agi + itemBonus.agi;
             hp.max = Math.floor((level * str * .7) + (inte * 4.5) - 100);
             hp.restoreRate = Math.floor(level / 3);
             atkPwr = level * 1.5 + itemBonus.atkPwr;
-            matkPwr = (level * 1.5) + (inte * 3.7);
+            matkPwr = (level * 1.5) + (inte * 3.7) + itemBonus.matkPwr;
             crit = Math.floor(((agi * 25) / (level)) - 25);
             document.getElementById('atk').innerHTML = prettify(atkPwr);
             document.getElementById('matk').innerHTML = prettify(matkPwr);
@@ -473,13 +495,13 @@ function updateStats() {
             document.getElementById('agi').innerHTML = agi + " (+" + statPoints.agi + ")";
             break;
         case 3:
-            str = level + statPoints.str;
-            inte = level + statPoints.inte;;
-            agi = Math.floor(level*2.7) + statPoints.agi;
+            str = level + statPoints.str; + itemBonus.str
+            inte = level + statPoints.inte + itemBonus.inte;
+            agi = Math.floor(level*2.7) + statPoints.agi + itemBonus.agi;
             hp.max = Math.floor((level * str * .95) + ((agi + level) * 29) - 1150);
             hp.restoreRate = Math.floor(level / 3);
             atkPwr = ((level + str) * 2.5) + ((agi + level) * 2.3) - 100 + itemBonus.atkPwr;
-            matkPwr = level + inte * 1.3;
+            matkPwr = level + inte * 1.3 + itemBonus.matkPwr;
             crit = Math.floor(((agi * 25) / (level)) - 65);
             document.getElementById('atk').innerHTML = prettify(atkPwr);
             document.getElementById('matk').innerHTML = prettify(matkPwr);
@@ -561,6 +583,11 @@ function updateInvTable() {
                 var header = document.createElement('H4');
                 header.className = "modal-title";
                 var t = document.createTextNode(items[k].name);
+                if(items[k].type == "weapon" || items[k].type == "armor") {
+                    if(items[k].upgrade > 0) {
+                        var t = document.createTextNode(items[k].name + " (+" + items[k].upgrade + ")");
+                    }
+                };
                 header.className = items[k].quality;
                 header.appendChild(t);
                 modalHeader.appendChild(header);
@@ -572,6 +599,48 @@ function updateInvTable() {
                 p.className = "text-muted small";
                 var em = document.createElement('EM');
                 em.appendChild(document.createTextNode(items[k].disc));
+                if(items[k].type == "weapon" || items[k].type == "armor") {
+                    var statsP = document.createElement('P');
+                    var stats = document.createTextNode(items[k].equipD);
+                    statsP.appendChild(stats);
+                    statsP.appendChild(document.createElement("br"));
+                    if(items[k].atkPwr > 0) {
+                        stats = document.createTextNode(items[k].atkPwr + " Attack Power");
+                        statsP.appendChild(stats);
+                        statsP.appendChild(document.createElement("br"));
+                    }
+                    if(items[k].matkPwr > 0) {
+                        stats = document.createTextNode(items[k].atkPwr + " Magic Attack Power");
+                        statsP.appendChild(stats);
+                        statsP.appendChild(document.createElement("br"));
+                    }
+                    if(items[k].def > 0) {
+                        stats = document.createTextNode(items[k].def + " Defense");
+                        statsP.appendChild(stats);
+                        statsP.appendChild(document.createElement("br"));
+                    }
+                    if(items[k].mdef > 0) {
+                        stats = document.createTextNode(items[k].mdef + " Magic Defense");
+                        statsP.appendChild(stats);
+                        statsP.appendChild(document.createElement("br"));
+                    }
+                    if(items[k].str > 0) {
+                        stats = document.createTextNode("+ " + items[k].str + " STR");
+                        statsP.appendChild(stats);
+                        statsP.appendChild(document.createElement("br"));
+                    }
+                    if(items[k].inte > 0) {
+                        stats = document.createTextNode("+ " + items[k].inte + " INT");
+                        statsP.appendChild(stats);
+                        statsP.appendChild(document.createElement("br"));
+                    }
+                    if(items[k].agi > 0) {
+                        stats = document.createTextNode("+ " + items[k].agi + " AGI");
+                        statsP.appendChild(stats);
+                        statsP.appendChild(document.createElement("br"));
+                    }
+                    modalBody.appendChild(statsP);
+                };
                 p.appendChild(em);
                 modalBody.appendChild(p);
                 
