@@ -17,8 +17,6 @@ var heroCost = 10;
 var inTown = true;
 var starterPack = false;
 var upgrades = {
-    restoreRateLvl:0,
-    restoreRateCost:300,
     goldRate:0,
     goldRateCost:300
 };
@@ -103,7 +101,7 @@ bronze_sword = {
     str: 30,
     inte: 20,
     agi: 10,
-    upgrade: 2,
+    upgrade: 0,
     equipD: 'One-Hand',
     disc: 'A shitty sword',
     moniker: 'bronze_sword'
@@ -119,7 +117,7 @@ bronze_chestpiece = {
     str: 0,
     inte: 0,
     agi: 0,
-    upgrade: 10,
+    upgrade: 0,
     equipD: 'Chest',
     disc: 'Shitty chest armor',
     moniker: 'bronze_chestpiece'
@@ -133,6 +131,25 @@ hp_potion = {
     disc: 'Recovers 50 HP',
     moniker: 'hp_potion'
 };
+wep_upgrade = {
+    name: 'Weapon Upgrade Stone',
+    img: 'images/new/I_Rubi.png',
+    type: 'item',
+    quality: 'text-primary',
+    equip: 'weapon',
+    disc: "Chance to increase a weapon's upgrade level by 1",
+    moniker: 'wep_upgrade'
+};
+armor_upgrade = {
+    name: 'Armor Upgrade Stone',
+    img: 'images/new/I_Saphire.png',
+    type: 'item',
+    quality: 'text-primary',
+    equip: 'armor',
+    disc: "Chance to increase an armor's upgrade level by 1",
+    moniker: 'armor_upgrade'
+};
+
 
 //monsters
 
@@ -255,6 +272,7 @@ function addToInv(itemName, amount) {
 
 function removeFromInv(itemName) {
     inventory.items.splice(inventory.items.indexOf(itemName), 1);
+    updateInvTable()
 }
 
 function useItem(itemName) {
@@ -271,9 +289,52 @@ function useItem(itemName) {
             }
             updateHp();
             removeFromInv(itemName);
-            updateInvTable();
             printToLog("Used " + itemName.name + "!");
         }
+    };
+}
+
+function getUpgradeProb(curr) {
+    var chance = new Chance();
+    
+    var prob = 100 - (5 * curr);
+    if(curr > 19)
+        prob  = 1;
+    return chance.bool({likelihood: prob});
+}
+
+function upgradeItem(itemName, pos) {
+    if(itemName.type == 'weapon') {
+        var k = inventory.items.indexOf(wep_upgrade);
+        if(k == -1) {
+            printToLog("You don't have the required upgrade stone!");
+            return;
+        }
+        removeFromInv(wep_upgrade);
+        if(getUpgradeProb(inventory.items[pos].upgrade)) {
+            inventory.items[pos].upgrade++;
+            updateInvTable();
+            printToLog("Upgrade successful! Upgraded to +" + inventory.items[pos].upgrade);
+        } else {
+            printToLog("Upgrade failed!");
+        }
+        return;
+    };
+    if(itemName.type == 'armor') {
+        var k = inventory.items.indexOf(armor_upgrade);
+        if(k == -1) {
+            printToLog("You don't have the required upgrade stone!");
+            return;
+        }
+        removeFromInv(armor_upgrade);
+        if(getUpgradeProb(inventory.items[pos].upgrade)) {
+            inventory.items[pos].upgrade++;
+            updateInvTable();
+            printToLog("Upgrade successful! Upgraded to +" + inventory.items[pos].upgrade);
+        } else {
+            printToLog("Upgrade failed!");
+        }
+        return;
     };
 }
 
@@ -651,6 +712,14 @@ function updateInvTable() {
                 if(items[k].type == "weapon" || items[k].type == "armor") {
                     var button = document.createElement('BUTTON');
                     button.setAttribute("type", "button");
+                    button.setAttribute("onClick", "upgradeItem(" + items[k].moniker + "," + k + ")");
+                    button.className = "btn btn-info";
+                    button.setAttribute("data-dismiss", "modal");
+                    modalFooter.appendChild(button);
+                    button.appendChild(document.createTextNode("Upgrade"));
+                    
+                    button = document.createElement('BUTTON');
+                    button.setAttribute("type", "button");
                     button.setAttribute("onClick", "useItem(" + items[k].moniker + ")");
                     button.className = "btn btn-success";
                     button.setAttribute("data-dismiss", "modal");
@@ -773,6 +842,8 @@ function load() {
     updateInvTable();
     updateEquipment();
     giveStarterPack();
+    addToInv(wep_upgrade, 3);
+    addToInv(armor_upgrade, 3);
 }
 
 function giveStarterPack() {
@@ -804,7 +875,6 @@ function updateVars() {
     //hp.restoreRate = hp.restoreRate + upgrades.restoreRateLvl*.1;
     document.getElementById('hpRate').innerHTML = prettify(hp.restoreRate);
     restoreRateCost = (upgrades.restoreRateLvl+1)*300;
-    document.getElementById('restoreRateC').innerHTML = restoreRateCost;
     document.getElementById('maxPartySize').innerHTML = party.maxSize;
     document.getElementById('currPartySize').innerHTML = party.currSize;
     
@@ -868,7 +938,6 @@ window.setInterval(function() {
 window.setInterval(function() {
     document.getElementById("errHp").innerHTML = "";
     document.getElementById("errGold").innerHTML = "";
-    document.getElementById("errUpgrade").innerHTML = "";
 }, 5000);
 
 window.setInterval(function() {
