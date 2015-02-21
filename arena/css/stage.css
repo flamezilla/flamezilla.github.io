@@ -5,6 +5,15 @@
 }
 
 .player img {
-	position: relative;
+	position: absolute;
+	left: 150px;
+	bottom: 150px;
+	z-index: 1;
+}
+
+.enemy img {
+	position: absolute;
+	right: 150px;
+	top: 150px;
 	z-index: 1;
 }
