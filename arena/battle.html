@@ -31,7 +31,7 @@
 <body onload="javascript:loadBattle()">
 
     <div id="wrapper">
-		
+
         <!-- Sidebar -->
         <div id="sidebar-wrapper">
             <ul class="sidebar-nav">
@@ -63,9 +63,33 @@
 								<h3 class="panel-title">Battle</h3>
 							</div>
 							<div class="panel-body">
+								<div class="stage">
+									<img src="images/BG_grass.png" alt="">
+								</div>
+								<div class="platform">
+									<img src="images/PF_grass.png" alt="">
+								</div>
+								<div class="hpbarbg1">
+									<img src="images/bar.png" alt="">
+								</div>
+								<div class="progressP">
+									<div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
+									</div>
+								</div>
+								<div class="progressE">
+									<div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
+									</div>
+								</div>
+								<div id="playerName" class="nameP"></div>
 								<div id="playerImg" class="player"></div>
+								<div id="enemyName" class="nameE"></div>
 								<div id="enemyImg" class="enemy"></div>
-								<canvas id="game" width="600" height="450"></canvas>								
+								<div id="playerHp" class="hpP">100/100</div>
+								<div id="enemyHp" class="hpE">100/100</div>
+								<div class="hpbarbg2">
+									<img src="images/bar.png" alt="">
+								</div>
+								
 							</div>
 						</div>
                     </div>
@@ -77,9 +101,7 @@
     </div>
     <!-- /#wrapper -->
 	
-	<script type="text/javascript" src="js/PxLoader.js"></script>
-	<script type="text/javascript" src="js/PxLoaderImage.js"></script> 
-	<script src="js/arena.js"></script>
+	 <script src="js/arena.js"></script>
 
     <!-- jQuery -->
     <script src="js/jquery.js"></script>

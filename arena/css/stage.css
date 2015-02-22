@@ -1,19 +1,120 @@
+@font-face {
+    font-family: OpenSans-Semi;
+    src: url('../fonts/OpenSans-Semibold.ttf');
+}
+
+@font-face {
+    font-family: OpenSans;
+    src: url('../fonts/OpenSans-Regular.ttf');
+}
+
 .stage img {
+	border:1px solid #021a40;
 	position: relative;
 	width: 100%;
 	z-index: 0;
 }
 
+.platform img {
+	position: absolute;
+	width: 90%;
+	left: 33px;
+	bottom: 38px;
+	z-index: 1;
+}
+
 .player img {
 	position: absolute;
-	left: 150px;
-	bottom: 150px;
-	z-index: 1;
+	left: 125px;
+	bottom: 50px;
+	z-index: 2;
 }
 
 .enemy img {
 	position: absolute;
-	right: 150px;
-	top: 150px;
-	z-index: 1;
+	right: 120px;
+	bottom: 250px;
+	z-index: 2;
+}
+
+.hpbarbg1 img {
+	position: absolute;
+	width: 30%;
+	left: 120px;
+	bottom: 200px;
+	z-index: 2;
+}
+
+.nameP {
+	font-family: OpenSans-Semi;
+	text-shadow: 1px 1px #000000;
+	color:white;
+	position: absolute;
+	left: 130px;
+	bottom: 235px;
+	z-index: 3;
+}
+
+.hpbarbg2 img {
+	position: absolute;
+	width: 30%;
+	right: 80px;
+	top: 100px;
+	z-index: 2;
+}
+
+.nameE {
+	font-family: OpenSans-Semi;
+	text-shadow: 1px 1px #000000;
+	color:white;
+	position: absolute;
+	right: 210px;
+	top: 88px;
+	z-index: 3;
+}
+
+.hpP {
+	font-family: OpenSans;
+	text-shadow: 1px 1px #000000;
+	color:white;
+	position: absolute;
+	left: 192px;
+	bottom: 203px;
+	z-index: 30;
+}
+
+.hpE {
+	font-family: OpenSans;
+	text-shadow: 1px 1px #000000;
+	color:white;
+	position: absolute;
+	right: 155px;
+	bottom: 407px;
+	z-index: 30;
+}
+
+.progressP {
+	background: rgba(170, 170, 170, 1);
+	border: 0px solid rgba(255, 255, 255, 1);
+	border-radius: 2px;
+	border: 1px solid rgba(255, 255, 255, 1);
+	bottom: 220px;
+	left: 135px;
+	height: 12px;
+	width: 170px;
+	position: absolute;
+	z-index: 20;
+}
+
+.progressE {
+	background: rgba(170, 170, 170, 1);
+	border: 0px solid rgba(255, 255, 255, 1);
+	border-radius: 2px;
+	border: 1px solid rgba(255, 255, 255, 1);
+	top: 111px;
+	right: 97px;
+	height: 12px;
+	width: 170px;
+	position: absolute;
+	z-index: 20;
 }
