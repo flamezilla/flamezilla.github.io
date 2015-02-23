@@ -27,14 +27,14 @@
 	position: absolute;
 	left: 125px;
 	bottom: 50px;
-	z-index: 2;
+	z-index: 10;
 }
 
 .enemy img {
 	position: absolute;
-	right: 120px;
+	right: 130px;
 	bottom: 250px;
-	z-index: 2;
+	z-index: 10;
 }
 
 .hpbarbg1 img {

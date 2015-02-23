@@ -2,8 +2,8 @@ var player = {
     name: "",
     loc: "",
     level: 99,
-    maxhp: 100,
-    currhp: 100,
+    maxhp: 300,
+    currhp: 300,
     xp: 0
 };
 
@@ -22,6 +22,11 @@ var requestAnimFrame = window.mozRequestAnimationFrame  ||
                                 window.webkitRequestAnimationFrame  ||
                                 window.msRequestAnimationFrame  ||
                                 window.oRequestAnimationFrame;
+
+                                
+function gameLogic() {
+    
+}
 
 function loadPlayer(name) {
     player.name = name.charAt(0).toUpperCase() + name.slice(1);
@@ -50,8 +55,8 @@ function loadEnemy(name) {
 }
 
 function loadBattle() {
-    var player = "kyurem-black";
-    var enemy = "kyurem-white";
+    var player = "charizard";
+    var enemy = "charizard";
     loadPlayer(player);
     loadEnemy(enemy);
     createCanvas(player,enemy);
@@ -66,29 +71,40 @@ function createCanvas() {
     
     loader.addCompletionListener(function() { 
         var canvas = document.getElementById('game'), 
-            ctx = canvas.getContext('2d'); 
+            ctx = canvas.getContext('2d');
+            
+        var canvas2 = document.getElementById('game'), 
+            ctx2 = canvas2.getContext('2d');
+            
+        var canvas3 = document.getElementById('game'), 
+            ctx3 = canvas3.getContext('2d'); 
      
         ctx.drawImage(backgroundImg, 0, 0, 600, 450); 
         ctx.drawImage(platformImg, 0, 0, 600, 450); 
         ctx.drawImage(bar, 80, 250, 200, 50); 
         ctx.drawImage(bar, 360, 50, 200, 50);
-        ctx.shadowColor = "black";
-        ctx.shadowOffsetX = 1; 
-        ctx.shadowOffsetY = 1; 
-        ctx.shadowBlur = 2;
-        ctx.scale(1,1);
-        ctx.font = '14px Verdana';
-        ctx.textBaseline = 'top';
-        ctx.fillStyle = 'white';
-        ctx.fillText(player.name, 95, 240);
-        ctx.fillText(enemy.name, 375, 40);
-        ctx.font = '15px Courier New';
-        ctx.fillText('lv.' + player.level, 225, 240);
-        ctx.fillText('lv.' + enemy.level, 510, 40);
+        ctx2.shadowColor = "black";
+        ctx2.shadowOffsetX = 1; 
+        ctx2.shadowOffsetY = 1; 
+        ctx2.shadowBlur = 2;
+        ctx2.scale(1,1);
+        ctx2.font = '14px Verdana';
+        ctx2.textBaseline = 'top';
+        ctx2.fillStyle = 'white';
+        ctx2.fillText(player.name, 95, 240);
+        ctx2.fillText(enemy.name, 375, 40);
+        ctx2.font = '15px Courier New';
+        ctx2.fillText('lv.' + player.level, 225, 240);
+        ctx2.fillText('lv.' + enemy.level, 510, 40);
         
-        ctx.fillStyle="#CF0720";
-        ctx.fillRect(95,262,(player.currhp/player.maxhp)*165,13);
-        ctx.fillRect(375,62,(enemy.currhp/enemy.maxhp)*165,13);
+        
+
+        /*ctx2.fillText(player.currhp + '/' + player.maxhp, 150, 275);
+        ctx2.fillText(enemy.currhp + '/' + enemy.maxhp, 430, 75);*/
+        
+        /*ctx2.fillStyle="#CF0720";
+        ctx2.fillRect(95,262,(player.currhp/player.maxhp)*165,13);
+        ctx2.fillRect(375,62,(enemy.currhp/enemy.maxhp)*165,13);*/
     }); 
      
     // begin downloading images 
@@ -98,13 +114,24 @@ function createCanvas() {
 function updateHp() {
         var canvas = document.getElementById('game'), 
             ctx = canvas.getContext('2d'); 
-            
+        var canvas2 = document.getElementById('game2'), 
+            ctx2 = canvas2.getContext('2d');     
         
-        ctx.clearRect(95, 262, 165, 13);
-        ctx.clearRect(375, 62, 165, 13);
-        ctx.fillStyle="#CF0720";
-        ctx.fillRect(95,262,(player.currhp/player.maxhp)*165,13);
-        ctx.fillRect(375,62,(enemy.currhp/enemy.maxhp)*165,13);
+        ctx2.clearRect(95, 262, 165, 13);
+        ctx2.clearRect(375, 62, 165, 13);
+        ctx2.fillStyle="#CF0720";
+        ctx2.fillRect(95,262,(player.currhp/player.maxhp)*165,13);
+        ctx2.fillRect(375,62,(enemy.currhp/enemy.maxhp)*165,13);
+        
+        //hp
+        ctx2.font = '15px Courier New';
+        ctx2.textBaseline = 'top';
+        ctx2.fillStyle = 'white';
+        ctx2.fillStyle="#FFFFFF";
+        ctx2.clearRect(150,275,200,20);
+        ctx2.fillText(player.currhp + '/' + player.maxhp, 150, 275);
+        ctx2.clearRect(430,75,200,20);
+        ctx2.fillText(enemy.currhp + '/' + enemy.maxhp, 430, 75)
         
         if(playerDamage > 0) {
             if(player.currhp <= 0)
