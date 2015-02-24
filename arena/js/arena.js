@@ -16,8 +16,8 @@ var enemy = {
     xp: 0
 };
 
-var playerDamage = 0;
-var enemyDamage = 0;
+var playerDamage = 1500;
+var enemyDamage = 100;
 var requestAnimFrame = window.mozRequestAnimationFrame  ||
                                 window.webkitRequestAnimationFrame  ||
                                 window.msRequestAnimationFrame  ||
@@ -55,8 +55,8 @@ function loadEnemy(name) {
 }
 
 function loadBattle() {
-    var player = "charizard";
-    var enemy = "charizard";
+    var player = "zekrom";
+    var enemy = "kyurem-Black";
     loadPlayer(player);
     loadEnemy(enemy);
     createCanvas(player,enemy);
@@ -67,17 +67,21 @@ function createCanvas() {
     var loader = new PxLoader(), 
     backgroundImg = loader.addImage('images/BG_grass.png'), 
     platformImg = loader.addImage('images/PF_grass.png'),
-    bar = loader.addImage('images/bar.png');
+    bar = loader.addImage('images/bar.png'),
+    hud = loader.addImage('images/hud.png'),
+    pokeball = loader.addImage('images/Pokeball.png');
     
     loader.addCompletionListener(function() { 
-        var canvas = document.getElementById('game'), 
+        var canvas = document.getElementById('game'), //background for 1st screen
             ctx = canvas.getContext('2d');
             
-        var canvas2 = document.getElementById('game'), 
+        var canvas2 = document.getElementById('game2'),
             ctx2 = canvas2.getContext('2d');
             
-        var canvas3 = document.getElementById('game'), 
+        var canvas3 = document.getElementById('game3'), //background for 2nd screen
             ctx3 = canvas3.getContext('2d'); 
+        var canvas4 = document.getElementById('game4'),
+            ctx4 = canvas4.getContext('2d'); 
      
         ctx.drawImage(backgroundImg, 0, 0, 600, 450); 
         ctx.drawImage(platformImg, 0, 0, 600, 450); 
@@ -97,7 +101,13 @@ function createCanvas() {
         ctx2.fillText('lv.' + player.level, 225, 240);
         ctx2.fillText('lv.' + enemy.level, 510, 40);
         
+        //ctx3.fillStyle = "#a8a8a8";
+        //ctx3.fillRect(0, 0, 600, 200);
+        ctx3.drawImage(hud, 0, 0, 600, 200);
         
+        //ctx4.fillStyle = "#FF0000";
+        //ctx4.fillRect(0, 0, 600, 200);
+        //ctx4.drawImage(pokeball, 20, 40, 80, 80);
 
         /*ctx2.fillText(player.currhp + '/' + player.maxhp, 150, 275);
         ctx2.fillText(enemy.currhp + '/' + enemy.maxhp, 430, 75);*/
@@ -117,8 +127,8 @@ function updateHp() {
         var canvas2 = document.getElementById('game2'), 
             ctx2 = canvas2.getContext('2d');     
         
-        ctx2.clearRect(95, 262, 165, 13);
-        ctx2.clearRect(375, 62, 165, 13);
+        ctx2.clearRect(92, 260, 170, 20);
+        ctx2.clearRect(372, 60, 170, 20);
         ctx2.fillStyle="#CF0720";
         ctx2.fillRect(95,262,(player.currhp/player.maxhp)*165,13);
         ctx2.fillRect(375,62,(enemy.currhp/enemy.maxhp)*165,13);
@@ -128,10 +138,10 @@ function updateHp() {
         ctx2.textBaseline = 'top';
         ctx2.fillStyle = 'white';
         ctx2.fillStyle="#FFFFFF";
-        ctx2.clearRect(150,275,200,20);
-        ctx2.fillText(player.currhp + '/' + player.maxhp, 150, 275);
-        ctx2.clearRect(430,75,200,20);
-        ctx2.fillText(enemy.currhp + '/' + enemy.maxhp, 430, 75)
+        ctx2.clearRect(150,280,100,18);
+        ctx2.fillText(player.currhp + '/' + player.maxhp, 150, 280);
+        ctx2.clearRect(435,80,100,18);
+        ctx2.fillText(enemy.currhp + '/' + enemy.maxhp, 435, 80)
         
         if(playerDamage > 0) {
             if(player.currhp <= 0)
