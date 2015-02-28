@@ -63,12 +63,18 @@ function loadBattle() {
     updateHp();
 }
 
+
 function createCanvas() {
+
+    //Bottom UI
+    var button = 0; //button currently selected
+    
     var loader = new PxLoader(), 
     backgroundImg = loader.addImage('images/BG_grass.png'), 
     platformImg = loader.addImage('images/PF_grass.png'),
     bar = loader.addImage('images/bar.png'),
     hud = loader.addImage('images/hud.png'),
+    button = loader.addImage('images/button.png'),
     pokeball = loader.addImage('images/Pokeball.png');
     
     loader.addCompletionListener(function() { 
@@ -105,20 +111,31 @@ function createCanvas() {
         //ctx3.fillRect(0, 0, 600, 200);
         ctx3.drawImage(hud, 0, 0, 600, 200);
         
-        //ctx4.fillStyle = "#FF0000";
-        //ctx4.fillRect(0, 0, 600, 200);
-        //ctx4.drawImage(pokeball, 20, 40, 80, 80);
-
-        /*ctx2.fillText(player.currhp + '/' + player.maxhp, 150, 275);
-        ctx2.fillText(enemy.currhp + '/' + enemy.maxhp, 430, 75);*/
-        
-        /*ctx2.fillStyle="#CF0720";
-        ctx2.fillRect(95,262,(player.currhp/player.maxhp)*165,13);
-        ctx2.fillRect(375,62,(enemy.currhp/enemy.maxhp)*165,13);*/
+        loadMoves(ctx4);
+        /*ctx4.fillStyle = "white";
+        ctx4.shadowBlur = 20;
+        ctx4.shadowColor = "black";
+        ctx4.font = '15px Verdana';
+        ctx4.fillText("Tackle", 100, 30);
+        ctx4.fillText("123", 100, 100);
+        ctx4.fillText("123", 400, 30);
+        ctx4.fillText("123", 400, 100);*/
+      
     }); 
      
     // begin downloading images 
     loader.start();
+}
+
+function loadMoves(ctx) {
+        ctx.fillStyle = "white";
+        ctx.shadowBlur = 20;
+        ctx.shadowColor = "black";
+        ctx.font = '15px Verdana';
+        ctx.fillText("Tackle", 100, 30);
+        ctx.fillText("123", 100, 100);
+        ctx.fillText("123", 400, 30);
+        ctx.fillText("123", 400, 100);
 }
 
 function updateHp() {

@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>hello phaser!</title>
+        <script src="phaser.min.js"></script>
+    </head>
+    <body>
+    
+    <script type="text/javascript">
+
+    window.onload = function() {
+
+        var game = new Phaser.Game(800, 600, Phaser.AUTO, '', { preload: preload, create: create });
+        
+        var playerMain = "blastoise";
+        var enemyMain = "Blastoise";
+
+        function preload () {
+
+            game.load.image('logo', 'phaser.png');
+            game.load.image('bg', 'images/BG_grass.png');
+            game.load.image('bg2', 'images/PF_grass.png');
+            game.load.image('bar', 'images/bar.png');
+            
+            //width, length, frames
+            game.load.spritesheet('blastoiseF', 'images/sprites/blastoiseF.png', 88, 83, 79);
+            game.load.spritesheet('blastoiseB', 'images/sprites/blastoiseB.png', 97, 83, 83);
+
+        }
+
+        function create () {
+            
+            var bg = game.add.sprite(game.world.centerX, game.world.centerY, 'bg');
+            var bg2 = game.add.sprite(game.world.centerX, game.world.centerY, 'bg2');
+            var bar = game.add.sprite(game.world.centerX, game.world.centerY-120, 'bar');
+            bg.anchor.setTo(.5, .5);
+            bg2.anchor.setTo(.5, .5);
+            bar.anchor.setTo(.5, .5);
+            
+            var player = game.add.sprite(game.world.centerX-120, game.world.centerY+60, getSpriteName(playerMain, "player"));
+            player.animations.add('idle');
+            player.animations.play('idle', 45, true);
+            var enemy = game.add.sprite(game.world.centerX+45, game.world.centerY-80, getSpriteName(playerMain, "enemy"));
+            enemy.animations.add('idle');
+            enemy.animations.play('idle', 45, true);
+
+        }
+        
+        function getSpriteName(name, p) {
+            var id = "";
+            if(p == "player") {
+                id = name + "B";
+            } else {
+                id = name + "F";
+            }
+            return id;
+        }
+
+    };
+
+    </script>
+
+    </body>
+</html>
