@@ -1,9 +1,17 @@
 <!doctype html>
 <html>
     <head>
-        <meta charset="UTF-8" />
-        <title>hello phaser!</title>
-        <script src="phaser.min.js"></script>
+            <title>Phaser game demo</title>
+        	<meta charset="utf-8">
+            <meta http-equiv="X-UA-Compatible" content="chrome=1, IE=9">
+            <meta name="format-detection" content="telephone=no">
+            <meta name="HandheldFriendly" content="true" />
+            <meta name="robots" content="noindex,nofollow" />
+            <meta name="apple-mobile-web-app-capable" content="yes" />
+            <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+            <meta name="apple-mobile-web-app-title" content="Phaser App">
+            <meta name="viewport" content="initial-scale=1 maximum-scale=1 user-scalable=0 minimal-ui" />
+        <script src="js/phaser.js"></script>
     </head>
     <body>
     
@@ -11,39 +19,153 @@
 
     window.onload = function() {
 
-        var game = new Phaser.Game(800, 600, Phaser.AUTO, '', { preload: preload, create: create });
+        var game = new Phaser.Game(800, 600, Phaser.AUTO, '', { preload: preload, create: create, update: update });
         
-        var playerMain = "blastoise";
-        var enemyMain = "Blastoise";
+        var player = {
+            name: "",
+            loc: "",
+            level: 99,
+            maxhp: 100,
+            hpleft: 100,
+            xp: 0
+        };
+
+        var enemy = {
+            name: "",
+            loc: "",
+            level: 99,
+            maxhp: 100,
+            hpleft: 100,
+            xp: 0
+        };
+        var hptext;
+        var hptext2;
+        var playerDamage = 0;
+        var enemyDamage = 0;
+        
 
         function preload () {
 
-            game.load.image('logo', 'phaser.png');
             game.load.image('bg', 'images/BG_grass.png');
             game.load.image('bg2', 'images/PF_grass.png');
             game.load.image('bar', 'images/bar.png');
+            game.load.image('UIbg', 'images/hud.png');
+            game.load.spritesheet('button', 'images/buttons.png', 140, 45);
             
             //width, length, frames
             game.load.spritesheet('blastoiseF', 'images/sprites/blastoiseF.png', 88, 83, 79);
             game.load.spritesheet('blastoiseB', 'images/sprites/blastoiseB.png', 97, 83, 83);
+            
+            player.name = "blastoise";
+            enemy.name = "blastoise";
 
         }
 
         function create () {
             
-            var bg = game.add.sprite(game.world.centerX, game.world.centerY, 'bg');
-            var bg2 = game.add.sprite(game.world.centerX, game.world.centerY, 'bg2');
-            var bar = game.add.sprite(game.world.centerX, game.world.centerY-120, 'bar');
+            var bgLayer = game.add.group();
+            bgLayer.z = 10;
+            var bgLayer2 = game.add.group();
+            bgLayer2.z = 11;
+            var uiLayer = game.add.group();
+            uiLayer.z = 15;
+            var spriteLayer = game.add.group();
+            spriteLayer.z = 20;
+            
+            var bg = game.add.sprite(game.world.centerX, game.world.centerY-100, 'bg');
+            bgLayer.add(bg);
+            var bg2 = game.add.sprite(game.world.centerX, game.world.centerY-100, 'bg2');
+            bgLayer2.add(bg2);
+            var bar = game.add.sprite(game.world.centerX+100, game.world.centerY-100+95, 'bar');
+            var bar2 = game.add.sprite(game.world.centerX-80, game.world.centerY-100-75, 'bar');
+            uiLayer.add(bar);
+            uiLayer.add(bar2);
             bg.anchor.setTo(.5, .5);
             bg2.anchor.setTo(.5, .5);
             bar.anchor.setTo(.5, .5);
+            bar2.anchor.setTo(.5, .5);
             
-            var player = game.add.sprite(game.world.centerX-120, game.world.centerY+60, getSpriteName(playerMain, "player"));
-            player.animations.add('idle');
-            player.animations.play('idle', 45, true);
-            var enemy = game.add.sprite(game.world.centerX+45, game.world.centerY-80, getSpriteName(playerMain, "enemy"));
-            enemy.animations.add('idle');
-            enemy.animations.play('idle', 45, true);
+            //build UI
+            var UIbg = game.add.sprite(game.world.centerX, game.world.centerY+150, 'UIbg');
+            UIbg.anchor.setTo(.5, .5);
+            var mButton1 = game.add.button(game.world.centerX - 145, game.world.centerY + 80, 'button', useMove, this, 2, 1, 0);
+            var mButton2 = game.add.button(game.world.centerX, game.world.centerY + 80, 'button', useMove, this, 2, 1, 0);
+            var mButton3 = game.add.button(game.world.centerX - 145, game.world.centerY + 130, 'button', useMove, this, 2, 1, 0);
+            var mButton4 = game.add.button(game.world.centerX, game.world.centerY + 130, 'button', useMove, this, 2, 1, 0);
+            
+            var playerSprite = game.add.sprite(game.world.centerX-120, game.world.centerY-100+60, getSpriteName(player.name, "player"));
+            spriteLayer.add(playerSprite);
+            playerSprite.animations.add('idle');
+            playerSprite.animations.play('idle', 45, true);
+            var enemySprite = game.add.sprite(game.world.centerX+45, game.world.centerY-100-80, getSpriteName(enemy.name, "enemy"));
+            spriteLayer.add(enemySprite);
+            enemySprite.animations.add('idle');
+            enemySprite.animations.play('idle', 45, true);
+            
+            var playerName = createNames(0);
+            var enemyName = createNames(1);
+            
+            hptext = game.add.text(game.world.centerX+100, game.world.centerY-100+115, player.hpleft + "/" + player.maxhp, {
+                font: "14px Courier New",
+                fill: "#ffffff",
+                align: "center"
+            });
+            hptext2 = game.add.text(game.world.centerX-85, game.world.centerY-100-60, enemy.hpleft + "/" + enemy.maxhp, {
+                font: "14px Courier New",
+                fill: "#ffffff",
+                align: "center"
+            });
+            hptext.anchor.setTo(0.5, 0.5);
+            hptext2.anchor.setTo(0.5, 0.5);
+
+        }
+        
+        function useMove() {
+            
+        }
+        
+        function update() {
+            updateHp();
+        }
+        
+        function updateHp() {
+            if(playerDamage > 0) {
+                if(player.currhp <= 0)
+                    return;
+                player.hpleft -= 1;
+                playerDamage -= 1;
+            }
+            if(enemyDamage > 0) {
+                if(enemy.hpleft <= 0)
+                    return;
+                enemy.hpleft -= 1;
+                enemyDamage -= 1;
+            }
+            
+            hptext.setText(player.hpleft + "/" + player.maxhp);
+            hptext2.setText(enemy.hpleft + "/" + enemy.maxhp);
+        }
+        
+        function createNames(n) {
+            var text = "";
+            if(n == 0) {
+                var name = player.name.charAt(0).toUpperCase() + player.name.slice(1);
+                text = game.add.text(game.world.centerX+40, game.world.centerY-100+50, name);
+                //	Font style
+                text.font = 'Verdana';
+                text.fontSize = 14;
+                text.fill = '#ffffff';
+                text.setShadow(1, 1, 'rgba(0,0,0,0.5)', 0.5);
+            } else if(n == 1) {
+                var name = enemy.name.charAt(0).toUpperCase() + enemy.name.slice(1);
+                text = game.add.text(game.world.centerX-140, game.world.centerY-100-120, name);
+                //	Font style
+                text.font = 'Verdana';
+                text.fontSize = 14;
+                text.fill = '#ffffff';
+                text.setShadow(1, 1, 'rgba(0,0,0,0.5)', 0.5);
+            }
+            return text;
 
         }
         
