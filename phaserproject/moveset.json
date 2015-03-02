@@ -1,0 +1,6212 @@
+[
+    {
+        "move": "Absorb",
+        "type": "GRASS",
+        "cat": "Special",
+        "pwr": "20",
+        "acc": "100",
+        "pp": "25",
+        "prob": "-",
+        "effect": "User_recovers_half_the_HP_inflicted_on_opponent."
+    },
+    {
+        "move": "Acid",
+        "type": "POISON",
+        "cat": "Special",
+        "pwr": "40",
+        "acc": "100",
+        "pp": "30",
+        "prob": "10",
+        "effect": "May_lower_opponent's_Special_Defense."
+    },
+    {
+        "move": "Acid_Armor",
+        "type": "POISON",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "-",
+        "pp": "20",
+        "prob": "-",
+        "effect": "Sharply_raises_user's_Defense."
+    },
+    {
+        "move": "Acid_Spray",
+        "type": "POISON",
+        "cat": "Special",
+        "pwr": "40",
+        "acc": "100",
+        "pp": "20",
+        "prob": "100",
+        "effect": "Sharply_lowers_opponent's_Special_Defense."
+    },
+    {
+        "move": "Acrobatics",
+        "type": "FLYING",
+        "cat": "Physical",
+        "pwr": "55",
+        "acc": "100",
+        "pp": "15",
+        "prob": "-",
+        "effect": "Stronger_when_the_user_does_not_have_a_held_item."
+    },
+    {
+        "move": "Acupressure",
+        "type": "NORMAL",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "-",
+        "pp": "30",
+        "prob": "-",
+        "effect": "Sharply_raises_a_random_stat."
+    },
+    {
+        "move": "Aerial_Ace",
+        "type": "FLYING",
+        "cat": "Physical",
+        "pwr": "60",
+        "acc": "-",
+        "pp": "20",
+        "prob": "-",
+        "effect": "Ignores_Accuracy_and_Evasiveness."
+    },
+    {
+        "move": "Aeroblast",
+        "type": "FLYING",
+        "cat": "Special",
+        "pwr": "100",
+        "acc": "95",
+        "pp": "5",
+        "prob": "-",
+        "effect": "High_critical_hit_ratio."
+    },
+    {
+        "move": "After_You",
+        "type": "NORMAL",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "-",
+        "pp": "15",
+        "prob": "-",
+        "effect": "Gives_target_priority_in_the_next_turn."
+    },
+    {
+        "move": "Agility",
+        "type": "PSYCHIC",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "-",
+        "pp": "30",
+        "prob": "-",
+        "effect": "Sharply_raises_user's_Speed."
+    },
+    {
+        "move": "Air_Cutter",
+        "type": "FLYING",
+        "cat": "Special",
+        "pwr": "60",
+        "acc": "95",
+        "pp": "25",
+        "prob": "-",
+        "effect": "High_critical_hit_ratio."
+    },
+    {
+        "move": "Air_Slash",
+        "type": "FLYING",
+        "cat": "Special",
+        "pwr": "75",
+        "acc": "95",
+        "pp": "20",
+        "prob": "30",
+        "effect": "May_cause_flinching."
+    },
+    {
+        "move": "Ally_Switch",
+        "type": "PSYCHIC",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "-",
+        "pp": "15",
+        "prob": "-",
+        "effect": "User_switches_with_opposite_teammate."
+    },
+    {
+        "move": "Amnesia",
+        "type": "PSYCHIC",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "-",
+        "pp": "20",
+        "prob": "-",
+        "effect": "Sharply_raises_user's_Special_Defense."
+    },
+    {
+        "move": "Ancient_Power",
+        "type": "ROCK",
+        "cat": "Special",
+        "pwr": "60",
+        "acc": "100",
+        "pp": "5",
+        "prob": "10",
+        "effect": "May_raise_all_user's_stats_at_once."
+    },
+    {
+        "move": "Aqua_Jet",
+        "type": "WATER",
+        "cat": "Physical",
+        "pwr": "40",
+        "acc": "100",
+        "pp": "20",
+        "prob": "-",
+        "effect": "User_attacks_first."
+    },
+    {
+        "move": "Aqua_Ring",
+        "type": "WATER",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "-",
+        "pp": "20",
+        "prob": "-",
+        "effect": "Restores_a_little_HP_each_turn."
+    },
+    {
+        "move": "Aqua_Tail",
+        "type": "WATER",
+        "cat": "Physical",
+        "pwr": "90",
+        "acc": "90",
+        "pp": "10",
+        "prob": "-",
+        "effect": "-"
+    },
+    {
+        "move": "Arm_Thrust",
+        "type": "FIGHTING",
+        "cat": "Physical",
+        "pwr": "15",
+        "acc": "100",
+        "pp": "20",
+        "prob": "-",
+        "effect": "Hits_2-5_times_in_one_turn."
+    },
+    {
+        "move": "Aromatherapy",
+        "type": "GRASS",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "-",
+        "pp": "5",
+        "prob": "-",
+        "effect": "Cures_all_status_problems_in_your_party."
+    },
+    {
+        "move": "Aromatic_Mist",
+        "type": "FAIRY",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "100",
+        "pp": "20",
+        "prob": "-",
+        "effect": "Raises_Special_Defense_of_allies."
+    },
+    {
+        "move": "Assist",
+        "type": "NORMAL",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "-",
+        "pp": "20",
+        "prob": "-",
+        "effect": "In_a_Double_Battle,_user_randomly_attacks_with_a_partner's_move."
+    },
+    {
+        "move": "Assurance",
+        "type": "DARK",
+        "cat": "Physical",
+        "pwr": "60",
+        "acc": "100",
+        "pp": "10",
+        "prob": "-",
+        "effect": "Power_doubles_if_opponent_already_took_damage_in_the_same_turn."
+    },
+    {
+        "move": "Astonish",
+        "type": "GHOST",
+        "cat": "Physical",
+        "pwr": "30",
+        "acc": "100",
+        "pp": "15",
+        "prob": "30",
+        "effect": "May_cause_flinching."
+    },
+    {
+        "move": "Attack_Order",
+        "type": "BUG",
+        "cat": "Physical",
+        "pwr": "90",
+        "acc": "100",
+        "pp": "15",
+        "prob": "-",
+        "effect": "High_critical_hit_ratio."
+    },
+    {
+        "move": "Attract",
+        "type": "NORMAL",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "100",
+        "pp": "15",
+        "prob": "-",
+        "effect": "If_opponent_is_the_opposite_gender,_it's_less_likely_to_attack."
+    },
+    {
+        "move": "Aura_Sphere",
+        "type": "FIGHTING",
+        "cat": "Special",
+        "pwr": "80",
+        "acc": "-",
+        "pp": "20",
+        "prob": "-",
+        "effect": "Ignores_Accuracy_and_Evasiveness."
+    },
+    {
+        "move": "Aurora_Beam",
+        "type": "ICE",
+        "cat": "Special",
+        "pwr": "65",
+        "acc": "100",
+        "pp": "20",
+        "prob": "10",
+        "effect": "May_lower_opponent's_Attack."
+    },
+    {
+        "move": "Autotomize",
+        "type": "STEEL",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "-",
+        "pp": "15",
+        "prob": "-",
+        "effect": "Halves_weight_and_sharply_raises_Speed."
+    },
+    {
+        "move": "Avalanche",
+        "type": "ICE",
+        "cat": "Physical",
+        "pwr": "60",
+        "acc": "100",
+        "pp": "10",
+        "prob": "-",
+        "effect": "Power_doubles_if_user_took_damage_first."
+    },
+    {
+        "move": "Baby-Doll_Eyes",
+        "type": "FAIRY",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "100",
+        "pp": "30",
+        "prob": "-",
+        "effect": "Always_goes_first._Lowers_the_target's_attack."
+    },
+    {
+        "move": "Barrage",
+        "type": "NORMAL",
+        "cat": "Physical",
+        "pwr": "15",
+        "acc": "85",
+        "pp": "20",
+        "prob": "-",
+        "effect": "Hits_2-5_times_in_one_turn."
+    },
+    {
+        "move": "Barrier",
+        "type": "PSYCHIC",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "-",
+        "pp": "20",
+        "prob": "-",
+        "effect": "Sharply_raises_user's_Defense."
+    },
+    {
+        "move": "Baton_Pass",
+        "type": "NORMAL",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "-",
+        "pp": "40",
+        "prob": "-",
+        "effect": "User_switches_out_and_gives_stat_changes_to_the_incoming_Pok‚mon."
+    },
+    {
+        "move": "Beat_Up",
+        "type": "DARK",
+        "cat": "Physical",
+        "pwr": "-",
+        "acc": "100",
+        "pp": "30",
+        "prob": "-",
+        "effect": "Each_Pok‚mon_in_your_party_attacks."
+    },
+    {
+        "move": "Belch",
+        "type": "POISON",
+        "cat": "Special",
+        "pwr": "120",
+        "acc": "90",
+        "pp": "10",
+        "prob": "-",
+        "effect": "Requires_a_held_Berry_to_attack."
+    },
+    {
+        "move": "Belly_Drum",
+        "type": "NORMAL",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "-",
+        "pp": "10",
+        "prob": "-",
+        "effect": "User_loses_50%_of_its_max_HP,_but_Attack_raises_to_maximum."
+    },
+    {
+        "move": "Bestow",
+        "type": "NORMAL",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "-",
+        "pp": "15",
+        "prob": "-",
+        "effect": "Gives_the_user's_held_item_to_the_target."
+    },
+    {
+        "move": "Bide",
+        "type": "NORMAL",
+        "cat": "Physical",
+        "pwr": "-",
+        "acc": "-",
+        "pp": "10",
+        "prob": "-",
+        "effect": "User_takes_damage_for_two_turns_then_strikes_back_double."
+    },
+    {
+        "move": "Bind",
+        "type": "NORMAL",
+        "cat": "Physical",
+        "pwr": "15",
+        "acc": "85",
+        "pp": "20",
+        "prob": "-",
+        "effect": "Traps_opponent,_damaging_them_for_4-5_turns."
+    },
+    {
+        "move": "Bite",
+        "type": "DARK",
+        "cat": "Physical",
+        "pwr": "60",
+        "acc": "100",
+        "pp": "25",
+        "prob": "30",
+        "effect": "May_cause_flinching."
+    },
+    {
+        "move": "Blast_Burn",
+        "type": "FIRE",
+        "cat": "Special",
+        "pwr": "150",
+        "acc": "90",
+        "pp": "5",
+        "prob": "-",
+        "effect": "User_must_recharge_next_turn."
+    },
+    {
+        "move": "Blaze_Kick",
+        "type": "FIRE",
+        "cat": "Physical",
+        "pwr": "85",
+        "acc": "90",
+        "pp": "10",
+        "prob": "10",
+        "effect": "High_critical_hit_ratio._May_burn_opponent."
+    },
+    {
+        "move": "Blizzard",
+        "type": "ICE",
+        "cat": "Special",
+        "pwr": "110",
+        "acc": "70",
+        "pp": "5",
+        "prob": "10",
+        "effect": "May_freeze_opponent."
+    },
+    {
+        "move": "Block",
+        "type": "NORMAL",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "-",
+        "pp": "5",
+        "prob": "-",
+        "effect": "Opponent_cannot_flee_or_switch."
+    },
+    {
+        "move": "Blue_Flare",
+        "type": "FIRE",
+        "cat": "Special",
+        "pwr": "130",
+        "acc": "85",
+        "pp": "5",
+        "prob": "20",
+        "effect": "May_burn_opponent."
+    },
+    {
+        "move": "Body_Slam",
+        "type": "NORMAL",
+        "cat": "Physical",
+        "pwr": "85",
+        "acc": "100",
+        "pp": "15",
+        "prob": "30",
+        "effect": "May_paralyze_opponent."
+    },
+    {
+        "move": "Bolt_Strike",
+        "type": "ELECTRIC",
+        "cat": "Physical",
+        "pwr": "130",
+        "acc": "85",
+        "pp": "5",
+        "prob": "20",
+        "effect": "May_paralyze_opponent."
+    },
+    {
+        "move": "Bone_Club",
+        "type": "GROUND",
+        "cat": "Physical",
+        "pwr": "65",
+        "acc": "85",
+        "pp": "20",
+        "prob": "10",
+        "effect": "May_cause_flinching."
+    },
+    {
+        "move": "Bone_Rush",
+        "type": "GROUND",
+        "cat": "Physical",
+        "pwr": "25",
+        "acc": "90",
+        "pp": "10",
+        "prob": "-",
+        "effect": "Hits_2-5_times_in_one_turn."
+    },
+    {
+        "move": "Bonemerang",
+        "type": "GROUND",
+        "cat": "Physical",
+        "pwr": "50",
+        "acc": "90",
+        "pp": "10",
+        "prob": "-",
+        "effect": "Hits_twice_in_one_turn."
+    },
+    {
+        "move": "Boomburst",
+        "type": "NORMAL",
+        "cat": "Special",
+        "pwr": "140",
+        "acc": "100",
+        "pp": "10",
+        "prob": "-",
+        "effect": "Hits_all_adjacent_Pok‚mon."
+    },
+    {
+        "move": "Bounce",
+        "type": "FLYING",
+        "cat": "Physical",
+        "pwr": "85",
+        "acc": "85",
+        "pp": "5",
+        "prob": "30",
+        "effect": "Springs_up_on_first_turn,_attacks_on_second._May_paralyze_opponent."
+    },
+    {
+        "move": "Brave_Bird",
+        "type": "FLYING",
+        "cat": "Physical",
+        "pwr": "120",
+        "acc": "100",
+        "pp": "15",
+        "prob": "-",
+        "effect": "User_receives_recoil_damage."
+    },
+    {
+        "move": "Brick_Break",
+        "type": "FIGHTING",
+        "cat": "Physical",
+        "pwr": "75",
+        "acc": "100",
+        "pp": "15",
+        "prob": "-",
+        "effect": "Breaks_through_Reflect_and_Light_Screen_barriers."
+    },
+    {
+        "move": "Brine",
+        "type": "WATER",
+        "cat": "Special",
+        "pwr": "65",
+        "acc": "100",
+        "pp": "10",
+        "prob": "-",
+        "effect": "Power_doubles_if_opponent's_HP_is_less_than_50%."
+    },
+    {
+        "move": "Bubble",
+        "type": "WATER",
+        "cat": "Special",
+        "pwr": "40",
+        "acc": "100",
+        "pp": "30",
+        "prob": "10",
+        "effect": "May_lower_opponent's_Speed."
+    },
+    {
+        "move": "Bubble_Beam",
+        "type": "WATER",
+        "cat": "Special",
+        "pwr": "65",
+        "acc": "100",
+        "pp": "20",
+        "prob": "10",
+        "effect": "May_lower_opponent's_Speed."
+    },
+    {
+        "move": "Bug_Bite",
+        "type": "BUG",
+        "cat": "Physical",
+        "pwr": "60",
+        "acc": "100",
+        "pp": "20",
+        "prob": "-",
+        "effect": "Receives_the_effect_from_the_opponent's_held_berry."
+    },
+    {
+        "move": "Bug_Buzz",
+        "type": "BUG",
+        "cat": "Special",
+        "pwr": "90",
+        "acc": "100",
+        "pp": "10",
+        "prob": "10",
+        "effect": "May_lower_opponent's_Special_Defense."
+    },
+    {
+        "move": "Bulk_Up",
+        "type": "FIGHTING",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "-",
+        "pp": "20",
+        "prob": "-",
+        "effect": "Raises_user's_Attack_and_Defense."
+    },
+    {
+        "move": "Bulldoze",
+        "type": "GROUND",
+        "cat": "Physical",
+        "pwr": "60",
+        "acc": "100",
+        "pp": "20",
+        "prob": "100",
+        "effect": "Lowers_opponent's_Speed."
+    },
+    {
+        "move": "Bullet_Punch",
+        "type": "STEEL",
+        "cat": "Physical",
+        "pwr": "40",
+        "acc": "100",
+        "pp": "30",
+        "prob": "-",
+        "effect": "User_attacks_first."
+    },
+    {
+        "move": "Bullet_Seed",
+        "type": "GRASS",
+        "cat": "Physical",
+        "pwr": "25",
+        "acc": "100",
+        "pp": "30",
+        "prob": "-",
+        "effect": "Hits_2-5_times_in_one_turn."
+    },
+    {
+        "move": "Calm_Mind",
+        "type": "PSYCHIC",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "-",
+        "pp": "20",
+        "prob": "-",
+        "effect": "Raises_user's_Special_Attack_and_Special_Defense."
+    },
+    {
+        "move": "Camouflage",
+        "type": "NORMAL",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "-",
+        "pp": "20",
+        "prob": "-",
+        "effect": "Changes_user's_type_according_to_the_location."
+    },
+    {
+        "move": "Captivate",
+        "type": "NORMAL",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "100",
+        "pp": "20",
+        "prob": "-",
+        "effect": "Sharply_lowers_opponent's_Special_Attack_if_opposite_gender."
+    },
+    {
+        "move": "Celebrate",
+        "type": "NORMAL",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "-",
+        "pp": "40",
+        "prob": "-",
+        "effect": "The_Pok‚mon_congratulates_you_on_your_special_day._No_battle_effect."
+    },
+    {
+        "move": "Charge",
+        "type": "ELECTRIC",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "-",
+        "pp": "20",
+        "prob": "-",
+        "effect": "Raises_user's_Special_Defense_and_next_Electric_move's_power_increases."
+    },
+    {
+        "move": "Charge_Beam",
+        "type": "ELECTRIC",
+        "cat": "Special",
+        "pwr": "50",
+        "acc": "90",
+        "pp": "10",
+        "prob": "70",
+        "effect": "May_raise_user's_Special_Attack."
+    },
+    {
+        "move": "Charm",
+        "type": "FAIRY",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "100",
+        "pp": "20",
+        "prob": "-",
+        "effect": "Sharply_lowers_opponent's_Attack."
+    },
+    {
+        "move": "Chatter",
+        "type": "FLYING",
+        "cat": "Special",
+        "pwr": "65",
+        "acc": "100",
+        "pp": "20",
+        "prob": "100",
+        "effect": "Confuses_opponent."
+    },
+    {
+        "move": "Chip_Away",
+        "type": "NORMAL",
+        "cat": "Physical",
+        "pwr": "70",
+        "acc": "100",
+        "pp": "20",
+        "prob": "-",
+        "effect": "Ignores_opponent's_stat_changes."
+    },
+    {
+        "move": "Circle_Throw",
+        "type": "FIGHTING",
+        "cat": "Physical",
+        "pwr": "60",
+        "acc": "90",
+        "pp": "10",
+        "prob": "-",
+        "effect": "In_battles,_the_opponent_switches._In_the_wild,_the_Pok‚mon_runs."
+    },
+    {
+        "move": "Clamp",
+        "type": "WATER",
+        "cat": "Physical",
+        "pwr": "35",
+        "acc": "85",
+        "pp": "10",
+        "prob": "-",
+        "effect": "Traps_opponent,_damaging_them_for_4-5_turns."
+    },
+    {
+        "move": "Clear_Smog",
+        "type": "POISON",
+        "cat": "Special",
+        "pwr": "50",
+        "acc": "-",
+        "pp": "15",
+        "prob": "-",
+        "effect": "Removes_all_of_the_target's_stat_changes."
+    },
+    {
+        "move": "Close_Combat",
+        "type": "FIGHTING",
+        "cat": "Physical",
+        "pwr": "120",
+        "acc": "100",
+        "pp": "5",
+        "prob": "-",
+        "effect": "Lowers_user's_Defense_and_Special_Defense."
+    },
+    {
+        "move": "Coil",
+        "type": "POISON",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "-",
+        "pp": "20",
+        "prob": "-",
+        "effect": "Raises_user's_Attack,_Defense_and_Accuracy."
+    },
+    {
+        "move": "Comet_Punch",
+        "type": "NORMAL",
+        "cat": "Physical",
+        "pwr": "18",
+        "acc": "85",
+        "pp": "15",
+        "prob": "-",
+        "effect": "Hits_2-5_times_in_one_turn."
+    },
+    {
+        "move": "Confide",
+        "type": "NORMAL",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "-",
+        "pp": "20",
+        "prob": "-",
+        "effect": "Lowers_opponent's_Special_Attack."
+    },
+    {
+        "move": "Confuse_Ray",
+        "type": "GHOST",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "100",
+        "pp": "10",
+        "prob": "-",
+        "effect": "Confuses_opponent."
+    },
+    {
+        "move": "Confusion",
+        "type": "PSYCHIC",
+        "cat": "Special",
+        "pwr": "50",
+        "acc": "100",
+        "pp": "25",
+        "prob": "10",
+        "effect": "May_confuse_opponent."
+    },
+    {
+        "move": "Constrict",
+        "type": "NORMAL",
+        "cat": "Physical",
+        "pwr": "10",
+        "acc": "100",
+        "pp": "35",
+        "prob": "10",
+        "effect": "May_lower_opponent's_Speed_by_one_stage."
+    },
+    {
+        "move": "Conversion",
+        "type": "NORMAL",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "-",
+        "pp": "30",
+        "prob": "-",
+        "effect": "Changes_user's_type_to_that_of_its_first_move."
+    },
+    {
+        "move": "Conversion_2",
+        "type": "NORMAL",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "-",
+        "pp": "30",
+        "prob": "-",
+        "effect": "User_changes_type_to_become_resistant_to_opponent's_last_move."
+    },
+    {
+        "move": "Copycat",
+        "type": "NORMAL",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "-",
+        "pp": "20",
+        "prob": "-",
+        "effect": "Copies_opponent's_last_move."
+    },
+    {
+        "move": "Cosmic_Power",
+        "type": "PSYCHIC",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "-",
+        "pp": "20",
+        "prob": "-",
+        "effect": "Raises_user's_Defense_and_Special_Defense."
+    },
+    {
+        "move": "Cotton_Guard",
+        "type": "GRASS",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "-",
+        "pp": "10",
+        "prob": "-",
+        "effect": "Drastically_raises_user's_Defense."
+    },
+    {
+        "move": "Cotton_Spore",
+        "type": "GRASS",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "100",
+        "pp": "40",
+        "prob": "-",
+        "effect": "Sharply_lowers_opponent's_Speed."
+    },
+    {
+        "move": "Counter",
+        "type": "FIGHTING",
+        "cat": "Physical",
+        "pwr": "-",
+        "acc": "100",
+        "pp": "20",
+        "prob": "-",
+        "effect": "When_hit_by_a_Physical_Attack,_user_strikes_back_with_2x_power."
+    },
+    {
+        "move": "Covet",
+        "type": "NORMAL",
+        "cat": "Physical",
+        "pwr": "60",
+        "acc": "100",
+        "pp": "25",
+        "prob": "-",
+        "effect": "Opponent's_item_is_stolen_by_the_user."
+    },
+    {
+        "move": "Crabhammer",
+        "type": "WATER",
+        "cat": "Physical",
+        "pwr": "100",
+        "acc": "90",
+        "pp": "10",
+        "prob": "-",
+        "effect": "High_critical_hit_ratio."
+    },
+    {
+        "move": "Crafty_Shield",
+        "type": "FAIRY",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "-",
+        "pp": "10",
+        "prob": "-",
+        "effect": "Protects_the_Pok‚mon_from_status_moves."
+    },
+    {
+        "move": "Cross_Chop",
+        "type": "FIGHTING",
+        "cat": "Physical",
+        "pwr": "100",
+        "acc": "80",
+        "pp": "5",
+        "prob": "-",
+        "effect": "High_critical_hit_ratio."
+    },
+    {
+        "move": "Cross_Poison",
+        "type": "POISON",
+        "cat": "Physical",
+        "pwr": "70",
+        "acc": "100",
+        "pp": "20",
+        "prob": "10",
+        "effect": "High_critical_hit_ratio._May_poison_opponent."
+    },
+    {
+        "move": "Crunch",
+        "type": "DARK",
+        "cat": "Physical",
+        "pwr": "80",
+        "acc": "100",
+        "pp": "15",
+        "prob": "20",
+        "effect": "May_lower_opponent's_Defense."
+    },
+    {
+        "move": "Crush_Claw",
+        "type": "NORMAL",
+        "cat": "Physical",
+        "pwr": "75",
+        "acc": "95",
+        "pp": "10",
+        "prob": "50",
+        "effect": "May_lower_opponent's_Defense."
+    },
+    {
+        "move": "Crush_Grip",
+        "type": "NORMAL",
+        "cat": "Physical",
+        "pwr": "-",
+        "acc": "100",
+        "pp": "5",
+        "prob": "-",
+        "effect": "More_powerful_when_opponent_has_higher_HP."
+    },
+    {
+        "move": "Curse",
+        "type": "GHOST",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "-",
+        "pp": "10",
+        "prob": "-",
+        "effect": "Ghosts_lose_50%_of_max_HP_and_curse_the_opponent;_Non-Ghosts_raise_Attack,_Defense_and_lower_Speed."
+    },
+    {
+        "move": "Cut",
+        "type": "NORMAL",
+        "cat": "Physical",
+        "pwr": "50",
+        "acc": "95",
+        "pp": "30",
+        "prob": "-",
+        "effect": "-"
+    },
+    {
+        "move": "Dark_Pulse",
+        "type": "DARK",
+        "cat": "Special",
+        "pwr": "80",
+        "acc": "100",
+        "pp": "15",
+        "prob": "20",
+        "effect": "May_cause_flinching."
+    },
+    {
+        "move": "Dark_Void",
+        "type": "DARK",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "80",
+        "pp": "10",
+        "prob": "-",
+        "effect": "Puts_all_adjacent_opponents_to_sleep."
+    },
+    {
+        "move": "Dazzling_Gleam",
+        "type": "FAIRY",
+        "cat": "Special",
+        "pwr": "80",
+        "acc": "100",
+        "pp": "10",
+        "prob": "-",
+        "effect": "Hits_all_adjacent_opponents."
+    },
+    {
+        "move": "Defend_Order",
+        "type": "BUG",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "-",
+        "pp": "10",
+        "prob": "-",
+        "effect": "Raises_user's_Defense_and_Special_Defense."
+    },
+    {
+        "move": "Defense_Curl",
+        "type": "NORMAL",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "-",
+        "pp": "40",
+        "prob": "-",
+        "effect": "Raises_user's_Defense."
+    },
+    {
+        "move": "Defog",
+        "type": "FLYING",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "-",
+        "pp": "15",
+        "prob": "-",
+        "effect": "Lowers_opponent's_Evasiveness_and_clears_fog."
+    },
+    {
+        "move": "Destiny_Bond",
+        "type": "GHOST",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "-",
+        "pp": "5",
+        "prob": "-",
+        "effect": "If_the_user_faints,_the_opponent_also_faints."
+    },
+    {
+        "move": "Detect",
+        "type": "FIGHTING",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "-",
+        "pp": "5",
+        "prob": "-",
+        "effect": "Opponent's_attack_doesn't_affect_you,_but_may_fail_if_used_often."
+    },
+    {
+        "move": "Diamond_Storm",
+        "type": "ROCK",
+        "cat": "Physical",
+        "pwr": "100",
+        "acc": "95",
+        "pp": "5",
+        "prob": "50",
+        "effect": "May_raise_user's_Defense"
+    },
+    {
+        "move": "Dig",
+        "type": "GROUND",
+        "cat": "Physical",
+        "pwr": "80",
+        "acc": "100",
+        "pp": "10",
+        "prob": "-",
+        "effect": "Digs_underground_on_first_turn,_attacks_on_second._Can_also_escape_from_caves."
+    },
+    {
+        "move": "Disable",
+        "type": "NORMAL",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "100",
+        "pp": "20",
+        "prob": "-",
+        "effect": "Opponent_can't_use_its_last_attack_for_a_few_turns."
+    },
+    {
+        "move": "Disarming_Voice",
+        "type": "FAIRY",
+        "cat": "Special",
+        "pwr": "40",
+        "acc": "-",
+        "pp": "15",
+        "prob": "-",
+        "effect": "Ignores_Accuracy_and_Evasiveness."
+    },
+    {
+        "move": "Discharge",
+        "type": "ELECTRIC",
+        "cat": "Special",
+        "pwr": "80",
+        "acc": "100",
+        "pp": "15",
+        "prob": "30",
+        "effect": "May_paralyze_opponent."
+    },
+    {
+        "move": "Dive",
+        "type": "WATER",
+        "cat": "Physical",
+        "pwr": "80",
+        "acc": "100",
+        "pp": "10",
+        "prob": "-",
+        "effect": "Dives_underwater_on_first_turn,_attacks_on_second_turn."
+    },
+    {
+        "move": "Dizzy_Punch",
+        "type": "NORMAL",
+        "cat": "Physical",
+        "pwr": "70",
+        "acc": "100",
+        "pp": "10",
+        "prob": "20",
+        "effect": "May_confuse_opponent."
+    },
+    {
+        "move": "Doom_Desire",
+        "type": "STEEL",
+        "cat": "Special",
+        "pwr": "140",
+        "acc": "100",
+        "pp": "5",
+        "prob": "-",
+        "effect": "Damage_occurs_2_turns_later."
+    },
+    {
+        "move": "Double_Hit",
+        "type": "NORMAL",
+        "cat": "Physical",
+        "pwr": "35",
+        "acc": "90",
+        "pp": "10",
+        "prob": "-",
+        "effect": "Hits_twice_in_one_turn."
+    },
+    {
+        "move": "Double_Kick",
+        "type": "FIGHTING",
+        "cat": "Physical",
+        "pwr": "30",
+        "acc": "100",
+        "pp": "30",
+        "prob": "-",
+        "effect": "Hits_twice_in_one_turn."
+    },
+    {
+        "move": "Double_Slap",
+        "type": "NORMAL",
+        "cat": "Physical",
+        "pwr": "15",
+        "acc": "85",
+        "pp": "10",
+        "prob": "-",
+        "effect": "Hits_2-5_times_in_one_turn."
+    },
+    {
+        "move": "Double_Team",
+        "type": "NORMAL",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "-",
+        "pp": "15",
+        "prob": "-",
+        "effect": "Raises_user's_Evasiveness."
+    },
+    {
+        "move": "Double-Edge",
+        "type": "NORMAL",
+        "cat": "Physical",
+        "pwr": "120",
+        "acc": "100",
+        "pp": "15",
+        "prob": "-",
+        "effect": "User_receives_recoil_damage."
+    },
+    {
+        "move": "Draco_Meteor",
+        "type": "DRAGON",
+        "cat": "Special",
+        "pwr": "130",
+        "acc": "90",
+        "pp": "5",
+        "prob": "-",
+        "effect": "Sharply_lowers_user's_Special_Attack."
+    },
+    {
+        "move": "Dragon_Ascent",
+        "type": "FLYING",
+        "cat": "Physical",
+        "pwr": "120",
+        "acc": "100",
+        "pp": "5",
+        "prob": "-",
+        "effect": "-"
+    },
+    {
+        "move": "Dragon_Breath",
+        "type": "DRAGON",
+        "cat": "Special",
+        "pwr": "60",
+        "acc": "100",
+        "pp": "20",
+        "prob": "30",
+        "effect": "May_paralyze_opponent."
+    },
+    {
+        "move": "Dragon_Claw",
+        "type": "DRAGON",
+        "cat": "Physical",
+        "pwr": "80",
+        "acc": "100",
+        "pp": "15",
+        "prob": "-",
+        "effect": "-"
+    },
+    {
+        "move": "Dragon_Dance",
+        "type": "DRAGON",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "-",
+        "pp": "20",
+        "prob": "-",
+        "effect": "Raises_user's_Attack_and_Speed."
+    },
+    {
+        "move": "Dragon_Pulse",
+        "type": "DRAGON",
+        "cat": "Special",
+        "pwr": "85",
+        "acc": "100",
+        "pp": "10",
+        "prob": "-",
+        "effect": "-"
+    },
+    {
+        "move": "Dragon_Rage",
+        "type": "DRAGON",
+        "cat": "Special",
+        "pwr": "-",
+        "acc": "100",
+        "pp": "10",
+        "prob": "-",
+        "effect": "Always_inflicts_40_HP."
+    },
+    {
+        "move": "Dragon_Rush",
+        "type": "DRAGON",
+        "cat": "Physical",
+        "pwr": "100",
+        "acc": "75",
+        "pp": "10",
+        "prob": "20",
+        "effect": "May_cause_flinching."
+    },
+    {
+        "move": "Dragon_Tail",
+        "type": "DRAGON",
+        "cat": "Physical",
+        "pwr": "60",
+        "acc": "90",
+        "pp": "10",
+        "prob": "-",
+        "effect": "In_battles,_the_opponent_switches._In_the_wild,_the_Pok‚mon_runs."
+    },
+    {
+        "move": "Drain_Punch",
+        "type": "FIGHTING",
+        "cat": "Physical",
+        "pwr": "75",
+        "acc": "100",
+        "pp": "10",
+        "prob": "-",
+        "effect": "User_recovers_half_the_HP_inflicted_on_opponent."
+    },
+    {
+        "move": "Draining_Kiss",
+        "type": "FAIRY",
+        "cat": "Special",
+        "pwr": "50",
+        "acc": "100",
+        "pp": "10",
+        "prob": "-",
+        "effect": "User_recovers_most_the_HP_inflicted_on_opponent."
+    },
+    {
+        "move": "Dream_Eater",
+        "type": "PSYCHIC",
+        "cat": "Special",
+        "pwr": "100",
+        "acc": "100",
+        "pp": "15",
+        "prob": "-",
+        "effect": "User_recovers_half_the_HP_inflicted_on_a_sleeping_opponent."
+    },
+    {
+        "move": "Drill_Peck",
+        "type": "FLYING",
+        "cat": "Physical",
+        "pwr": "80",
+        "acc": "100",
+        "pp": "20",
+        "prob": "-",
+        "effect": "-"
+    },
+    {
+        "move": "Drill_Run",
+        "type": "GROUND",
+        "cat": "Physical",
+        "pwr": "80",
+        "acc": "95",
+        "pp": "10",
+        "prob": "-",
+        "effect": "High_critical_hit_ratio."
+    },
+    {
+        "move": "Dual_Chop",
+        "type": "DRAGON",
+        "cat": "Physical",
+        "pwr": "40",
+        "acc": "90",
+        "pp": "15",
+        "prob": "-",
+        "effect": "Hits_twice_in_one_turn."
+    },
+    {
+        "move": "Dynamic_Punch",
+        "type": "FIGHTING",
+        "cat": "Physical",
+        "pwr": "100",
+        "acc": "50",
+        "pp": "5",
+        "prob": "100",
+        "effect": "Confuses_opponent."
+    },
+    {
+        "move": "Earth_Power",
+        "type": "GROUND",
+        "cat": "Special",
+        "pwr": "90",
+        "acc": "100",
+        "pp": "10",
+        "prob": "10",
+        "effect": "May_lower_opponent's_Special_Defense."
+    },
+    {
+        "move": "Earthquake",
+        "type": "GROUND",
+        "cat": "Physical",
+        "pwr": "100",
+        "acc": "100",
+        "pp": "10",
+        "prob": "-",
+        "effect": "Power_is_doubled_if_opponent_is_underground_from_using_Dig."
+    },
+    {
+        "move": "Echoed_Voice",
+        "type": "NORMAL",
+        "cat": "Special",
+        "pwr": "40",
+        "acc": "100",
+        "pp": "15",
+        "prob": "-",
+        "effect": "Power_increases_each_turn."
+    },
+    {
+        "move": "Eerie_Impulse",
+        "type": "ELECTRIC",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "100",
+        "pp": "15",
+        "prob": "-",
+        "effect": "Sharply_lowers_opponent's_Special_Attack."
+    },
+    {
+        "move": "Egg_Bomb",
+        "type": "NORMAL",
+        "cat": "Physical",
+        "pwr": "100",
+        "acc": "75",
+        "pp": "10",
+        "prob": "-",
+        "effect": "-"
+    },
+    {
+        "move": "Electric_Terrain",
+        "type": "ELECTRIC",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "-",
+        "pp": "10",
+        "prob": "-",
+        "effect": "Prevents_all_Pok‚mon_from_falling_asleep_for_5_turns."
+    },
+    {
+        "move": "Electrify",
+        "type": "ELECTRIC",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "-",
+        "pp": "20",
+        "prob": "-",
+        "effect": "Changes_the_target's_move_to_Electric_type."
+    },
+    {
+        "move": "Electro_Ball",
+        "type": "ELECTRIC",
+        "cat": "Special",
+        "pwr": "-",
+        "acc": "100",
+        "pp": "10",
+        "prob": "-",
+        "effect": "The_faster_the_user,_the_stronger_the_attack."
+    },
+    {
+        "move": "Electroweb",
+        "type": "ELECTRIC",
+        "cat": "Special",
+        "pwr": "55",
+        "acc": "95",
+        "pp": "15",
+        "prob": "100",
+        "effect": "Lowers_opponent's_Speed."
+    },
+    {
+        "move": "Embargo",
+        "type": "DARK",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "100",
+        "pp": "15",
+        "prob": "-",
+        "effect": "Opponent_cannot_use_items."
+    },
+    {
+        "move": "Ember",
+        "type": "FIRE",
+        "cat": "Special",
+        "pwr": "40",
+        "acc": "100",
+        "pp": "25",
+        "prob": "10",
+        "effect": "May_burn_opponent."
+    },
+    {
+        "move": "Encore",
+        "type": "NORMAL",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "100",
+        "pp": "5",
+        "prob": "-",
+        "effect": "Forces_opponent_to_keep_using_its_last_move_for_3_turns."
+    },
+    {
+        "move": "Endeavor",
+        "type": "NORMAL",
+        "cat": "Physical",
+        "pwr": "-",
+        "acc": "100",
+        "pp": "5",
+        "prob": "-",
+        "effect": "Reduces_opponent's_HP_to_same_as_user's."
+    },
+    {
+        "move": "Endure",
+        "type": "NORMAL",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "-",
+        "pp": "10",
+        "prob": "-",
+        "effect": "Always_left_with_at_least_1_HP,_but_may_fail_if_used_consecutively."
+    },
+    {
+        "move": "Energy_Ball",
+        "type": "GRASS",
+        "cat": "Special",
+        "pwr": "90",
+        "acc": "100",
+        "pp": "10",
+        "prob": "10",
+        "effect": "May_lower_opponent's_Special_Defense."
+    },
+    {
+        "move": "Entrainment",
+        "type": "NORMAL",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "100",
+        "pp": "15",
+        "prob": "-",
+        "effect": "Makes_target's_ability_same_as_user's."
+    },
+    {
+        "move": "Eruption",
+        "type": "FIRE",
+        "cat": "Special",
+        "pwr": "150",
+        "acc": "100",
+        "pp": "5",
+        "prob": "-",
+        "effect": "Stronger_when_the_user's_HP_is_higher."
+    },
+    {
+        "move": "Explosion",
+        "type": "NORMAL",
+        "cat": "Physical",
+        "pwr": "250",
+        "acc": "100",
+        "pp": "5",
+        "prob": "-",
+        "effect": "User_faints."
+    },
+    {
+        "move": "Extrasensory",
+        "type": "PSYCHIC",
+        "cat": "Special",
+        "pwr": "80",
+        "acc": "100",
+        "pp": "20",
+        "prob": "10",
+        "effect": "May_cause_flinching."
+    },
+    {
+        "move": "Extreme_Speed",
+        "type": "NORMAL",
+        "cat": "Physical",
+        "pwr": "80",
+        "acc": "100",
+        "pp": "5",
+        "prob": "-",
+        "effect": "User_attacks_first."
+    },
+    {
+        "move": "Facade",
+        "type": "NORMAL",
+        "cat": "Physical",
+        "pwr": "70",
+        "acc": "100",
+        "pp": "20",
+        "prob": "-",
+        "effect": "Power_doubles_if_user_is_burned,_poisoned,_or_paralyzed."
+    },
+    {
+        "move": "Fairy_Lock",
+        "type": "FAIRY",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "-",
+        "pp": "10",
+        "prob": "-",
+        "effect": "Prevents_fleeing_in_the_next_turn."
+    },
+    {
+        "move": "Fairy_Wind",
+        "type": "FAIRY",
+        "cat": "Special",
+        "pwr": "40",
+        "acc": "100",
+        "pp": "30",
+        "prob": "-",
+        "effect": "-"
+    },
+    {
+        "move": "Fake_Out",
+        "type": "NORMAL",
+        "cat": "Physical",
+        "pwr": "40",
+        "acc": "100",
+        "pp": "10",
+        "prob": "100",
+        "effect": "User_attacks_first,_foe_flinches._Only_usable_on_first_turn."
+    },
+    {
+        "move": "Fake_Tears",
+        "type": "DARK",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "100",
+        "pp": "20",
+        "prob": "-",
+        "effect": "Sharply_lowers_opponent's_Special_Defense."
+    },
+    {
+        "move": "False_Swipe",
+        "type": "NORMAL",
+        "cat": "Physical",
+        "pwr": "40",
+        "acc": "100",
+        "pp": "40",
+        "prob": "-",
+        "effect": "Always_leaves_opponent_with_at_least_1_HP."
+    },
+    {
+        "move": "Feather_Dance",
+        "type": "FLYING",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "100",
+        "pp": "15",
+        "prob": "-",
+        "effect": "Sharply_lowers_opponent's_Attack."
+    },
+    {
+        "move": "Feint",
+        "type": "NORMAL",
+        "cat": "Physical",
+        "pwr": "30",
+        "acc": "100",
+        "pp": "10",
+        "prob": "-",
+        "effect": "Only_hits_if_opponent_uses_Protect_or_Detect_in_the_same_turn."
+    },
+    {
+        "move": "Feint_Attack",
+        "type": "DARK",
+        "cat": "Physical",
+        "pwr": "60",
+        "acc": "-",
+        "pp": "20",
+        "prob": "-",
+        "effect": "Ignores_Accuracy_and_Evasiveness."
+    },
+    {
+        "move": "Fell_Stinger",
+        "type": "BUG",
+        "cat": "Physical",
+        "pwr": "30",
+        "acc": "100",
+        "pp": "25",
+        "prob": "-",
+        "effect": "Sharply_raises_user's_Attack_if_target_is_KO'd."
+    },
+    {
+        "move": "Fiery_Dance",
+        "type": "FIRE",
+        "cat": "Special",
+        "pwr": "80",
+        "acc": "100",
+        "pp": "10",
+        "prob": "50",
+        "effect": "May_raise_user's_Special_Attack."
+    },
+    {
+        "move": "Final_Gambit",
+        "type": "FIGHTING",
+        "cat": "Special",
+        "pwr": "-",
+        "acc": "100",
+        "pp": "5",
+        "prob": "-",
+        "effect": "Inflicts_damage_equal_to_the_user's_remaining_HP._User_faints."
+    },
+    {
+        "move": "Fire_Blast",
+        "type": "FIRE",
+        "cat": "Special",
+        "pwr": "110",
+        "acc": "85",
+        "pp": "5",
+        "prob": "10",
+        "effect": "May_burn_opponent."
+    },
+    {
+        "move": "Fire_Fang",
+        "type": "FIRE",
+        "cat": "Physical",
+        "pwr": "65",
+        "acc": "95",
+        "pp": "15",
+        "prob": "10",
+        "effect": "May_cause_flinching_and/or_burn_opponent."
+    },
+    {
+        "move": "Fire_Pledge",
+        "type": "FIRE",
+        "cat": "Special",
+        "pwr": "80",
+        "acc": "100",
+        "pp": "10",
+        "prob": "-",
+        "effect": "Added_effects_appear_if_combined_with_Grass_Pledge_or_Water_Pledge."
+    },
+    {
+        "move": "Fire_Punch",
+        "type": "FIRE",
+        "cat": "Physical",
+        "pwr": "75",
+        "acc": "100",
+        "pp": "15",
+        "prob": "10",
+        "effect": "May_burn_opponent."
+    },
+    {
+        "move": "Fire_Spin",
+        "type": "FIRE",
+        "cat": "Special",
+        "pwr": "35",
+        "acc": "85",
+        "pp": "15",
+        "prob": "-",
+        "effect": "Traps_opponent,_damaging_them_for_4-5_turns."
+    },
+    {
+        "move": "Fissure",
+        "type": "GROUND",
+        "cat": "Physical",
+        "pwr": "-",
+        "acc": "-",
+        "pp": "5",
+        "prob": "-",
+        "effect": "One-Hit-KO,_if_it_hits."
+    },
+    {
+        "move": "Flail",
+        "type": "NORMAL",
+        "cat": "Physical",
+        "pwr": "-",
+        "acc": "100",
+        "pp": "15",
+        "prob": "-",
+        "effect": "The_lower_the_user's_HP,_the_higher_the_power."
+    },
+    {
+        "move": "Flame_Burst",
+        "type": "FIRE",
+        "cat": "Special",
+        "pwr": "70",
+        "acc": "100",
+        "pp": "15",
+        "prob": "-",
+        "effect": "May_also_injure_nearby_Pok‚mon."
+    },
+    {
+        "move": "Flame_Charge",
+        "type": "FIRE",
+        "cat": "Physical",
+        "pwr": "50",
+        "acc": "100",
+        "pp": "20",
+        "prob": "100",
+        "effect": "Raises_user's_Speed."
+    },
+    {
+        "move": "Flame_Wheel",
+        "type": "FIRE",
+        "cat": "Physical",
+        "pwr": "60",
+        "acc": "100",
+        "pp": "25",
+        "prob": "10",
+        "effect": "May_burn_opponent."
+    },
+    {
+        "move": "Flamethrower",
+        "type": "FIRE",
+        "cat": "Special",
+        "pwr": "90",
+        "acc": "100",
+        "pp": "15",
+        "prob": "10",
+        "effect": "May_burn_opponent."
+    },
+    {
+        "move": "Flare_Blitz",
+        "type": "FIRE",
+        "cat": "Physical",
+        "pwr": "120",
+        "acc": "100",
+        "pp": "15",
+        "prob": "10",
+        "effect": "User_receives_recoil_damage._May_burn_opponent."
+    },
+    {
+        "move": "Flash",
+        "type": "NORMAL",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "100",
+        "pp": "20",
+        "prob": "-",
+        "effect": "Lowers_opponent's_Accuracy."
+    },
+    {
+        "move": "Flash_Cannon",
+        "type": "STEEL",
+        "cat": "Special",
+        "pwr": "80",
+        "acc": "100",
+        "pp": "10",
+        "prob": "10",
+        "effect": "May_lower_opponent's_Special_Defense."
+    },
+    {
+        "move": "Flatter",
+        "type": "DARK",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "100",
+        "pp": "15",
+        "prob": "-",
+        "effect": "Confuses_opponent,_but_raises_its_Special_Attack_by_two_stages."
+    },
+    {
+        "move": "Fling",
+        "type": "DARK",
+        "cat": "Physical",
+        "pwr": "-",
+        "acc": "100",
+        "pp": "10",
+        "prob": "-",
+        "effect": "Power_depends_on_held_item."
+    },
+    {
+        "move": "Flower_Shield",
+        "type": "FAIRY",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "-",
+        "pp": "10",
+        "prob": "-",
+        "effect": "Sharply_raises_Defense_of_all_Grass-type_Pok‚mon_on_the_field."
+    },
+    {
+        "move": "Fly",
+        "type": "FLYING",
+        "cat": "Physical",
+        "pwr": "90",
+        "acc": "95",
+        "pp": "15",
+        "prob": "-",
+        "effect": "Flies_up_on_first_turn,_attacks_on_second_turn."
+    },
+    {
+        "move": "Flying_Press",
+        "type": "FIGHTING",
+        "cat": "Physical",
+        "pwr": "80",
+        "acc": "95",
+        "pp": "10",
+        "prob": "-",
+        "effect": "Deals_Fighting_and_Flying_type_damage."
+    },
+    {
+        "move": "Focus_Blast",
+        "type": "FIGHTING",
+        "cat": "Special",
+        "pwr": "120",
+        "acc": "70",
+        "pp": "5",
+        "prob": "10",
+        "effect": "May_lower_opponent's_Special_Defense."
+    },
+    {
+        "move": "Focus_Energy",
+        "type": "NORMAL",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "-",
+        "pp": "30",
+        "prob": "-",
+        "effect": "Increases_critical_hit_ratio."
+    },
+    {
+        "move": "Focus_Punch",
+        "type": "FIGHTING",
+        "cat": "Physical",
+        "pwr": "150",
+        "acc": "100",
+        "pp": "20",
+        "prob": "-",
+        "effect": "If_the_user_is_hit_before_attacking,_it_flinches_instead."
+    },
+    {
+        "move": "Follow_Me",
+        "type": "NORMAL",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "-",
+        "pp": "20",
+        "prob": "-",
+        "effect": "In_Double_Battle,_the_user_takes_all_the_attacks."
+    },
+    {
+        "move": "Force_Palm",
+        "type": "FIGHTING",
+        "cat": "Physical",
+        "pwr": "60",
+        "acc": "100",
+        "pp": "10",
+        "prob": "30",
+        "effect": "May_paralyze_opponent."
+    },
+    {
+        "move": "Foresight",
+        "type": "NORMAL",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "-",
+        "pp": "40",
+        "prob": "-",
+        "effect": "Resets_opponent's_Evasiveness,_Normal-type_and_Fighting-type_attacks_can_now_hit_Ghosts,_and_Ghost-type_attacks_hit_Normal."
+    },
+    {
+        "move": "Forest's_Curse",
+        "type": "GRASS",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "100",
+        "pp": "20",
+        "prob": "-",
+        "effect": "Adds_Grass_type_to_opponent."
+    },
+    {
+        "move": "Foul_Play",
+        "type": "DARK",
+        "cat": "Physical",
+        "pwr": "95",
+        "acc": "100",
+        "pp": "15",
+        "prob": "-",
+        "effect": "Uses_the_opponent's_Attack_stat."
+    },
+    {
+        "move": "Freeze_Shock",
+        "type": "ICE",
+        "cat": "Physical",
+        "pwr": "140",
+        "acc": "90",
+        "pp": "5",
+        "prob": "30",
+        "effect": "Charges_on_first_turn,_attacks_on_second._May_paralyze_opponent."
+    },
+    {
+        "move": "Freeze-Dry",
+        "type": "ICE",
+        "cat": "Special",
+        "pwr": "70",
+        "acc": "100",
+        "pp": "20",
+        "prob": "-",
+        "effect": "May_freeze_opponent._Super-effective_against_Water_types."
+    },
+    {
+        "move": "Frenzy_Plant",
+        "type": "GRASS",
+        "cat": "Special",
+        "pwr": "150",
+        "acc": "90",
+        "pp": "5",
+        "prob": "-",
+        "effect": "User_must_recharge_next_turn."
+    },
+    {
+        "move": "Frost_Breath",
+        "type": "ICE",
+        "cat": "Special",
+        "pwr": "60",
+        "acc": "90",
+        "pp": "10",
+        "prob": "100",
+        "effect": "Always_results_in_a_critical_hit."
+    },
+    {
+        "move": "Frustration",
+        "type": "NORMAL",
+        "cat": "Physical",
+        "pwr": "-",
+        "acc": "100",
+        "pp": "20",
+        "prob": "-",
+        "effect": "Power_decreases_with_higher_Happiness."
+    },
+    {
+        "move": "Fury_Attack",
+        "type": "NORMAL",
+        "cat": "Physical",
+        "pwr": "15",
+        "acc": "85",
+        "pp": "20",
+        "prob": "-",
+        "effect": "Hits_2-5_times_in_one_turn."
+    },
+    {
+        "move": "Fury_Cutter",
+        "type": "BUG",
+        "cat": "Physical",
+        "pwr": "40",
+        "acc": "95",
+        "pp": "20",
+        "prob": "-",
+        "effect": "Power_increases_each_turn."
+    },
+    {
+        "move": "Fury_Swipes",
+        "type": "NORMAL",
+        "cat": "Physical",
+        "pwr": "18",
+        "acc": "80",
+        "pp": "15",
+        "prob": "-",
+        "effect": "Hits_2-5_times_in_one_turn."
+    },
+    {
+        "move": "Fusion_Bolt",
+        "type": "ELECTRIC",
+        "cat": "Physical",
+        "pwr": "100",
+        "acc": "100",
+        "pp": "5",
+        "prob": "-",
+        "effect": "Power_increases_if_Fusion_Flare_is_used_in_the_same_turn."
+    },
+    {
+        "move": "Fusion_Flare",
+        "type": "FIRE",
+        "cat": "Special",
+        "pwr": "100",
+        "acc": "100",
+        "pp": "5",
+        "prob": "-",
+        "effect": "Power_increases_if_Fusion_Bolt_is_used_in_the_same_turn."
+    },
+    {
+        "move": "Future_Sight",
+        "type": "PSYCHIC",
+        "cat": "Special",
+        "pwr": "120",
+        "acc": "100",
+        "pp": "10",
+        "prob": "-",
+        "effect": "Damage_occurs_2_turns_later."
+    },
+    {
+        "move": "Gastro_Acid",
+        "type": "POISON",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "100",
+        "pp": "10",
+        "prob": "-",
+        "effect": "Cancels_out_the_effect_of_the_opponent's_Ability."
+    },
+    {
+        "move": "Gear_Grind",
+        "type": "STEEL",
+        "cat": "Physical",
+        "pwr": "50",
+        "acc": "85",
+        "pp": "15",
+        "prob": "-",
+        "effect": "Hits_twice_in_one_turn."
+    },
+    {
+        "move": "Geomancy",
+        "type": "FAIRY",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "-",
+        "pp": "10",
+        "prob": "-",
+        "effect": "Charges_on_first_turn,_sharply_raises_user's_Sp._Attack,_Sp._Defense_and_Speed_on_the_second."
+    },
+    {
+        "move": "Giga_Drain",
+        "type": "GRASS",
+        "cat": "Special",
+        "pwr": "75",
+        "acc": "100",
+        "pp": "10",
+        "prob": "-",
+        "effect": "User_recovers_half_the_HP_inflicted_on_opponent."
+    },
+    {
+        "move": "Giga_Impact",
+        "type": "NORMAL",
+        "cat": "Physical",
+        "pwr": "150",
+        "acc": "90",
+        "pp": "5",
+        "prob": "-",
+        "effect": "User_must_recharge_next_turn."
+    },
+    {
+        "move": "Glaciate",
+        "type": "ICE",
+        "cat": "Special",
+        "pwr": "65",
+        "acc": "95",
+        "pp": "10",
+        "prob": "100",
+        "effect": "Lowers_opponent's_Speed."
+    },
+    {
+        "move": "Glare",
+        "type": "NORMAL",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "100",
+        "pp": "30",
+        "prob": "-",
+        "effect": "Paralyzes_opponent."
+    },
+    {
+        "move": "Grass_Knot",
+        "type": "GRASS",
+        "cat": "Special",
+        "pwr": "-",
+        "acc": "100",
+        "pp": "20",
+        "prob": "-",
+        "effect": "The_heavier_the_opponent,_the_stronger_the_attack."
+    },
+    {
+        "move": "Grass_Pledge",
+        "type": "GRASS",
+        "cat": "Special",
+        "pwr": "80",
+        "acc": "100",
+        "pp": "10",
+        "prob": "-",
+        "effect": "Added_effects_appear_if_preceded_by_Water_Pledge_or_succeeded_by_Fire_Pledge."
+    },
+    {
+        "move": "Grass_Whistle",
+        "type": "GRASS",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "55",
+        "pp": "15",
+        "prob": "-",
+        "effect": "Puts_opponent_to_sleep."
+    },
+    {
+        "move": "Grassy_Terrain",
+        "type": "GRASS",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "-",
+        "pp": "10",
+        "prob": "-",
+        "effect": "Restores_a_little_HP_of_all_Pok‚mon_for_5_turns."
+    },
+    {
+        "move": "Gravity",
+        "type": "PSYCHIC",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "-",
+        "pp": "5",
+        "prob": "-",
+        "effect": "Prevents_moves_like_Fly_and_Bounce_and_the_Ability_Levitate_for_5_turns."
+    },
+    {
+        "move": "Growl",
+        "type": "NORMAL",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "100",
+        "pp": "40",
+        "prob": "-",
+        "effect": "Lowers_opponent's_Attack."
+    },
+    {
+        "move": "Growth",
+        "type": "NORMAL",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "-",
+        "pp": "40",
+        "prob": "-",
+        "effect": "Raises_user's_Attack_and_Special_Attack."
+    },
+    {
+        "move": "Grudge",
+        "type": "GHOST",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "-",
+        "pp": "5",
+        "prob": "-",
+        "effect": "If_the_users_faints_after_using_this_move,_the_PP_for_the_opponent's_last_move_is_depleted."
+    },
+    {
+        "move": "Guard_Split",
+        "type": "PSYCHIC",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "-",
+        "pp": "10",
+        "prob": "-",
+        "effect": "Averages_Defense_and_Special_Defense_with_the_target."
+    },
+    {
+        "move": "Guard_Swap",
+        "type": "PSYCHIC",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "-",
+        "pp": "10",
+        "prob": "-",
+        "effect": "User_and_opponent_swap_Defense_and_Special_Defense."
+    },
+    {
+        "move": "Guillotine",
+        "type": "NORMAL",
+        "cat": "Physical",
+        "pwr": "-",
+        "acc": "-",
+        "pp": "5",
+        "prob": "-",
+        "effect": "One-Hit-KO,_if_it_hits."
+    },
+    {
+        "move": "Gunk_Shot",
+        "type": "POISON",
+        "cat": "Physical",
+        "pwr": "120",
+        "acc": "80",
+        "pp": "5",
+        "prob": "30",
+        "effect": "May_poison_opponent."
+    },
+    {
+        "move": "Gust",
+        "type": "FLYING",
+        "cat": "Special",
+        "pwr": "40",
+        "acc": "100",
+        "pp": "35",
+        "prob": "-",
+        "effect": "Hits_Pok‚mon_using_Fly/Bounce_with_double_power."
+    },
+    {
+        "move": "Gyro_Ball",
+        "type": "STEEL",
+        "cat": "Physical",
+        "pwr": "-",
+        "acc": "100",
+        "pp": "5",
+        "prob": "-",
+        "effect": "The_slower_the_opponent,_the_stronger_the_attack."
+    },
+    {
+        "move": "Hail",
+        "type": "ICE",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "-",
+        "pp": "10",
+        "prob": "-",
+        "effect": "Non-Ice_types_are_damaged_for_5_turns."
+    },
+    {
+        "move": "Hammer_Arm",
+        "type": "FIGHTING",
+        "cat": "Physical",
+        "pwr": "100",
+        "acc": "90",
+        "pp": "10",
+        "prob": "-",
+        "effect": "Lowers_user's_Speed."
+    },
+    {
+        "move": "Happy_Hour",
+        "type": "NORMAL",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "-",
+        "pp": "30",
+        "prob": "-",
+        "effect": "Doubles_prize_money_from_trainer_battles."
+    },
+    {
+        "move": "Harden",
+        "type": "NORMAL",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "-",
+        "pp": "30",
+        "prob": "-",
+        "effect": "Raises_user's_Defense."
+    },
+    {
+        "move": "Haze",
+        "type": "ICE",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "-",
+        "pp": "30",
+        "prob": "-",
+        "effect": "Resets_all_stat_changes."
+    },
+    {
+        "move": "Head_Charge",
+        "type": "NORMAL",
+        "cat": "Physical",
+        "pwr": "120",
+        "acc": "100",
+        "pp": "15",
+        "prob": "-",
+        "effect": "User_receives_recoil_damage."
+    },
+    {
+        "move": "Head_Smash",
+        "type": "ROCK",
+        "cat": "Physical",
+        "pwr": "150",
+        "acc": "80",
+        "pp": "5",
+        "prob": "-",
+        "effect": "User_receives_recoil_damage."
+    },
+    {
+        "move": "Headbutt",
+        "type": "NORMAL",
+        "cat": "Physical",
+        "pwr": "70",
+        "acc": "100",
+        "pp": "15",
+        "prob": "30",
+        "effect": "May_cause_flinching."
+    },
+    {
+        "move": "Heal_Bell",
+        "type": "NORMAL",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "-",
+        "pp": "5",
+        "prob": "-",
+        "effect": "Heals_the_user's_party's_status_conditions."
+    },
+    {
+        "move": "Heal_Block",
+        "type": "PSYCHIC",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "-",
+        "pp": "15",
+        "prob": "-",
+        "effect": "Prevents_the_opponent_from_restoring_HP_for_5_turns."
+    },
+    {
+        "move": "Heal_Order",
+        "type": "BUG",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "-",
+        "pp": "10",
+        "prob": "-",
+        "effect": "User_recovers_half_its_max_HP."
+    },
+    {
+        "move": "Heal_Pulse",
+        "type": "PSYCHIC",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "-",
+        "pp": "10",
+        "prob": "-",
+        "effect": "Restores_half_the_target's_max_HP."
+    },
+    {
+        "move": "Healing_Wish",
+        "type": "PSYCHIC",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "-",
+        "pp": "10",
+        "prob": "-",
+        "effect": "The_user_faints_and_the_next_Pok‚mon_released_is_fully_healed."
+    },
+    {
+        "move": "Heart_Stamp",
+        "type": "PSYCHIC",
+        "cat": "Physical",
+        "pwr": "60",
+        "acc": "100",
+        "pp": "25",
+        "prob": "30",
+        "effect": "May_cause_flinching."
+    },
+    {
+        "move": "Heart_Swap",
+        "type": "PSYCHIC",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "-",
+        "pp": "10",
+        "prob": "-",
+        "effect": "Stat_changes_are_swapped_with_the_opponent."
+    },
+    {
+        "move": "Heat_Crash",
+        "type": "FIRE",
+        "cat": "Physical",
+        "pwr": "-",
+        "acc": "100",
+        "pp": "10",
+        "prob": "-",
+        "effect": "The_heavier_the_user,_the_stronger_the_attack."
+    },
+    {
+        "move": "Heat_Wave",
+        "type": "FIRE",
+        "cat": "Special",
+        "pwr": "95",
+        "acc": "90",
+        "pp": "10",
+        "prob": "10",
+        "effect": "May_burn_opponent."
+    },
+    {
+        "move": "Heavy_Slam",
+        "type": "STEEL",
+        "cat": "Physical",
+        "pwr": "-",
+        "acc": "100",
+        "pp": "10",
+        "prob": "-",
+        "effect": "The_heavier_the_user,_the_stronger_the_attack."
+    },
+    {
+        "move": "Helping_Hand",
+        "type": "NORMAL",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "-",
+        "pp": "20",
+        "prob": "-",
+        "effect": "In_Double_Battles,_boosts_the_power_of_the_partner's_move."
+    },
+    {
+        "move": "Hex",
+        "type": "GHOST",
+        "cat": "Special",
+        "pwr": "65",
+        "acc": "100",
+        "pp": "10",
+        "prob": "-",
+        "effect": "Inflicts_more_damage_if_the_target_has_a_status_condition."
+    },
+    {
+        "move": "Hidden_Power",
+        "type": "NORMAL",
+        "cat": "Special",
+        "pwr": "60",
+        "acc": "100",
+        "pp": "15",
+        "prob": "-",
+        "effect": "Type_and_power_depends_on_user's_IVs."
+    },
+    {
+        "move": "High_Jump_Kick",
+        "type": "FIGHTING",
+        "cat": "Physical",
+        "pwr": "130",
+        "acc": "90",
+        "pp": "10",
+        "prob": "-",
+        "effect": "If_it_misses,_the_user_loses_half_their_HP."
+    },
+    {
+        "move": "Hold_Back",
+        "type": "NORMAL",
+        "cat": "Physical",
+        "pwr": "40",
+        "acc": "100",
+        "pp": "40",
+        "prob": "-",
+        "effect": "Always_leaves_opponent_with_at_least_1_HP."
+    },
+    {
+        "move": "Hold_Hands",
+        "type": "NORMAL",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "-",
+        "pp": "40",
+        "prob": "-",
+        "effect": "Makes_the_user_and_an_ally_very_happy."
+    },
+    {
+        "move": "Hone_Claws",
+        "type": "DARK",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "-",
+        "pp": "15",
+        "prob": "-",
+        "effect": "Raises_user's_Attack_and_Accuracy."
+    },
+    {
+        "move": "Horn_Attack",
+        "type": "NORMAL",
+        "cat": "Physical",
+        "pwr": "65",
+        "acc": "100",
+        "pp": "25",
+        "prob": "-",
+        "effect": "-"
+    },
+    {
+        "move": "Horn_Drill",
+        "type": "NORMAL",
+        "cat": "Physical",
+        "pwr": "-",
+        "acc": "-",
+        "pp": "5",
+        "prob": "-",
+        "effect": "One-Hit-KO,_if_it_hits."
+    },
+    {
+        "move": "Horn_Leech",
+        "type": "GRASS",
+        "cat": "Physical",
+        "pwr": "75",
+        "acc": "100",
+        "pp": "10",
+        "prob": "-",
+        "effect": "User_recovers_half_the_HP_inflicted_on_opponent."
+    },
+    {
+        "move": "Howl",
+        "type": "NORMAL",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "-",
+        "pp": "40",
+        "prob": "-",
+        "effect": "Raises_user's_Attack."
+    },
+    {
+        "move": "Hurricane",
+        "type": "FLYING",
+        "cat": "Special",
+        "pwr": "110",
+        "acc": "70",
+        "pp": "10",
+        "prob": "30",
+        "effect": "May_confuse_opponent."
+    },
+    {
+        "move": "Hydro_Cannon",
+        "type": "WATER",
+        "cat": "Special",
+        "pwr": "150",
+        "acc": "90",
+        "pp": "5",
+        "prob": "-",
+        "effect": "User_must_recharge_next_turn."
+    },
+    {
+        "move": "Hydro_Pump",
+        "type": "WATER",
+        "cat": "Special",
+        "pwr": "110",
+        "acc": "80",
+        "pp": "5",
+        "prob": "-",
+        "effect": "-"
+    },
+    {
+        "move": "Hyper_Beam",
+        "type": "NORMAL",
+        "cat": "Special",
+        "pwr": "150",
+        "acc": "90",
+        "pp": "5",
+        "prob": "-",
+        "effect": "User_must_recharge_next_turn."
+    },
+    {
+        "move": "Hyper_Fang",
+        "type": "NORMAL",
+        "cat": "Physical",
+        "pwr": "80",
+        "acc": "90",
+        "pp": "15",
+        "prob": "10",
+        "effect": "May_cause_flinching."
+    },
+    {
+        "move": "Hyper_Voice",
+        "type": "NORMAL",
+        "cat": "Special",
+        "pwr": "90",
+        "acc": "100",
+        "pp": "10",
+        "prob": "-",
+        "effect": "-"
+    },
+    {
+        "move": "Hyperspace_Fury",
+        "type": "DARK",
+        "cat": "Special",
+        "pwr": "100",
+        "acc": "-",
+        "pp": "5",
+        "prob": "-",
+        "effect": "-"
+    },
+    {
+        "move": "Hyperspace_Hole",
+        "type": "PSYCHIC",
+        "cat": "Special",
+        "pwr": "80",
+        "acc": "-",
+        "pp": "5",
+        "prob": "-",
+        "effect": "Can_strike_through_Protect/Detect."
+    },
+    {
+        "move": "Hypnosis",
+        "type": "PSYCHIC",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "60",
+        "pp": "20",
+        "prob": "-",
+        "effect": "Puts_opponent_to_sleep."
+    },
+    {
+        "move": "Ice_Ball",
+        "type": "ICE",
+        "cat": "Physical",
+        "pwr": "30",
+        "acc": "90",
+        "pp": "20",
+        "prob": "-",
+        "effect": "Doubles_in_power_each_turn_for_5_turns."
+    },
+    {
+        "move": "Ice_Beam",
+        "type": "ICE",
+        "cat": "Special",
+        "pwr": "90",
+        "acc": "100",
+        "pp": "10",
+        "prob": "10",
+        "effect": "May_freeze_opponent."
+    },
+    {
+        "move": "Ice_Burn",
+        "type": "ICE",
+        "cat": "Special",
+        "pwr": "140",
+        "acc": "90",
+        "pp": "5",
+        "prob": "30",
+        "effect": "Charges_on_first_turn,_attacks_on_second._May_burn_opponent."
+    },
+    {
+        "move": "Ice_Fang",
+        "type": "ICE",
+        "cat": "Physical",
+        "pwr": "65",
+        "acc": "95",
+        "pp": "15",
+        "prob": "10",
+        "effect": "May_cause_flinching_and/or_freeze_opponent."
+    },
+    {
+        "move": "Ice_Punch",
+        "type": "ICE",
+        "cat": "Physical",
+        "pwr": "75",
+        "acc": "100",
+        "pp": "15",
+        "prob": "10",
+        "effect": "May_freeze_opponent."
+    },
+    {
+        "move": "Ice_Shard",
+        "type": "ICE",
+        "cat": "Physical",
+        "pwr": "40",
+        "acc": "100",
+        "pp": "30",
+        "prob": "-",
+        "effect": "User_attacks_first."
+    },
+    {
+        "move": "Icicle_Crash",
+        "type": "ICE",
+        "cat": "Physical",
+        "pwr": "85",
+        "acc": "90",
+        "pp": "10",
+        "prob": "30",
+        "effect": "May_cause_flinching."
+    },
+    {
+        "move": "Icicle_Spear",
+        "type": "ICE",
+        "cat": "Physical",
+        "pwr": "25",
+        "acc": "100",
+        "pp": "30",
+        "prob": "-",
+        "effect": "Hits_2-5_times_in_one_turn."
+    },
+    {
+        "move": "Icy_Wind",
+        "type": "ICE",
+        "cat": "Special",
+        "pwr": "55",
+        "acc": "95",
+        "pp": "15",
+        "prob": "100",
+        "effect": "Lowers_opponent's_Speed."
+    },
+    {
+        "move": "Imprison",
+        "type": "PSYCHIC",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "-",
+        "pp": "10",
+        "prob": "-",
+        "effect": "Opponent_is_unable_to_use_moves_that_the_user_also_knows."
+    },
+    {
+        "move": "Incinerate",
+        "type": "FIRE",
+        "cat": "Special",
+        "pwr": "60",
+        "acc": "100",
+        "pp": "15",
+        "prob": "-",
+        "effect": "Destroys_the_target's_held_berry."
+    },
+    {
+        "move": "Inferno",
+        "type": "FIRE",
+        "cat": "Special",
+        "pwr": "100",
+        "acc": "50",
+        "pp": "5",
+        "prob": "100",
+        "effect": "Burns_opponent."
+    },
+    {
+        "move": "Infestation",
+        "type": "BUG",
+        "cat": "Special",
+        "pwr": "20",
+        "acc": "100",
+        "pp": "20",
+        "prob": "-",
+        "effect": "Traps_opponent,_damaging_them_for_4-5_turns."
+    },
+    {
+        "move": "Ingrain",
+        "type": "GRASS",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "-",
+        "pp": "20",
+        "prob": "-",
+        "effect": "User_restores_HP_each_turn._User_cannot_escape/switch."
+    },
+    {
+        "move": "Ion_Deluge",
+        "type": "ELECTRIC",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "-",
+        "pp": "25",
+        "prob": "-",
+        "effect": "Changes_Normal-type_moves_to_Electric-type."
+    },
+    {
+        "move": "Iron_Defense",
+        "type": "STEEL",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "-",
+        "pp": "15",
+        "prob": "-",
+        "effect": "Sharply_raises_user's_Defense."
+    },
+    {
+        "move": "Iron_Head",
+        "type": "STEEL",
+        "cat": "Physical",
+        "pwr": "80",
+        "acc": "100",
+        "pp": "15",
+        "prob": "30",
+        "effect": "May_cause_flinching."
+    },
+    {
+        "move": "Iron_Tail",
+        "type": "STEEL",
+        "cat": "Physical",
+        "pwr": "100",
+        "acc": "75",
+        "pp": "15",
+        "prob": "10",
+        "effect": "May_lower_opponent's_Defense."
+    },
+    {
+        "move": "Judgment",
+        "type": "NORMAL",
+        "cat": "Special",
+        "pwr": "100",
+        "acc": "100",
+        "pp": "10",
+        "prob": "-",
+        "effect": "Type_depends_on_the_Arceus_Plate_being_held."
+    },
+    {
+        "move": "Jump_Kick",
+        "type": "FIGHTING",
+        "cat": "Physical",
+        "pwr": "100",
+        "acc": "95",
+        "pp": "10",
+        "prob": "-",
+        "effect": "If_it_misses,_the_user_loses_half_their_HP."
+    },
+    {
+        "move": "Karate_Chop",
+        "type": "FIGHTING",
+        "cat": "Physical",
+        "pwr": "50",
+        "acc": "100",
+        "pp": "25",
+        "prob": "-",
+        "effect": "High_critical_hit_ratio."
+    },
+    {
+        "move": "Kinesis",
+        "type": "PSYCHIC",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "80",
+        "pp": "15",
+        "prob": "-",
+        "effect": "Lowers_opponent's_Accuracy."
+    },
+    {
+        "move": "King's_Shield",
+        "type": "STEEL",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "-",
+        "pp": "10",
+        "prob": "-",
+        "effect": "Protects_against_attacks,_and_lowers_opponent's_Attack_on_contact."
+    },
+    {
+        "move": "Knock_Off",
+        "type": "DARK",
+        "cat": "Physical",
+        "pwr": "65",
+        "acc": "100",
+        "pp": "25",
+        "prob": "-",
+        "effect": "Removes_opponent's_held_item_for_the_rest_of_the_battle."
+    },
+    {
+        "move": "Land's_Wrath",
+        "type": "GROUND",
+        "cat": "Physical",
+        "pwr": "90",
+        "acc": "100",
+        "pp": "10",
+        "prob": "-",
+        "effect": "-"
+    },
+    {
+        "move": "Last_Resort",
+        "type": "NORMAL",
+        "cat": "Physical",
+        "pwr": "140",
+        "acc": "100",
+        "pp": "5",
+        "prob": "-",
+        "effect": "Can_only_be_used_after_all_other_moves_are_used."
+    },
+    {
+        "move": "Lava_Plume",
+        "type": "FIRE",
+        "cat": "Special",
+        "pwr": "80",
+        "acc": "100",
+        "pp": "15",
+        "prob": "30",
+        "effect": "May_burn_opponent."
+    },
+    {
+        "move": "Leaf_Blade",
+        "type": "GRASS",
+        "cat": "Physical",
+        "pwr": "90",
+        "acc": "100",
+        "pp": "15",
+        "prob": "-",
+        "effect": "High_critical_hit_ratio."
+    },
+    {
+        "move": "Leaf_Storm",
+        "type": "GRASS",
+        "cat": "Special",
+        "pwr": "130",
+        "acc": "90",
+        "pp": "5",
+        "prob": "-",
+        "effect": "Sharply_lowers_user's_Special_Attack."
+    },
+    {
+        "move": "Leaf_Tornado",
+        "type": "GRASS",
+        "cat": "Special",
+        "pwr": "65",
+        "acc": "90",
+        "pp": "10",
+        "prob": "30",
+        "effect": "May_lower_opponent's_Accuracy."
+    },
+    {
+        "move": "Leech_Life",
+        "type": "BUG",
+        "cat": "Physical",
+        "pwr": "20",
+        "acc": "100",
+        "pp": "15",
+        "prob": "-",
+        "effect": "User_recovers_half_the_HP_inflicted_on_opponent."
+    },
+    {
+        "move": "Leech_Seed",
+        "type": "GRASS",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "90",
+        "pp": "10",
+        "prob": "-",
+        "effect": "User_steals_HP_from_opponent_each_turn."
+    },
+    {
+        "move": "Leer",
+        "type": "NORMAL",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "100",
+        "pp": "30",
+        "prob": "-",
+        "effect": "Lowers_opponent's_Defense."
+    },
+    {
+        "move": "Lick",
+        "type": "GHOST",
+        "cat": "Physical",
+        "pwr": "30",
+        "acc": "100",
+        "pp": "30",
+        "prob": "30",
+        "effect": "May_paralyze_opponent."
+    },
+    {
+        "move": "Light_Screen",
+        "type": "PSYCHIC",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "-",
+        "pp": "30",
+        "prob": "-",
+        "effect": "Halves_damage_from_Special_attacks_for_5_turns."
+    },
+    {
+        "move": "Light_of_Ruin",
+        "type": "FAIRY",
+        "cat": "Special",
+        "pwr": "140",
+        "acc": "90",
+        "pp": "5",
+        "prob": "-",
+        "effect": "User_receives_recoil_damage."
+    },
+    {
+        "move": "Lock-On",
+        "type": "NORMAL",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "-",
+        "pp": "5",
+        "prob": "-",
+        "effect": "The_next_move_the_user_uses_is_guaranteed_to_hit."
+    },
+    {
+        "move": "Lovely_Kiss",
+        "type": "NORMAL",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "75",
+        "pp": "10",
+        "prob": "-",
+        "effect": "Puts_opponent_to_sleep."
+    },
+    {
+        "move": "Low_Kick",
+        "type": "FIGHTING",
+        "cat": "Physical",
+        "pwr": "-",
+        "acc": "100",
+        "pp": "20",
+        "prob": "-",
+        "effect": "The_heavier_the_opponent,_the_stronger_the_attack."
+    },
+    {
+        "move": "Low_Sweep",
+        "type": "FIGHTING",
+        "cat": "Physical",
+        "pwr": "65",
+        "acc": "100",
+        "pp": "20",
+        "prob": "100",
+        "effect": "Lowers_opponent's_Speed."
+    },
+    {
+        "move": "Lucky_Chant",
+        "type": "NORMAL",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "-",
+        "pp": "30",
+        "prob": "-",
+        "effect": "Opponent_cannot_land_critical_hits_for_5_turns."
+    },
+    {
+        "move": "Lunar_Dance",
+        "type": "PSYCHIC",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "-",
+        "pp": "10",
+        "prob": "-",
+        "effect": "The_user_faints_but_the_next_Pok‚mon_released_is_fully_healed."
+    },
+    {
+        "move": "Luster_Purge",
+        "type": "PSYCHIC",
+        "cat": "Special",
+        "pwr": "70",
+        "acc": "100",
+        "pp": "5",
+        "prob": "50",
+        "effect": "May_lower_opponent's_Special_Defense."
+    },
+    {
+        "move": "Mach_Punch",
+        "type": "FIGHTING",
+        "cat": "Physical",
+        "pwr": "40",
+        "acc": "100",
+        "pp": "30",
+        "prob": "-",
+        "effect": "User_attacks_first."
+    },
+    {
+        "move": "Magic_Coat",
+        "type": "PSYCHIC",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "-",
+        "pp": "15",
+        "prob": "-",
+        "effect": "Any_special_move_is_reflected_back_to_the_attacker."
+    },
+    {
+        "move": "Magic_Room",
+        "type": "PSYCHIC",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "-",
+        "pp": "10",
+        "prob": "-",
+        "effect": "Suppresses_the_effects_of_held_items_for_five_turns."
+    },
+    {
+        "move": "Magical_Leaf",
+        "type": "GRASS",
+        "cat": "Special",
+        "pwr": "60",
+        "acc": "-",
+        "pp": "20",
+        "prob": "-",
+        "effect": "Ignores_Accuracy_and_Evasiveness."
+    },
+    {
+        "move": "Magma_Storm",
+        "type": "FIRE",
+        "cat": "Special",
+        "pwr": "120",
+        "acc": "75",
+        "pp": "5",
+        "prob": "-",
+        "effect": "Traps_opponent,_damaging_them_for_4-5_turns."
+    },
+    {
+        "move": "Magnet_Bomb",
+        "type": "STEEL",
+        "cat": "Physical",
+        "pwr": "60",
+        "acc": "-",
+        "pp": "20",
+        "prob": "-",
+        "effect": "Ignores_Accuracy_and_Evasiveness."
+    },
+    {
+        "move": "Magnet_Rise",
+        "type": "ELECTRIC",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "-",
+        "pp": "10",
+        "prob": "-",
+        "effect": "User_becomes_immune_to_Ground-type_moves_for_5_turns."
+    },
+    {
+        "move": "Magnetic_Flux",
+        "type": "ELECTRIC",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "-",
+        "pp": "20",
+        "prob": "-",
+        "effect": "Raises_Defense_and_Sp._Defense_of_Plus/Minus_Pok‚mon."
+    },
+    {
+        "move": "Magnitude",
+        "type": "GROUND",
+        "cat": "Physical",
+        "pwr": "-",
+        "acc": "100",
+        "pp": "30",
+        "prob": "-",
+        "effect": "Hits_with_random_power."
+    },
+    {
+        "move": "Mat_Block",
+        "type": "FIGHTING",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "-",
+        "pp": "15",
+        "prob": "-",
+        "effect": "Protects_teammates_from_damaging_moves."
+    },
+    {
+        "move": "Me_First",
+        "type": "NORMAL",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "-",
+        "pp": "20",
+        "prob": "-",
+        "effect": "User_copies_the_opponent's_attack_with_1.5?_power."
+    },
+    {
+        "move": "Mean_Look",
+        "type": "NORMAL",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "-",
+        "pp": "5",
+        "prob": "-",
+        "effect": "Opponent_cannot_flee_or_switch."
+    },
+    {
+        "move": "Meditate",
+        "type": "PSYCHIC",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "-",
+        "pp": "40",
+        "prob": "-",
+        "effect": "Raises_user's_Attack."
+    },
+    {
+        "move": "Mega_Drain",
+        "type": "GRASS",
+        "cat": "Special",
+        "pwr": "40",
+        "acc": "100",
+        "pp": "15",
+        "prob": "-",
+        "effect": "User_recovers_half_the_HP_inflicted_on_opponent."
+    },
+    {
+        "move": "Mega_Kick",
+        "type": "NORMAL",
+        "cat": "Physical",
+        "pwr": "120",
+        "acc": "75",
+        "pp": "5",
+        "prob": "-",
+        "effect": "-"
+    },
+    {
+        "move": "Mega_Punch",
+        "type": "NORMAL",
+        "cat": "Physical",
+        "pwr": "80",
+        "acc": "85",
+        "pp": "20",
+        "prob": "-",
+        "effect": "-"
+    },
+    {
+        "move": "Megahorn",
+        "type": "BUG",
+        "cat": "Physical",
+        "pwr": "120",
+        "acc": "85",
+        "pp": "10",
+        "prob": "-",
+        "effect": "-"
+    },
+    {
+        "move": "Memento",
+        "type": "DARK",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "100",
+        "pp": "10",
+        "prob": "-",
+        "effect": "User_faints,_sharply_lowers_opponent's_Attack_and_Special_Attack."
+    },
+    {
+        "move": "Metal_Burst",
+        "type": "STEEL",
+        "cat": "Physical",
+        "pwr": "-",
+        "acc": "100",
+        "pp": "10",
+        "prob": "-",
+        "effect": "Deals_damage_equal_to_1.5x_opponent's_attack."
+    },
+    {
+        "move": "Metal_Claw",
+        "type": "STEEL",
+        "cat": "Physical",
+        "pwr": "50",
+        "acc": "95",
+        "pp": "35",
+        "prob": "10",
+        "effect": "May_raise_user's_Attack."
+    },
+    {
+        "move": "Metal_Sound",
+        "type": "STEEL",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "85",
+        "pp": "40",
+        "prob": "-",
+        "effect": "Sharply_lowers_opponent's_Special_Defense."
+    },
+    {
+        "move": "Meteor_Mash",
+        "type": "STEEL",
+        "cat": "Physical",
+        "pwr": "90",
+        "acc": "90",
+        "pp": "10",
+        "prob": "20",
+        "effect": "May_raise_user's_Attack."
+    },
+    {
+        "move": "Metronome",
+        "type": "NORMAL",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "-",
+        "pp": "10",
+        "prob": "-",
+        "effect": "User_performs_any_move_in_the_game_at_random."
+    },
+    {
+        "move": "Milk_Drink",
+        "type": "NORMAL",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "-",
+        "pp": "10",
+        "prob": "-",
+        "effect": "User_recovers_half_its_max_HP."
+    },
+    {
+        "move": "Mimic",
+        "type": "NORMAL",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "-",
+        "pp": "10",
+        "prob": "-",
+        "effect": "Copies_the_opponent's_last_move."
+    },
+    {
+        "move": "Mind_Reader",
+        "type": "NORMAL",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "-",
+        "pp": "5",
+        "prob": "-",
+        "effect": "User's_next_attack_is_guaranteed_to_hit."
+    },
+    {
+        "move": "Minimize",
+        "type": "NORMAL",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "-",
+        "pp": "10",
+        "prob": "-",
+        "effect": "Sharply_raises_user's_Evasiveness."
+    },
+    {
+        "move": "Miracle_Eye",
+        "type": "PSYCHIC",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "-",
+        "pp": "40",
+        "prob": "-",
+        "effect": "Resets_opponent's_Evasiveness,_removes_Dark's_Psychic_immunity."
+    },
+    {
+        "move": "Mirror_Coat",
+        "type": "PSYCHIC",
+        "cat": "Special",
+        "pwr": "-",
+        "acc": "100",
+        "pp": "20",
+        "prob": "-",
+        "effect": "When_hit_by_a_Special_Attack,_user_strikes_back_with_2x_power."
+    },
+    {
+        "move": "Mirror_Move",
+        "type": "FLYING",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "-",
+        "pp": "20",
+        "prob": "-",
+        "effect": "User_performs_the_opponent's_last_move."
+    },
+    {
+        "move": "Mirror_Shot",
+        "type": "STEEL",
+        "cat": "Special",
+        "pwr": "65",
+        "acc": "85",
+        "pp": "10",
+        "prob": "30",
+        "effect": "May_lower_opponent's_Accuracy."
+    },
+    {
+        "move": "Mist",
+        "type": "ICE",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "-",
+        "pp": "30",
+        "prob": "-",
+        "effect": "User's_stats_cannot_be_changed_for_a_period_of_time."
+    },
+    {
+        "move": "Mist_Ball",
+        "type": "PSYCHIC",
+        "cat": "Special",
+        "pwr": "70",
+        "acc": "100",
+        "pp": "5",
+        "prob": "50",
+        "effect": "May_lower_opponent's_Special_Attack."
+    },
+    {
+        "move": "Misty_Terrain",
+        "type": "FAIRY",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "-",
+        "pp": "10",
+        "prob": "-",
+        "effect": "Protects_the_field_from_status_conditions_for_5_turns."
+    },
+    {
+        "move": "Moonblast",
+        "type": "FAIRY",
+        "cat": "Special",
+        "pwr": "95",
+        "acc": "100",
+        "pp": "15",
+        "prob": "30",
+        "effect": "May_lower_opponent's_Special_Attack."
+    },
+    {
+        "move": "Moonlight",
+        "type": "FAIRY",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "-",
+        "pp": "5",
+        "prob": "-",
+        "effect": "User_recovers_HP._Amount_varies_with_the_weather."
+    },
+    {
+        "move": "Morning_Sun",
+        "type": "NORMAL",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "-",
+        "pp": "5",
+        "prob": "-",
+        "effect": "User_recovers_HP._Amount_varies_with_the_weather."
+    },
+    {
+        "move": "Mud_Bomb",
+        "type": "GROUND",
+        "cat": "Special",
+        "pwr": "65",
+        "acc": "85",
+        "pp": "10",
+        "prob": "30",
+        "effect": "May_lower_opponent's_Accuracy."
+    },
+    {
+        "move": "Mud_Shot",
+        "type": "GROUND",
+        "cat": "Special",
+        "pwr": "55",
+        "acc": "95",
+        "pp": "15",
+        "prob": "100",
+        "effect": "Lowers_opponent's_Speed."
+    },
+    {
+        "move": "Mud_Sport",
+        "type": "GROUND",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "-",
+        "pp": "15",
+        "prob": "-",
+        "effect": "Weakens_the_power_of_Electric-type_moves."
+    },
+    {
+        "move": "Mud-Slap",
+        "type": "GROUND",
+        "cat": "Special",
+        "pwr": "20",
+        "acc": "100",
+        "pp": "10",
+        "prob": "100",
+        "effect": "Lowers_opponent's_Accuracy."
+    },
+    {
+        "move": "Muddy_Water",
+        "type": "WATER",
+        "cat": "Special",
+        "pwr": "90",
+        "acc": "85",
+        "pp": "10",
+        "prob": "30",
+        "effect": "May_lower_opponent's_Accuracy."
+    },
+    {
+        "move": "Mystical_Fire",
+        "type": "FIRE",
+        "cat": "Special",
+        "pwr": "65",
+        "acc": "100",
+        "pp": "10",
+        "prob": "100",
+        "effect": "Lowers_opponent's_Special_Attack."
+    },
+    {
+        "move": "Nasty_Plot",
+        "type": "DARK",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "-",
+        "pp": "20",
+        "prob": "-",
+        "effect": "Sharply_raises_user's_Special_Attack."
+    },
+    {
+        "move": "Natural_Gift",
+        "type": "NORMAL",
+        "cat": "Physical",
+        "pwr": "-",
+        "acc": "100",
+        "pp": "15",
+        "prob": "-",
+        "effect": "Power_and_type_depend_on_the_user's_held_berry."
+    },
+    {
+        "move": "Nature_Power",
+        "type": "NORMAL",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "-",
+        "pp": "20",
+        "prob": "-",
+        "effect": "Uses_a_certain_move_based_on_the_current_terrain."
+    },
+    {
+        "move": "Needle_Arm",
+        "type": "GRASS",
+        "cat": "Physical",
+        "pwr": "60",
+        "acc": "100",
+        "pp": "15",
+        "prob": "30",
+        "effect": "May_cause_flinching."
+    },
+    {
+        "move": "Night_Daze",
+        "type": "DARK",
+        "cat": "Special",
+        "pwr": "85",
+        "acc": "95",
+        "pp": "10",
+        "prob": "40",
+        "effect": "May_lower_opponent's_Accuracy."
+    },
+    {
+        "move": "Night_Shade",
+        "type": "GHOST",
+        "cat": "Special",
+        "pwr": "-",
+        "acc": "100",
+        "pp": "15",
+        "prob": "-",
+        "effect": "Inflicts_damage_equal_to_user's_level."
+    },
+    {
+        "move": "Night_Slash",
+        "type": "DARK",
+        "cat": "Physical",
+        "pwr": "70",
+        "acc": "100",
+        "pp": "15",
+        "prob": "-",
+        "effect": "High_critical_hit_ratio."
+    },
+    {
+        "move": "Nightmare",
+        "type": "GHOST",
+        "cat": "Special",
+        "pwr": "-",
+        "acc": "100",
+        "pp": "15",
+        "prob": "-",
+        "effect": "The_sleeping_opponent_loses_25%_of_its_max_HP_each_turn."
+    },
+    {
+        "move": "Noble_Roar",
+        "type": "NORMAL",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "100",
+        "pp": "30",
+        "prob": "-",
+        "effect": "Lowers_opponent's_Attack_and_Special_Attack."
+    },
+    {
+        "move": "Nuzzle",
+        "type": "ELECTRIC",
+        "cat": "Physical",
+        "pwr": "20",
+        "acc": "100",
+        "pp": "20",
+        "prob": "100",
+        "effect": "Paralyzes_opponent."
+    },
+    {
+        "move": "Oblivion_Wing",
+        "type": "FLYING",
+        "cat": "Special",
+        "pwr": "80",
+        "acc": "100",
+        "pp": "10",
+        "prob": "-",
+        "effect": "User_recovers_most_of_the_HP_inflicted_on_opponent."
+    },
+    {
+        "move": "Octazooka",
+        "type": "WATER",
+        "cat": "Special",
+        "pwr": "65",
+        "acc": "85",
+        "pp": "10",
+        "prob": "50",
+        "effect": "May_lower_opponent's_Accuracy."
+    },
+    {
+        "move": "Odor_Sleuth",
+        "type": "NORMAL",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "-",
+        "pp": "40",
+        "prob": "-",
+        "effect": "Resets_opponent's_Evasiveness,_Normal-type_and_Fighting-type_attacks_can_now_hit_Ghosts,_and_Ghost-type_attacks_hit_Normal."
+    },
+    {
+        "move": "Ominous_Wind",
+        "type": "GHOST",
+        "cat": "Special",
+        "pwr": "60",
+        "acc": "100",
+        "pp": "5",
+        "prob": "10",
+        "effect": "May_raise_all_user's_stats_at_once."
+    },
+    {
+        "move": "Origin_Pulse",
+        "type": "WATER",
+        "cat": "Special",
+        "pwr": "110",
+        "acc": "85",
+        "pp": "10",
+        "prob": "-",
+        "effect": "Hits_all_adjacent_opponents."
+    },
+    {
+        "move": "Outrage",
+        "type": "DRAGON",
+        "cat": "Physical",
+        "pwr": "120",
+        "acc": "100",
+        "pp": "10",
+        "prob": "-",
+        "effect": "User_attacks_for_2-3_turns_but_then_becomes_confused."
+    },
+    {
+        "move": "Overheat",
+        "type": "FIRE",
+        "cat": "Special",
+        "pwr": "130",
+        "acc": "90",
+        "pp": "5",
+        "prob": "-",
+        "effect": "Sharply_lowers_user's_Special_Attack."
+    },
+    {
+        "move": "Pain_Split",
+        "type": "NORMAL",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "-",
+        "pp": "20",
+        "prob": "-",
+        "effect": "The_user's_and_opponent's_HP_becomes_the_average_of_both."
+    },
+    {
+        "move": "Parabolic_Charge",
+        "type": "ELECTRIC",
+        "cat": "Special",
+        "pwr": "50",
+        "acc": "100",
+        "pp": "20",
+        "prob": "-",
+        "effect": "User_recovers_half_the_HP_inflicted_on_opponent."
+    },
+    {
+        "move": "Parting_Shot",
+        "type": "DARK",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "100",
+        "pp": "20",
+        "prob": "-",
+        "effect": "Lowers_opponent's_Attack_and_Special_Attack_then_switches_out."
+    },
+    {
+        "move": "Pay_Day",
+        "type": "NORMAL",
+        "cat": "Physical",
+        "pwr": "40",
+        "acc": "100",
+        "pp": "20",
+        "prob": "-",
+        "effect": "A_small_amount_of_money_is_gained_after_the_battle_resolves."
+    },
+    {
+        "move": "Payback",
+        "type": "DARK",
+        "cat": "Physical",
+        "pwr": "50",
+        "acc": "100",
+        "pp": "10",
+        "prob": "-",
+        "effect": "Power_doubles_if_the_user_was_attacked_first."
+    },
+    {
+        "move": "Peck",
+        "type": "FLYING",
+        "cat": "Physical",
+        "pwr": "35",
+        "acc": "100",
+        "pp": "35",
+        "prob": "-",
+        "effect": "-"
+    },
+    {
+        "move": "Perish_Song",
+        "type": "NORMAL",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "-",
+        "pp": "5",
+        "prob": "-",
+        "effect": "Any_Pok‚mon_in_play_when_this_attack_is_used_faints_in_3_turns."
+    },
+    {
+        "move": "Petal_Blizzard",
+        "type": "GRASS",
+        "cat": "Physical",
+        "pwr": "90",
+        "acc": "100",
+        "pp": "15",
+        "prob": "-",
+        "effect": "Hits_all_adjacent_Pok‚mon."
+    },
+    {
+        "move": "Petal_Dance",
+        "type": "GRASS",
+        "cat": "Special",
+        "pwr": "120",
+        "acc": "100",
+        "pp": "10",
+        "prob": "-",
+        "effect": "User_attacks_for_2-3_turns_but_then_becomes_confused."
+    },
+    {
+        "move": "Phantom_Force",
+        "type": "GHOST",
+        "cat": "Physical",
+        "pwr": "90",
+        "acc": "100",
+        "pp": "10",
+        "prob": "-",
+        "effect": "Disappears_on_first_turn,_attacks_on_second._Can_strike_through_Protect/Detect."
+    },
+    {
+        "move": "Pin_Missile",
+        "type": "BUG",
+        "cat": "Physical",
+        "pwr": "25",
+        "acc": "85",
+        "pp": "20",
+        "prob": "-",
+        "effect": "Hits_2-5_times_in_one_turn."
+    },
+    {
+        "move": "Play_Nice",
+        "type": "NORMAL",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "-",
+        "pp": "20",
+        "prob": "-",
+        "effect": "Lowers_opponent's_Attack._Always_hits."
+    },
+    {
+        "move": "Play_Rough",
+        "type": "FAIRY",
+        "cat": "Physical",
+        "pwr": "90",
+        "acc": "90",
+        "pp": "10",
+        "prob": "10",
+        "effect": "May_lower_opponent's_Attack."
+    },
+    {
+        "move": "Pluck",
+        "type": "FLYING",
+        "cat": "Physical",
+        "pwr": "60",
+        "acc": "100",
+        "pp": "20",
+        "prob": "-",
+        "effect": "If_the_opponent_is_holding_a_berry,_its_effect_is_stolen_by_user."
+    },
+    {
+        "move": "Poison_Fang",
+        "type": "POISON",
+        "cat": "Physical",
+        "pwr": "50",
+        "acc": "100",
+        "pp": "15",
+        "prob": "50",
+        "effect": "May_badly_poison_opponent."
+    },
+    {
+        "move": "Poison_Gas",
+        "type": "POISON",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "90",
+        "pp": "40",
+        "prob": "-",
+        "effect": "Poisons_opponent."
+    },
+    {
+        "move": "Poison_Jab",
+        "type": "POISON",
+        "cat": "Physical",
+        "pwr": "80",
+        "acc": "100",
+        "pp": "20",
+        "prob": "30",
+        "effect": "May_poison_the_opponent."
+    },
+    {
+        "move": "Poison_Powder",
+        "type": "POISON",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "75",
+        "pp": "35",
+        "prob": "-",
+        "effect": "Poisons_opponent."
+    },
+    {
+        "move": "Poison_Sting",
+        "type": "POISON",
+        "cat": "Physical",
+        "pwr": "15",
+        "acc": "100",
+        "pp": "35",
+        "prob": "30",
+        "effect": "May_poison_the_opponent."
+    },
+    {
+        "move": "Poison_Tail",
+        "type": "POISON",
+        "cat": "Physical",
+        "pwr": "50",
+        "acc": "100",
+        "pp": "25",
+        "prob": "10",
+        "effect": "High_critical_hit_ratio._May_poison_opponent."
+    },
+    {
+        "move": "Pound",
+        "type": "NORMAL",
+        "cat": "Physical",
+        "pwr": "40",
+        "acc": "100",
+        "pp": "35",
+        "prob": "-",
+        "effect": "-"
+    },
+    {
+        "move": "Powder",
+        "type": "BUG",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "100",
+        "pp": "20",
+        "prob": "-",
+        "effect": "Damages_Pok‚mon_using_Fire_type_moves."
+    },
+    {
+        "move": "Powder_Snow",
+        "type": "ICE",
+        "cat": "Special",
+        "pwr": "40",
+        "acc": "100",
+        "pp": "25",
+        "prob": "10",
+        "effect": "May_freeze_opponent."
+    },
+    {
+        "move": "Power_Gem",
+        "type": "ROCK",
+        "cat": "Special",
+        "pwr": "80",
+        "acc": "100",
+        "pp": "20",
+        "prob": "-",
+        "effect": "-"
+    },
+    {
+        "move": "Power_Split",
+        "type": "PSYCHIC",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "-",
+        "pp": "10",
+        "prob": "-",
+        "effect": "Averages_Attack_and_Special_Attack_with_the_target."
+    },
+    {
+        "move": "Power_Swap",
+        "type": "PSYCHIC",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "-",
+        "pp": "10",
+        "prob": "-",
+        "effect": "User_and_opponent_swap_Attack_and_Special_Attack."
+    },
+    {
+        "move": "Power_Trick",
+        "type": "PSYCHIC",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "-",
+        "pp": "10",
+        "prob": "-",
+        "effect": "User's_own_Attack_and_Defense_switch."
+    },
+    {
+        "move": "Power_Whip",
+        "type": "GRASS",
+        "cat": "Physical",
+        "pwr": "120",
+        "acc": "85",
+        "pp": "10",
+        "prob": "-",
+        "effect": "-"
+    },
+    {
+        "move": "Power-Up_Punch",
+        "type": "FIGHTING",
+        "cat": "Physical",
+        "pwr": "40",
+        "acc": "100",
+        "pp": "10",
+        "prob": "100",
+        "effect": "Raises_Attack."
+    },
+    {
+        "move": "Precipice_Blades",
+        "type": "GROUND",
+        "cat": "Physical",
+        "pwr": "120",
+        "acc": "85",
+        "pp": "10",
+        "prob": "-",
+        "effect": "Hits_all_adjacent_opponents."
+    },
+    {
+        "move": "Present",
+        "type": "NORMAL",
+        "cat": "Physical",
+        "pwr": "-",
+        "acc": "90",
+        "pp": "15",
+        "prob": "-",
+        "effect": "Either_deals_damage_or_heals."
+    },
+    {
+        "move": "Protect",
+        "type": "NORMAL",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "-",
+        "pp": "10",
+        "prob": "-",
+        "effect": "User_is_not_affected_by_opponent's_move."
+    },
+    {
+        "move": "Psybeam",
+        "type": "PSYCHIC",
+        "cat": "Special",
+        "pwr": "65",
+        "acc": "100",
+        "pp": "20",
+        "prob": "10",
+        "effect": "May_confuse_opponent."
+    },
+    {
+        "move": "Psych_Up",
+        "type": "NORMAL",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "-",
+        "pp": "10",
+        "prob": "-",
+        "effect": "Copies_the_opponent's_stat_changes."
+    },
+    {
+        "move": "Psychic",
+        "type": "PSYCHIC",
+        "cat": "Special",
+        "pwr": "90",
+        "acc": "100",
+        "pp": "10",
+        "prob": "10",
+        "effect": "May_lower_opponent's_Special_Defense."
+    },
+    {
+        "move": "Psycho_Boost",
+        "type": "PSYCHIC",
+        "cat": "Special",
+        "pwr": "140",
+        "acc": "90",
+        "pp": "5",
+        "prob": "-",
+        "effect": "Sharply_lowers_user's_Special_Attack."
+    },
+    {
+        "move": "Psycho_Cut",
+        "type": "PSYCHIC",
+        "cat": "Physical",
+        "pwr": "70",
+        "acc": "100",
+        "pp": "20",
+        "prob": "-",
+        "effect": "High_critical_hit_ratio."
+    },
+    {
+        "move": "Psycho_Shift",
+        "type": "PSYCHIC",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "90",
+        "pp": "10",
+        "prob": "-",
+        "effect": "Gives_the_opponent_the_user's_status_condition,_if_it_hits."
+    },
+    {
+        "move": "Psyshock",
+        "type": "PSYCHIC",
+        "cat": "Special",
+        "pwr": "80",
+        "acc": "100",
+        "pp": "10",
+        "prob": "-",
+        "effect": "Inflicts_damage_based_on_the_target's_Defense,_not_Special_Defense."
+    },
+    {
+        "move": "Psystrike",
+        "type": "PSYCHIC",
+        "cat": "Special",
+        "pwr": "100",
+        "acc": "100",
+        "pp": "10",
+        "prob": "-",
+        "effect": "Inflicts_damage_based_on_the_target's_Defense,_not_Special_Defense."
+    },
+    {
+        "move": "Psywave",
+        "type": "PSYCHIC",
+        "cat": "Special",
+        "pwr": "-",
+        "acc": "80",
+        "pp": "15",
+        "prob": "-",
+        "effect": "Inflicts_damage_50-150%_of_user's_level."
+    },
+    {
+        "move": "Punishment",
+        "type": "DARK",
+        "cat": "Physical",
+        "pwr": "-",
+        "acc": "100",
+        "pp": "5",
+        "prob": "-",
+        "effect": "Power_increases_when_opponent's_stats_have_been_raised."
+    },
+    {
+        "move": "Pursuit",
+        "type": "DARK",
+        "cat": "Physical",
+        "pwr": "40",
+        "acc": "100",
+        "pp": "20",
+        "prob": "-",
+        "effect": "Double_power_if_the_opponent_is_switching_out."
+    },
+    {
+        "move": "Quash",
+        "type": "DARK",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "100",
+        "pp": "15",
+        "prob": "-",
+        "effect": "Makes_the_target_act_last_this_turn."
+    },
+    {
+        "move": "Quick_Attack",
+        "type": "NORMAL",
+        "cat": "Physical",
+        "pwr": "40",
+        "acc": "100",
+        "pp": "30",
+        "prob": "-",
+        "effect": "User_attacks_first."
+    },
+    {
+        "move": "Quick_Guard",
+        "type": "FIGHTING",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "-",
+        "pp": "15",
+        "prob": "-",
+        "effect": "Fast_moves_won't_damage_the_user_or_its_teammates."
+    },
+    {
+        "move": "Quiver_Dance",
+        "type": "BUG",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "-",
+        "pp": "20",
+        "prob": "-",
+        "effect": "Raises_user's_Special_Attack,_Special_Defense_and_Speed."
+    },
+    {
+        "move": "Rage",
+        "type": "NORMAL",
+        "cat": "Physical",
+        "pwr": "20",
+        "acc": "100",
+        "pp": "20",
+        "prob": "-",
+        "effect": "Raises_user's_Attack_when_hit."
+    },
+    {
+        "move": "Rage_Powder",
+        "type": "BUG",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "-",
+        "pp": "20",
+        "prob": "-",
+        "effect": "Forces_attacks_to_hit_user,_not_team-mates."
+    },
+    {
+        "move": "Rain_Dance",
+        "type": "WATER",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "-",
+        "pp": "5",
+        "prob": "-",
+        "effect": "Makes_it_rain_for_5_turns."
+    },
+    {
+        "move": "Rapid_Spin",
+        "type": "NORMAL",
+        "cat": "Physical",
+        "pwr": "20",
+        "acc": "100",
+        "pp": "40",
+        "prob": "-",
+        "effect": "Removes_effects_of_trap_moves."
+    },
+    {
+        "move": "Razor_Leaf",
+        "type": "GRASS",
+        "cat": "Physical",
+        "pwr": "55",
+        "acc": "95",
+        "pp": "25",
+        "prob": "-",
+        "effect": "High_critical_hit_ratio."
+    },
+    {
+        "move": "Razor_Shell",
+        "type": "WATER",
+        "cat": "Physical",
+        "pwr": "75",
+        "acc": "95",
+        "pp": "10",
+        "prob": "50",
+        "effect": "May_lower_opponent's_Defense."
+    },
+    {
+        "move": "Razor_Wind",
+        "type": "NORMAL",
+        "cat": "Special",
+        "pwr": "80",
+        "acc": "100",
+        "pp": "10",
+        "prob": "-",
+        "effect": "Charges_on_first_turn,_attacks_on_second._High_critical_hit_ratio."
+    },
+    {
+        "move": "Recover",
+        "type": "NORMAL",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "-",
+        "pp": "10",
+        "prob": "-",
+        "effect": "User_recovers_half_its_max_HP."
+    },
+    {
+        "move": "Recycle",
+        "type": "NORMAL",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "-",
+        "pp": "10",
+        "prob": "-",
+        "effect": "User's_used_hold_item_is_restored."
+    },
+    {
+        "move": "Reflect",
+        "type": "PSYCHIC",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "-",
+        "pp": "20",
+        "prob": "-",
+        "effect": "Halves_damage_from_Physical_attacks_for_5_turns."
+    },
+    {
+        "move": "Reflect_Type",
+        "type": "NORMAL",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "-",
+        "pp": "15",
+        "prob": "-",
+        "effect": "User_becomes_the_target's_type."
+    },
+    {
+        "move": "Refresh",
+        "type": "NORMAL",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "-",
+        "pp": "20",
+        "prob": "-",
+        "effect": "Cures_paralysis,_poison,_and_burns."
+    },
+    {
+        "move": "Relic_Song",
+        "type": "NORMAL",
+        "cat": "Special",
+        "pwr": "75",
+        "acc": "100",
+        "pp": "10",
+        "prob": "10",
+        "effect": "May_put_the_target_to_sleep."
+    },
+    {
+        "move": "Rest",
+        "type": "PSYCHIC",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "-",
+        "pp": "10",
+        "prob": "-",
+        "effect": "User_sleeps_for_2_turns,_but_user_is_fully_healed."
+    },
+    {
+        "move": "Retaliate",
+        "type": "NORMAL",
+        "cat": "Physical",
+        "pwr": "70",
+        "acc": "100",
+        "pp": "5",
+        "prob": "-",
+        "effect": "Inflicts_double_damage_if_a_teammate_fainted_on_the_last_turn."
+    },
+    {
+        "move": "Return",
+        "type": "NORMAL",
+        "cat": "Physical",
+        "pwr": "-",
+        "acc": "100",
+        "pp": "20",
+        "prob": "-",
+        "effect": "Power_increases_with_user's_Happiness."
+    },
+    {
+        "move": "Revenge",
+        "type": "FIGHTING",
+        "cat": "Physical",
+        "pwr": "60",
+        "acc": "100",
+        "pp": "10",
+        "prob": "-",
+        "effect": "Power_increases_if_user_was_hit_first."
+    },
+    {
+        "move": "Reversal",
+        "type": "FIGHTING",
+        "cat": "Physical",
+        "pwr": "-",
+        "acc": "100",
+        "pp": "15",
+        "prob": "-",
+        "effect": "The_lower_the_user's_HP,_the_higher_the_power."
+    },
+    {
+        "move": "Roar",
+        "type": "NORMAL",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "-",
+        "pp": "20",
+        "prob": "-",
+        "effect": "In_battles,_the_opponent_switches._In_the_wild,_the_Pok‚mon_runs."
+    },
+    {
+        "move": "Roar_of_Time",
+        "type": "DRAGON",
+        "cat": "Special",
+        "pwr": "150",
+        "acc": "90",
+        "pp": "5",
+        "prob": "-",
+        "effect": "User_must_recharge_next_turn."
+    },
+    {
+        "move": "Rock_Blast",
+        "type": "ROCK",
+        "cat": "Physical",
+        "pwr": "25",
+        "acc": "90",
+        "pp": "10",
+        "prob": "-",
+        "effect": "Hits_2-5_times_in_one_turn."
+    },
+    {
+        "move": "Rock_Climb",
+        "type": "NORMAL",
+        "cat": "Physical",
+        "pwr": "90",
+        "acc": "85",
+        "pp": "20",
+        "prob": "20",
+        "effect": "May_confuse_opponent."
+    },
+    {
+        "move": "Rock_Polish",
+        "type": "ROCK",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "-",
+        "pp": "20",
+        "prob": "-",
+        "effect": "Sharply_raises_user's_Speed."
+    },
+    {
+        "move": "Rock_Slide",
+        "type": "ROCK",
+        "cat": "Physical",
+        "pwr": "75",
+        "acc": "90",
+        "pp": "10",
+        "prob": "30",
+        "effect": "May_cause_flinching."
+    },
+    {
+        "move": "Rock_Smash",
+        "type": "FIGHTING",
+        "cat": "Physical",
+        "pwr": "40",
+        "acc": "100",
+        "pp": "15",
+        "prob": "50",
+        "effect": "May_lower_opponent's_Defense."
+    },
+    {
+        "move": "Rock_Throw",
+        "type": "ROCK",
+        "cat": "Physical",
+        "pwr": "50",
+        "acc": "90",
+        "pp": "15",
+        "prob": "-",
+        "effect": "-"
+    },
+    {
+        "move": "Rock_Tomb",
+        "type": "ROCK",
+        "cat": "Physical",
+        "pwr": "60",
+        "acc": "95",
+        "pp": "15",
+        "prob": "100",
+        "effect": "Lowers_opponent's_Speed."
+    },
+    {
+        "move": "Rock_Wrecker",
+        "type": "ROCK",
+        "cat": "Physical",
+        "pwr": "150",
+        "acc": "90",
+        "pp": "5",
+        "prob": "-",
+        "effect": "User_must_recharge_next_turn."
+    },
+    {
+        "move": "Role_Play",
+        "type": "PSYCHIC",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "-",
+        "pp": "15",
+        "prob": "-",
+        "effect": "User_copies_the_opponent's_Ability."
+    },
+    {
+        "move": "Rolling_Kick",
+        "type": "FIGHTING",
+        "cat": "Physical",
+        "pwr": "60",
+        "acc": "85",
+        "pp": "15",
+        "prob": "30",
+        "effect": "May_cause_flinching."
+    },
+    {
+        "move": "Rollout",
+        "type": "ROCK",
+        "cat": "Physical",
+        "pwr": "30",
+        "acc": "90",
+        "pp": "20",
+        "prob": "-",
+        "effect": "Doubles_in_power_each_turn_for_5_turns."
+    },
+    {
+        "move": "Roost",
+        "type": "FLYING",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "-",
+        "pp": "10",
+        "prob": "-",
+        "effect": "User_recovers_half_of_its_max_HP._Flying_types_temporarily_lose_Ground_type_immunity."
+    },
+    {
+        "move": "Rototiller",
+        "type": "GROUND",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "-",
+        "pp": "10",
+        "prob": "-",
+        "effect": "Raises_Attack_and_Special_Attack_of_Grass-types."
+    },
+    {
+        "move": "Round",
+        "type": "NORMAL",
+        "cat": "Special",
+        "pwr": "60",
+        "acc": "100",
+        "pp": "15",
+        "prob": "-",
+        "effect": "Power_increases_if_teammates_use_it_in_the_same_turn."
+    },
+    {
+        "move": "Sacred_Fire",
+        "type": "FIRE",
+        "cat": "Physical",
+        "pwr": "100",
+        "acc": "95",
+        "pp": "5",
+        "prob": "50",
+        "effect": "May_burn_opponent."
+    },
+    {
+        "move": "Sacred_Sword",
+        "type": "FIGHTING",
+        "cat": "Physical",
+        "pwr": "90",
+        "acc": "100",
+        "pp": "20",
+        "prob": "-",
+        "effect": "Ignores_opponent's_stat_changes."
+    },
+    {
+        "move": "Safeguard",
+        "type": "NORMAL",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "-",
+        "pp": "25",
+        "prob": "-",
+        "effect": "The_user's_party_is_protected_from_status_conditions."
+    },
+    {
+        "move": "Sand_Attack",
+        "type": "GROUND",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "100",
+        "pp": "15",
+        "prob": "-",
+        "effect": "Lowers_opponent's_Accuracy."
+    },
+    {
+        "move": "Sand_Tomb",
+        "type": "GROUND",
+        "cat": "Physical",
+        "pwr": "35",
+        "acc": "85",
+        "pp": "15",
+        "prob": "-",
+        "effect": "Traps_opponent,_damaging_them_for_4-5_turns."
+    },
+    {
+        "move": "Sandstorm",
+        "type": "ROCK",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "-",
+        "pp": "10",
+        "prob": "-",
+        "effect": "Creates_a_sandstorm_for_5_turns."
+    },
+    {
+        "move": "Scald",
+        "type": "WATER",
+        "cat": "Special",
+        "pwr": "80",
+        "acc": "100",
+        "pp": "15",
+        "prob": "30",
+        "effect": "May_burn_opponent."
+    },
+    {
+        "move": "Scary_Face",
+        "type": "NORMAL",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "100",
+        "pp": "10",
+        "prob": "-",
+        "effect": "Sharply_lowers_opponent's_Speed."
+    },
+    {
+        "move": "Scratch",
+        "type": "NORMAL",
+        "cat": "Physical",
+        "pwr": "40",
+        "acc": "100",
+        "pp": "35",
+        "prob": "-",
+        "effect": "-"
+    },
+    {
+        "move": "Screech",
+        "type": "NORMAL",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "85",
+        "pp": "40",
+        "prob": "-",
+        "effect": "Sharply_lowers_opponent's_Defense."
+    },
+    {
+        "move": "Searing_Shot",
+        "type": "FIRE",
+        "cat": "Special",
+        "pwr": "100",
+        "acc": "100",
+        "pp": "5",
+        "prob": "30",
+        "effect": "May_burn_opponent."
+    },
+    {
+        "move": "Secret_Power",
+        "type": "NORMAL",
+        "cat": "Physical",
+        "pwr": "70",
+        "acc": "100",
+        "pp": "20",
+        "prob": "30",
+        "effect": "Effects_of_the_attack_vary_with_the_location."
+    },
+    {
+        "move": "Secret_Sword",
+        "type": "FIGHTING",
+        "cat": "Special",
+        "pwr": "85",
+        "acc": "100",
+        "pp": "10",
+        "prob": "-",
+        "effect": "Inflicts_damage_based_on_the_target's_Defense,_not_Special_Defense."
+    },
+    {
+        "move": "Seed_Bomb",
+        "type": "GRASS",
+        "cat": "Physical",
+        "pwr": "80",
+        "acc": "100",
+        "pp": "15",
+        "prob": "-",
+        "effect": "-"
+    },
+    {
+        "move": "Seed_Flare",
+        "type": "GRASS",
+        "cat": "Special",
+        "pwr": "120",
+        "acc": "85",
+        "pp": "5",
+        "prob": "40",
+        "effect": "May_lower_opponent's_Special_Defense."
+    },
+    {
+        "move": "Seismic_Toss",
+        "type": "FIGHTING",
+        "cat": "Physical",
+        "pwr": "-",
+        "acc": "100",
+        "pp": "20",
+        "prob": "-",
+        "effect": "Inflicts_damage_equal_to_user's_level."
+    },
+    {
+        "move": "Self-Destruct",
+        "type": "NORMAL",
+        "cat": "Physical",
+        "pwr": "200",
+        "acc": "100",
+        "pp": "5",
+        "prob": "-",
+        "effect": "User_faints."
+    },
+    {
+        "move": "Shadow_Ball",
+        "type": "GHOST",
+        "cat": "Special",
+        "pwr": "80",
+        "acc": "100",
+        "pp": "15",
+        "prob": "20",
+        "effect": "May_lower_opponent's_Special_Defense."
+    },
+    {
+        "move": "Shadow_Claw",
+        "type": "GHOST",
+        "cat": "Physical",
+        "pwr": "70",
+        "acc": "100",
+        "pp": "15",
+        "prob": "-",
+        "effect": "High_critical_hit_ratio."
+    },
+    {
+        "move": "Shadow_Force",
+        "type": "GHOST",
+        "cat": "Physical",
+        "pwr": "120",
+        "acc": "100",
+        "pp": "5",
+        "prob": "-",
+        "effect": "Disappears_on_first_turn,_attacks_on_second._Can_strike_through_Protect/Detect."
+    },
+    {
+        "move": "Shadow_Punch",
+        "type": "GHOST",
+        "cat": "Physical",
+        "pwr": "60",
+        "acc": "-",
+        "pp": "20",
+        "prob": "-",
+        "effect": "Ignores_Accuracy_and_Evasiveness."
+    },
+    {
+        "move": "Shadow_Sneak",
+        "type": "GHOST",
+        "cat": "Physical",
+        "pwr": "40",
+        "acc": "100",
+        "pp": "30",
+        "prob": "-",
+        "effect": "User_attacks_first."
+    },
+    {
+        "move": "Sharpen",
+        "type": "NORMAL",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "-",
+        "pp": "30",
+        "prob": "-",
+        "effect": "Raises_user's_Attack."
+    },
+    {
+        "move": "Sheer_Cold",
+        "type": "ICE",
+        "cat": "Special",
+        "pwr": "-",
+        "acc": "-",
+        "pp": "5",
+        "prob": "-",
+        "effect": "One-Hit-KO,_if_it_hits."
+    },
+    {
+        "move": "Shell_Smash",
+        "type": "NORMAL",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "-",
+        "pp": "15",
+        "prob": "-",
+        "effect": "Sharply_raises_user's_Attack,_Special_Attack_and_Speed_but_lowers_Defense_and_Special_Defense."
+    },
+    {
+        "move": "Shift_Gear",
+        "type": "STEEL",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "-",
+        "pp": "10",
+        "prob": "-",
+        "effect": "Raises_user's_Attack_and_sharply_raises_Speed."
+    },
+    {
+        "move": "Shock_Wave",
+        "type": "ELECTRIC",
+        "cat": "Special",
+        "pwr": "60",
+        "acc": "-",
+        "pp": "20",
+        "prob": "-",
+        "effect": "Ignores_Accuracy_and_Evasiveness."
+    },
+    {
+        "move": "Signal_Beam",
+        "type": "BUG",
+        "cat": "Special",
+        "pwr": "75",
+        "acc": "100",
+        "pp": "15",
+        "prob": "10",
+        "effect": "May_confuse_opponent."
+    },
+    {
+        "move": "Silver_Wind",
+        "type": "BUG",
+        "cat": "Special",
+        "pwr": "60",
+        "acc": "100",
+        "pp": "5",
+        "prob": "10",
+        "effect": "May_raise_all_stats_of_user_at_once."
+    },
+    {
+        "move": "Simple_Beam",
+        "type": "NORMAL",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "100",
+        "pp": "15",
+        "prob": "-",
+        "effect": "Changes_target's_ability_to_Simple."
+    },
+    {
+        "move": "Sing",
+        "type": "NORMAL",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "55",
+        "pp": "15",
+        "prob": "100",
+        "effect": "Puts_opponent_to_sleep."
+    },
+    {
+        "move": "Sketch",
+        "type": "NORMAL",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "-",
+        "pp": "1",
+        "prob": "-",
+        "effect": "Permanently_copies_the_opponent's_last_move."
+    },
+    {
+        "move": "Skill_Swap",
+        "type": "PSYCHIC",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "-",
+        "pp": "10",
+        "prob": "-",
+        "effect": "The_user_swaps_Abilities_with_the_opponent."
+    },
+    {
+        "move": "Skull_Bash",
+        "type": "NORMAL",
+        "cat": "Physical",
+        "pwr": "130",
+        "acc": "100",
+        "pp": "10",
+        "prob": "100",
+        "effect": "Raises_Defense_on_first_turn,_attacks_on_second."
+    },
+    {
+        "move": "Sky_Attack",
+        "type": "FLYING",
+        "cat": "Physical",
+        "pwr": "140",
+        "acc": "90",
+        "pp": "5",
+        "prob": "30",
+        "effect": "Charges_on_first_turn,_attacks_on_second._May_cause_flinching."
+    },
+    {
+        "move": "Sky_Drop",
+        "type": "FLYING",
+        "cat": "Physical",
+        "pwr": "60",
+        "acc": "100",
+        "pp": "10",
+        "prob": "-",
+        "effect": "Takes_opponent_into_the_air_on_first_turn,_drops_them_on_second_turn."
+    },
+    {
+        "move": "Sky_Uppercut",
+        "type": "FIGHTING",
+        "cat": "Physical",
+        "pwr": "85",
+        "acc": "90",
+        "pp": "15",
+        "prob": "-",
+        "effect": "Hits_the_opponent,_even_during_Fly."
+    },
+    {
+        "move": "Slack_Off",
+        "type": "NORMAL",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "-",
+        "pp": "10",
+        "prob": "-",
+        "effect": "User_recovers_half_its_max_HP."
+    },
+    {
+        "move": "Slam",
+        "type": "NORMAL",
+        "cat": "Physical",
+        "pwr": "80",
+        "acc": "75",
+        "pp": "20",
+        "prob": "-",
+        "effect": "-"
+    },
+    {
+        "move": "Slash",
+        "type": "NORMAL",
+        "cat": "Physical",
+        "pwr": "70",
+        "acc": "100",
+        "pp": "20",
+        "prob": "-",
+        "effect": "High_critical_hit_ratio."
+    },
+    {
+        "move": "Sleep_Powder",
+        "type": "GRASS",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "75",
+        "pp": "15",
+        "prob": "-",
+        "effect": "Puts_opponent_to_sleep."
+    },
+    {
+        "move": "Sleep_Talk",
+        "type": "NORMAL",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "-",
+        "pp": "10",
+        "prob": "-",
+        "effect": "User_performs_one_of_its_own_moves_while_sleeping."
+    },
+    {
+        "move": "Sludge",
+        "type": "POISON",
+        "cat": "Special",
+        "pwr": "65",
+        "acc": "100",
+        "pp": "20",
+        "prob": "30",
+        "effect": "May_poison_opponent."
+    },
+    {
+        "move": "Sludge_Bomb",
+        "type": "POISON",
+        "cat": "Special",
+        "pwr": "90",
+        "acc": "100",
+        "pp": "10",
+        "prob": "30",
+        "effect": "May_poison_opponent."
+    },
+    {
+        "move": "Sludge_Wave",
+        "type": "POISON",
+        "cat": "Special",
+        "pwr": "95",
+        "acc": "100",
+        "pp": "10",
+        "prob": "10",
+        "effect": "May_poison_opponent."
+    },
+    {
+        "move": "Smack_Down",
+        "type": "ROCK",
+        "cat": "Physical",
+        "pwr": "50",
+        "acc": "100",
+        "pp": "15",
+        "prob": "-",
+        "effect": "Makes_Flying-type_Pok‚mon_vulnerable_to_Ground_moves."
+    },
+    {
+        "move": "Smelling_Salts",
+        "type": "NORMAL",
+        "cat": "Physical",
+        "pwr": "70",
+        "acc": "100",
+        "pp": "10",
+        "prob": "-",
+        "effect": "Power_doubles_if_opponent_is_paralyzed,_but_cures_it."
+    },
+    {
+        "move": "Smog",
+        "type": "POISON",
+        "cat": "Special",
+        "pwr": "30",
+        "acc": "70",
+        "pp": "20",
+        "prob": "40",
+        "effect": "May_poison_opponent."
+    },
+    {
+        "move": "Smokescreen",
+        "type": "NORMAL",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "100",
+        "pp": "20",
+        "prob": "-",
+        "effect": "Lowers_opponent's_Accuracy."
+    },
+    {
+        "move": "Snarl",
+        "type": "DARK",
+        "cat": "Special",
+        "pwr": "55",
+        "acc": "95",
+        "pp": "15",
+        "prob": "100",
+        "effect": "Lowers_opponent's_Special_Attack."
+    },
+    {
+        "move": "Snatch",
+        "type": "DARK",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "-",
+        "pp": "10",
+        "prob": "-",
+        "effect": "Steals_the_effects_of_the_opponent's_next_move."
+    },
+    {
+        "move": "Snore",
+        "type": "NORMAL",
+        "cat": "Special",
+        "pwr": "50",
+        "acc": "100",
+        "pp": "15",
+        "prob": "30",
+        "effect": "Can_only_be_used_if_asleep._May_cause_flinching."
+    },
+    {
+        "move": "Soak",
+        "type": "WATER",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "100",
+        "pp": "20",
+        "prob": "-",
+        "effect": "Changes_the_target's_type_to_water."
+    },
+    {
+        "move": "Soft-Boiled",
+        "type": "NORMAL",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "-",
+        "pp": "10",
+        "prob": "-",
+        "effect": "User_recovers_half_its_max_HP."
+    },
+    {
+        "move": "Solar_Beam",
+        "type": "GRASS",
+        "cat": "Special",
+        "pwr": "120",
+        "acc": "100",
+        "pp": "10",
+        "prob": "-",
+        "effect": "Charges_on_first_turn,_attacks_on_second."
+    },
+    {
+        "move": "Sonic_Boom",
+        "type": "NORMAL",
+        "cat": "Special",
+        "pwr": "-",
+        "acc": "90",
+        "pp": "20",
+        "prob": "-",
+        "effect": "Always_inflicts_20_HP."
+    },
+    {
+        "move": "Spacial_Rend",
+        "type": "DRAGON",
+        "cat": "Special",
+        "pwr": "100",
+        "acc": "95",
+        "pp": "5",
+        "prob": "-",
+        "effect": "High_critical_hit_ratio."
+    },
+    {
+        "move": "Spark",
+        "type": "ELECTRIC",
+        "cat": "Physical",
+        "pwr": "65",
+        "acc": "100",
+        "pp": "20",
+        "prob": "30",
+        "effect": "May_paralyze_opponent."
+    },
+    {
+        "move": "Spider_Web",
+        "type": "BUG",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "-",
+        "pp": "10",
+        "prob": "-",
+        "effect": "Opponent_cannot_escape/switch."
+    },
+    {
+        "move": "Spike_Cannon",
+        "type": "NORMAL",
+        "cat": "Physical",
+        "pwr": "20",
+        "acc": "100",
+        "pp": "15",
+        "prob": "-",
+        "effect": "Hits_2-5_times_in_one_turn."
+    },
+    {
+        "move": "Spikes",
+        "type": "GROUND",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "-",
+        "pp": "20",
+        "prob": "-",
+        "effect": "Hurts_opponents_when_they_switch_into_battle."
+    },
+    {
+        "move": "Spiky_Shield",
+        "type": "GRASS",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "-",
+        "pp": "10",
+        "prob": "-",
+        "effect": "Protects_user_and_inflicts_damage_on_contact_moves."
+    },
+    {
+        "move": "Spit_Up",
+        "type": "NORMAL",
+        "cat": "Special",
+        "pwr": "-",
+        "acc": "100",
+        "pp": "10",
+        "prob": "-",
+        "effect": "Power_depends_on_how_many_times_the_user_performed_Stockpile."
+    },
+    {
+        "move": "Spite",
+        "type": "GHOST",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "100",
+        "pp": "10",
+        "prob": "-",
+        "effect": "The_opponent's_last_move_loses_2-5_PP."
+    },
+    {
+        "move": "Splash",
+        "type": "NORMAL",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "-",
+        "pp": "40",
+        "prob": "-",
+        "effect": "Doesn't_do_ANYTHING."
+    },
+    {
+        "move": "Spore",
+        "type": "GRASS",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "100",
+        "pp": "15",
+        "prob": "100",
+        "effect": "Puts_opponent_to_sleep."
+    },
+    {
+        "move": "Stealth_Rock",
+        "type": "ROCK",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "-",
+        "pp": "20",
+        "prob": "-",
+        "effect": "Damages_opponent_switching_into_battle."
+    },
+    {
+        "move": "Steam_Eruption",
+        "type": "WATER",
+        "cat": "Special",
+        "pwr": "110",
+        "acc": "95",
+        "pp": "5",
+        "prob": "30",
+        "effect": "May_burn_opponent."
+    },
+    {
+        "move": "Steamroller",
+        "type": "BUG",
+        "cat": "Physical",
+        "pwr": "65",
+        "acc": "100",
+        "pp": "20",
+        "prob": "30",
+        "effect": "May_cause_flinching."
+    },
+    {
+        "move": "Steel_Wing",
+        "type": "STEEL",
+        "cat": "Physical",
+        "pwr": "70",
+        "acc": "90",
+        "pp": "25",
+        "prob": "10",
+        "effect": "May_raise_user's_Defense."
+    },
+    {
+        "move": "Sticky_Web",
+        "type": "BUG",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "-",
+        "pp": "20",
+        "prob": "-",
+        "effect": "Lowers_opponent's_Speed_when_switching_into_battle."
+    },
+    {
+        "move": "Stockpile",
+        "type": "NORMAL",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "-",
+        "pp": "20",
+        "prob": "-",
+        "effect": "Stores_energy_for_use_with_Spit_Up_and_Swallow."
+    },
+    {
+        "move": "Stomp",
+        "type": "NORMAL",
+        "cat": "Physical",
+        "pwr": "65",
+        "acc": "100",
+        "pp": "20",
+        "prob": "30",
+        "effect": "May_cause_flinching."
+    },
+    {
+        "move": "Stone_Edge",
+        "type": "ROCK",
+        "cat": "Physical",
+        "pwr": "100",
+        "acc": "80",
+        "pp": "5",
+        "prob": "-",
+        "effect": "High_critical_hit_ratio."
+    },
+    {
+        "move": "Stored_Power",
+        "type": "PSYCHIC",
+        "cat": "Special",
+        "pwr": "20",
+        "acc": "100",
+        "pp": "10",
+        "prob": "-",
+        "effect": "Power_increases_when_user's_stats_have_been_raised."
+    },
+    {
+        "move": "Storm_Throw",
+        "type": "FIGHTING",
+        "cat": "Physical",
+        "pwr": "60",
+        "acc": "100",
+        "pp": "10",
+        "prob": "-",
+        "effect": "Always_results_in_a_critical_hit."
+    },
+    {
+        "move": "Strength",
+        "type": "NORMAL",
+        "cat": "Physical",
+        "pwr": "80",
+        "acc": "100",
+        "pp": "15",
+        "prob": "-",
+        "effect": "-"
+    },
+    {
+        "move": "String_Shot",
+        "type": "BUG",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "95",
+        "pp": "40",
+        "prob": "-",
+        "effect": "Sharply_lowers_opponent's_Speed."
+    },
+    {
+        "move": "Struggle",
+        "type": "NORMAL",
+        "cat": "Physical",
+        "pwr": "50",
+        "acc": "100",
+        "pp": "-",
+        "prob": "-",
+        "effect": "Only_usable_when_all_PP_are_gone._Hurts_the_user."
+    },
+    {
+        "move": "Struggle_Bug",
+        "type": "BUG",
+        "cat": "Special",
+        "pwr": "50",
+        "acc": "100",
+        "pp": "20",
+        "prob": "100",
+        "effect": "Lowers_opponent's_Special_Attack."
+    },
+    {
+        "move": "Stun_Spore",
+        "type": "GRASS",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "75",
+        "pp": "30",
+        "prob": "-",
+        "effect": "Paralyzes_opponent."
+    },
+    {
+        "move": "Submission",
+        "type": "FIGHTING",
+        "cat": "Physical",
+        "pwr": "80",
+        "acc": "80",
+        "pp": "25",
+        "prob": "-",
+        "effect": "User_receives_recoil_damage."
+    },
+    {
+        "move": "Substitute",
+        "type": "NORMAL",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "-",
+        "pp": "10",
+        "prob": "-",
+        "effect": "Uses_HP_to_creates_a_decoy_that_takes_hits."
+    },
+    {
+        "move": "Sucker_Punch",
+        "type": "DARK",
+        "cat": "Physical",
+        "pwr": "80",
+        "acc": "100",
+        "pp": "5",
+        "prob": "-",
+        "effect": "User_attacks_first,_but_only_works_if_opponent_is_readying_an_attack."
+    },
+    {
+        "move": "Sunny_Day",
+        "type": "FIRE",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "-",
+        "pp": "5",
+        "prob": "-",
+        "effect": "Makes_it_sunny_for_5_turns."
+    },
+    {
+        "move": "Super_Fang",
+        "type": "NORMAL",
+        "cat": "Physical",
+        "pwr": "-",
+        "acc": "90",
+        "pp": "10",
+        "prob": "-",
+        "effect": "Always_takes_off_half_of_the_opponent's_HP."
+    },
+    {
+        "move": "Superpower",
+        "type": "FIGHTING",
+        "cat": "Physical",
+        "pwr": "120",
+        "acc": "100",
+        "pp": "5",
+        "prob": "-",
+        "effect": "Lowers_user's_Attack_and_Defense."
+    },
+    {
+        "move": "Supersonic",
+        "type": "NORMAL",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "55",
+        "pp": "20",
+        "prob": "-",
+        "effect": "Confuses_opponent."
+    },
+    {
+        "move": "Surf",
+        "type": "WATER",
+        "cat": "Special",
+        "pwr": "90",
+        "acc": "100",
+        "pp": "15",
+        "prob": "-",
+        "effect": "Hits_all_adjacent_Pok‚mon."
+    },
+    {
+        "move": "Swagger",
+        "type": "NORMAL",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "90",
+        "pp": "15",
+        "prob": "-",
+        "effect": "Opponent_becomes_confused,_but_its_Attack_is_raised_two_stages."
+    },
+    {
+        "move": "Swallow",
+        "type": "NORMAL",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "-",
+        "pp": "10",
+        "prob": "-",
+        "effect": "The_more_times_the_user_has_performed_Stockpile,_the_more_HP_is_recovered."
+    },
+    {
+        "move": "Sweet_Kiss",
+        "type": "FAIRY",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "75",
+        "pp": "10",
+        "prob": "-",
+        "effect": "Confuses_opponent."
+    },
+    {
+        "move": "Sweet_Scent",
+        "type": "NORMAL",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "-",
+        "pp": "20",
+        "prob": "-",
+        "effect": "Lowers_opponent's_Evasiveness."
+    },
+    {
+        "move": "Swift",
+        "type": "NORMAL",
+        "cat": "Special",
+        "pwr": "60",
+        "acc": "-",
+        "pp": "20",
+        "prob": "-",
+        "effect": "Ignores_Accuracy_and_Evasiveness."
+    },
+    {
+        "move": "Switcheroo",
+        "type": "DARK",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "100",
+        "pp": "15",
+        "prob": "-",
+        "effect": "Swaps_held_items_with_the_opponent."
+    },
+    {
+        "move": "Swords_Dance",
+        "type": "NORMAL",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "-",
+        "pp": "20",
+        "prob": "-",
+        "effect": "Sharply_raises_user's_Attack."
+    },
+    {
+        "move": "Synchronoise",
+        "type": "PSYCHIC",
+        "cat": "Special",
+        "pwr": "120",
+        "acc": "100",
+        "pp": "15",
+        "prob": "-",
+        "effect": "Hits_any_Pok‚mon_that_shares_a_type_with_the_user."
+    },
+    {
+        "move": "Synthesis",
+        "type": "GRASS",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "-",
+        "pp": "5",
+        "prob": "-",
+        "effect": "User_recovers_HP._Amount_varies_with_the_weather."
+    },
+    {
+        "move": "Tackle",
+        "type": "NORMAL",
+        "cat": "Physical",
+        "pwr": "50",
+        "acc": "100",
+        "pp": "35",
+        "prob": "-",
+        "effect": "-"
+    },
+    {
+        "move": "Tail_Glow",
+        "type": "BUG",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "-",
+        "pp": "20",
+        "prob": "-",
+        "effect": "Drastically_raises_user's_Special_Attack."
+    },
+    {
+        "move": "Tail_Slap",
+        "type": "NORMAL",
+        "cat": "Physical",
+        "pwr": "25",
+        "acc": "85",
+        "pp": "10",
+        "prob": "-",
+        "effect": "Hits_2-5_times_in_one_turn."
+    },
+    {
+        "move": "Tail_Whip",
+        "type": "NORMAL",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "100",
+        "pp": "30",
+        "prob": "-",
+        "effect": "Lowers_opponent's_Defense."
+    },
+    {
+        "move": "Tailwind",
+        "type": "FLYING",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "-",
+        "pp": "30",
+        "prob": "-",
+        "effect": "Doubles_Speed_for_4_turns."
+    },
+    {
+        "move": "Take_Down",
+        "type": "NORMAL",
+        "cat": "Physical",
+        "pwr": "90",
+        "acc": "85",
+        "pp": "20",
+        "prob": "-",
+        "effect": "User_receives_recoil_damage."
+    },
+    {
+        "move": "Taunt",
+        "type": "DARK",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "100",
+        "pp": "20",
+        "prob": "-",
+        "effect": "Opponent_can_only_use_moves_that_attack."
+    },
+    {
+        "move": "Techno_Blast",
+        "type": "NORMAL",
+        "cat": "Special",
+        "pwr": "85",
+        "acc": "100",
+        "pp": "5",
+        "prob": "-",
+        "effect": "Type_depends_on_the_Drive_being_held."
+    },
+    {
+        "move": "Teeter_Dance",
+        "type": "NORMAL",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "100",
+        "pp": "20",
+        "prob": "-",
+        "effect": "Confuses_all_Pok‚mon."
+    },
+    {
+        "move": "Telekinesis",
+        "type": "PSYCHIC",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "-",
+        "pp": "15",
+        "prob": "-",
+        "effect": "Ignores_opponent's_Evasiveness_for_three_turns,_add_Ground_immunity."
+    },
+    {
+        "move": "Teleport",
+        "type": "PSYCHIC",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "-",
+        "pp": "20",
+        "prob": "-",
+        "effect": "Allows_user_to_flee_wild_battles;_also_warps_player_to_last_Pok‚Center."
+    },
+    {
+        "move": "Thief",
+        "type": "DARK",
+        "cat": "Physical",
+        "pwr": "60",
+        "acc": "100",
+        "pp": "25",
+        "prob": "-",
+        "effect": "Also_steals_opponent's_held_item."
+    },
+    {
+        "move": "Thousand_Arrows",
+        "type": "GROUND",
+        "cat": "Physical",
+        "pwr": "90",
+        "acc": "100",
+        "pp": "10",
+        "prob": "-",
+        "effect": "Makes_Flying-type_Pok‚mon_vulnerable_to_Ground_moves."
+    },
+    {
+        "move": "Thousand_Waves",
+        "type": "GROUND",
+        "cat": "Physical",
+        "pwr": "90",
+        "acc": "100",
+        "pp": "10",
+        "prob": "-",
+        "effect": "Opponent_cannot_flee_or_switch."
+    },
+    {
+        "move": "Thrash",
+        "type": "NORMAL",
+        "cat": "Physical",
+        "pwr": "120",
+        "acc": "100",
+        "pp": "10",
+        "prob": "-",
+        "effect": "User_attacks_for_2-3_turns_but_then_becomes_confused."
+    },
+    {
+        "move": "Thunder",
+        "type": "ELECTRIC",
+        "cat": "Special",
+        "pwr": "110",
+        "acc": "70",
+        "pp": "10",
+        "prob": "30",
+        "effect": "May_paralyze_opponent."
+    },
+    {
+        "move": "Thunder_Fang",
+        "type": "ELECTRIC",
+        "cat": "Physical",
+        "pwr": "65",
+        "acc": "95",
+        "pp": "15",
+        "prob": "10",
+        "effect": "May_cause_flinching_and/or_paralyze_opponent."
+    },
+    {
+        "move": "Thunder_Punch",
+        "type": "ELECTRIC",
+        "cat": "Physical",
+        "pwr": "75",
+        "acc": "100",
+        "pp": "15",
+        "prob": "10",
+        "effect": "May_paralyze_opponent."
+    },
+    {
+        "move": "Thunder_Shock",
+        "type": "ELECTRIC",
+        "cat": "Special",
+        "pwr": "40",
+        "acc": "100",
+        "pp": "30",
+        "prob": "10",
+        "effect": "May_paralyze_opponent."
+    },
+    {
+        "move": "Thunder_Wave",
+        "type": "ELECTRIC",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "100",
+        "pp": "20",
+        "prob": "100",
+        "effect": "Paralyzes_opponent."
+    },
+    {
+        "move": "Thunderbolt",
+        "type": "ELECTRIC",
+        "cat": "Special",
+        "pwr": "90",
+        "acc": "100",
+        "pp": "15",
+        "prob": "10",
+        "effect": "May_paralyze_opponent."
+    },
+    {
+        "move": "Tickle",
+        "type": "NORMAL",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "100",
+        "pp": "20",
+        "prob": "-",
+        "effect": "Lowers_opponent's_Attack_and_Defense."
+    },
+    {
+        "move": "Topsy-Turvy",
+        "type": "DARK",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "100",
+        "pp": "20",
+        "prob": "-",
+        "effect": "Reverses_stat_changes_of_opponent."
+    },
+    {
+        "move": "Torment",
+        "type": "DARK",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "100",
+        "pp": "15",
+        "prob": "-",
+        "effect": "Opponent_cannot_use_the_same_move_in_a_row."
+    },
+    {
+        "move": "Toxic",
+        "type": "POISON",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "90",
+        "pp": "10",
+        "prob": "-",
+        "effect": "Badly_poisons_opponent."
+    },
+    {
+        "move": "Toxic_Spikes",
+        "type": "POISON",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "-",
+        "pp": "20",
+        "prob": "-",
+        "effect": "Poisons_opponents_when_they_switch_into_battle."
+    },
+    {
+        "move": "Transform",
+        "type": "NORMAL",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "-",
+        "pp": "10",
+        "prob": "-",
+        "effect": "User_takes_on_the_form_and_attacks_of_the_opponent."
+    },
+    {
+        "move": "Tri_Attack",
+        "type": "NORMAL",
+        "cat": "Special",
+        "pwr": "80",
+        "acc": "100",
+        "pp": "10",
+        "prob": "20",
+        "effect": "May_paralyze,_burn_or_freeze_opponent."
+    },
+    {
+        "move": "Trick",
+        "type": "PSYCHIC",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "100",
+        "pp": "10",
+        "prob": "-",
+        "effect": "Swaps_held_items_with_the_opponent."
+    },
+    {
+        "move": "Trick_Room",
+        "type": "PSYCHIC",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "-",
+        "pp": "5",
+        "prob": "-",
+        "effect": "Slower_Pok‚mon_move_first_in_the_turn_for_5_turns."
+    },
+    {
+        "move": "Trick-or-Treat",
+        "type": "GHOST",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "100",
+        "pp": "20",
+        "prob": "-",
+        "effect": "Adds_Ghost_type_to_opponent."
+    },
+    {
+        "move": "Triple_Kick",
+        "type": "FIGHTING",
+        "cat": "Physical",
+        "pwr": "10",
+        "acc": "90",
+        "pp": "10",
+        "prob": "-",
+        "effect": "Hits_thrice_in_one_turn_at_increasing_power."
+    },
+    {
+        "move": "Trump_Card",
+        "type": "NORMAL",
+        "cat": "Special",
+        "pwr": "-",
+        "acc": "-",
+        "pp": "5",
+        "prob": "-",
+        "effect": "The_lower_the_PP,_the_higher_the_power."
+    },
+    {
+        "move": "Twineedle",
+        "type": "BUG",
+        "cat": "Physical",
+        "pwr": "25",
+        "acc": "100",
+        "pp": "20",
+        "prob": "20",
+        "effect": "Hits_twice_in_one_turn._May_poison_opponent."
+    },
+    {
+        "move": "Twister",
+        "type": "DRAGON",
+        "cat": "Special",
+        "pwr": "40",
+        "acc": "100",
+        "pp": "20",
+        "prob": "20",
+        "effect": "May_cause_flinching._Hits_Pok‚mon_using_Fly/Bounce_with_double_power."
+    },
+    {
+        "move": "U-turn",
+        "type": "BUG",
+        "cat": "Physical",
+        "pwr": "70",
+        "acc": "100",
+        "pp": "20",
+        "prob": "-",
+        "effect": "User_switches_out_immediately_after_attacking."
+    },
+    {
+        "move": "Uproar",
+        "type": "NORMAL",
+        "cat": "Special",
+        "pwr": "90",
+        "acc": "100",
+        "pp": "10",
+        "prob": "-",
+        "effect": "User_attacks_for_3_turns_and_prevents_sleep."
+    },
+    {
+        "move": "V-create",
+        "type": "FIRE",
+        "cat": "Physical",
+        "pwr": "180",
+        "acc": "95",
+        "pp": "5",
+        "prob": "100",
+        "effect": "Lowers_user's_Defense,_Special_Defense_and_Speed."
+    },
+    {
+        "move": "Vacuum_Wave",
+        "type": "FIGHTING",
+        "cat": "Special",
+        "pwr": "40",
+        "acc": "100",
+        "pp": "30",
+        "prob": "-",
+        "effect": "User_attacks_first."
+    },
+    {
+        "move": "Venom_Drench",
+        "type": "POISON",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "100",
+        "pp": "20",
+        "prob": "-",
+        "effect": "Lowers_poisoned_opponent's_Special_Attack_and_Speed."
+    },
+    {
+        "move": "Venoshock",
+        "type": "POISON",
+        "cat": "Special",
+        "pwr": "65",
+        "acc": "100",
+        "pp": "10",
+        "prob": "-",
+        "effect": "Inflicts_double_damage_if_the_target_is_poisoned."
+    },
+    {
+        "move": "Vice_Grip",
+        "type": "NORMAL",
+        "cat": "Physical",
+        "pwr": "55",
+        "acc": "100",
+        "pp": "30",
+        "prob": "-",
+        "effect": "-"
+    },
+    {
+        "move": "Vine_Whip",
+        "type": "GRASS",
+        "cat": "Physical",
+        "pwr": "45",
+        "acc": "100",
+        "pp": "25",
+        "prob": "-",
+        "effect": "-"
+    },
+    {
+        "move": "Vital_Throw",
+        "type": "FIGHTING",
+        "cat": "Physical",
+        "pwr": "70",
+        "acc": "-",
+        "pp": "10",
+        "prob": "-",
+        "effect": "User_attacks_last,_but_ignores_Accuracy_and_Evasiveness."
+    },
+    {
+        "move": "Volt_Switch",
+        "type": "ELECTRIC",
+        "cat": "Special",
+        "pwr": "70",
+        "acc": "100",
+        "pp": "20",
+        "prob": "-",
+        "effect": "User_must_switch_out_after_attacking."
+    },
+    {
+        "move": "Volt_Tackle",
+        "type": "ELECTRIC",
+        "cat": "Physical",
+        "pwr": "120",
+        "acc": "100",
+        "pp": "15",
+        "prob": "10",
+        "effect": "User_receives_recoil_damage._May_paralyze_opponent."
+    },
+    {
+        "move": "Wake-Up_Slap",
+        "type": "FIGHTING",
+        "cat": "Physical",
+        "pwr": "70",
+        "acc": "100",
+        "pp": "10",
+        "prob": "-",
+        "effect": "Power_doubles_if_opponent_is_asleep,_but_wakes_it_up."
+    },
+    {
+        "move": "Water_Gun",
+        "type": "WATER",
+        "cat": "Special",
+        "pwr": "40",
+        "acc": "100",
+        "pp": "25",
+        "prob": "-",
+        "effect": "-"
+    },
+    {
+        "move": "Water_Pledge",
+        "type": "WATER",
+        "cat": "Special",
+        "pwr": "80",
+        "acc": "100",
+        "pp": "10",
+        "prob": "-",
+        "effect": "Added_effects_appear_if_preceded_by_Fire_Pledge_or_succeeded_by_Grass_Pledge."
+    },
+    {
+        "move": "Water_Pulse",
+        "type": "WATER",
+        "cat": "Special",
+        "pwr": "60",
+        "acc": "100",
+        "pp": "20",
+        "prob": "20",
+        "effect": "May_confuse_opponent."
+    },
+    {
+        "move": "Water_Shuriken",
+        "type": "WATER",
+        "cat": "Physical",
+        "pwr": "15",
+        "acc": "100",
+        "pp": "10",
+        "prob": "-",
+        "effect": "Hits_2-5_times_in_one_turn."
+    },
+    {
+        "move": "Water_Sport",
+        "type": "WATER",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "-",
+        "pp": "15",
+        "prob": "-",
+        "effect": "Weakens_the_power_of_Fire-type_moves."
+    },
+    {
+        "move": "Water_Spout",
+        "type": "WATER",
+        "cat": "Special",
+        "pwr": "150",
+        "acc": "100",
+        "pp": "5",
+        "prob": "-",
+        "effect": "The_higher_the_user's_HP,_the_higher_the_damage_caused."
+    },
+    {
+        "move": "Waterfall",
+        "type": "WATER",
+        "cat": "Physical",
+        "pwr": "80",
+        "acc": "100",
+        "pp": "15",
+        "prob": "20",
+        "effect": "May_cause_flinching."
+    },
+    {
+        "move": "Weather_Ball",
+        "type": "NORMAL",
+        "cat": "Special",
+        "pwr": "50",
+        "acc": "100",
+        "pp": "10",
+        "prob": "-",
+        "effect": "Move's_power_and_type_changes_with_the_weather."
+    },
+    {
+        "move": "Whirlpool",
+        "type": "WATER",
+        "cat": "Special",
+        "pwr": "35",
+        "acc": "85",
+        "pp": "15",
+        "prob": "-",
+        "effect": "Traps_opponent,_damaging_them_for_4-5_turns."
+    },
+    {
+        "move": "Whirlwind",
+        "type": "NORMAL",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "-",
+        "pp": "20",
+        "prob": "-",
+        "effect": "In_battles,_the_opponent_switches._In_the_wild,_the_Pok‚mon_runs."
+    },
+    {
+        "move": "Wide_Guard",
+        "type": "ROCK",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "-",
+        "pp": "10",
+        "prob": "-",
+        "effect": "Protects_the_user's_team_from_multi-target_attacks."
+    },
+    {
+        "move": "Wild_Charge",
+        "type": "ELECTRIC",
+        "cat": "Physical",
+        "pwr": "90",
+        "acc": "100",
+        "pp": "15",
+        "prob": "-",
+        "effect": "User_receives_recoil_damage."
+    },
+    {
+        "move": "Will-O-Wisp",
+        "type": "FIRE",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "85",
+        "pp": "15",
+        "prob": "100",
+        "effect": "Burns_opponent."
+    },
+    {
+        "move": "Wing_Attack",
+        "type": "FLYING",
+        "cat": "Physical",
+        "pwr": "60",
+        "acc": "100",
+        "pp": "35",
+        "prob": "-",
+        "effect": "-"
+    },
+    {
+        "move": "Wish",
+        "type": "NORMAL",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "-",
+        "pp": "10",
+        "prob": "-",
+        "effect": "The_user_recovers_HP_in_the_following_turn."
+    },
+    {
+        "move": "Withdraw",
+        "type": "WATER",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "-",
+        "pp": "40",
+        "prob": "-",
+        "effect": "Raises_user's_Defense."
+    },
+    {
+        "move": "Wonder_Room",
+        "type": "PSYCHIC",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "-",
+        "pp": "10",
+        "prob": "-",
+        "effect": "Swaps_every_Pok‚mon's_Defense_and_Special_Defense_for_5_turns."
+    },
+    {
+        "move": "Wood_Hammer",
+        "type": "GRASS",
+        "cat": "Physical",
+        "pwr": "120",
+        "acc": "100",
+        "pp": "15",
+        "prob": "-",
+        "effect": "User_receives_recoil_damage."
+    },
+    {
+        "move": "Work_Up",
+        "type": "NORMAL",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "-",
+        "pp": "30",
+        "prob": "-",
+        "effect": "Raises_user's_Attack_and_Special_Attack."
+    },
+    {
+        "move": "Worry_Seed",
+        "type": "GRASS",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "100",
+        "pp": "10",
+        "prob": "-",
+        "effect": "Changes_the_opponent's_Ability_to_Insomnia."
+    },
+    {
+        "move": "Wrap",
+        "type": "NORMAL",
+        "cat": "Physical",
+        "pwr": "15",
+        "acc": "90",
+        "pp": "20",
+        "prob": "-",
+        "effect": "Traps_opponent,_damaging_them_for_4-5_turns."
+    },
+    {
+        "move": "Wring_Out",
+        "type": "NORMAL",
+        "cat": "Special",
+        "pwr": "-",
+        "acc": "100",
+        "pp": "5",
+        "prob": "-",
+        "effect": "The_higher_the_opponent's_HP,_the_higher_the_damage."
+    },
+    {
+        "move": "X-Scissor",
+        "type": "BUG",
+        "cat": "Physical",
+        "pwr": "80",
+        "acc": "100",
+        "pp": "15",
+        "prob": "-",
+        "effect": "-"
+    },
+    {
+        "move": "Yawn",
+        "type": "NORMAL",
+        "cat": "Status",
+        "pwr": "-",
+        "acc": "-",
+        "pp": "10",
+        "prob": "-",
+        "effect": "Puts_opponent_to_sleep_in_the_next_turn."
+    },
+    {
+        "move": "Zap_Cannon",
+        "type": "ELECTRIC",
+        "cat": "Special",
+        "pwr": "120",
+        "acc": "50",
+        "pp": "5",
+        "prob": "100",
+        "effect": "Paralyzes_opponent."
+    },
+    {
+        "move": "Zen_Headbutt",
+        "type": "PSYCHIC",
+        "cat": "Physical",
+        "pwr": "80",
+        "acc": "90",
+        "pp": "15",
+        "prob": "20",
+        "effect": "May_cause_flinching."
+    }
+]

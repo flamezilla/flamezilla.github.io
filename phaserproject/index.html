@@ -6,7 +6,6 @@
             <meta http-equiv="X-UA-Compatible" content="chrome=1, IE=9">
             <meta name="format-detection" content="telephone=no">
             <meta name="HandheldFriendly" content="true" />
-            <meta name="robots" content="noindex,nofollow" />
             <meta name="apple-mobile-web-app-capable" content="yes" />
             <meta name="apple-mobile-web-app-status-bar-style" content="black" />
             <meta name="apple-mobile-web-app-title" content="Phaser App">
@@ -21,13 +20,31 @@
 
         var game = new Phaser.Game(800, 600, Phaser.AUTO, '', { preload: preload, create: create, update: update });
         
+        var playerLineup = [];
+        var enemyLineup = [];
         var player = {
             name: "",
             loc: "",
             level: 99,
             maxhp: 100,
             hpleft: 100,
-            xp: 0
+            xp: 0,
+            moves: [/*{
+                name: "",
+                type: "",
+                cat: "",
+                pwr: 0,
+                acc: 0,
+                pp: 0,
+                prob: 0,
+                effect: ""}*/],
+            type: "",
+            id: "",
+            Attack: 0,
+            Defense: 0,
+            SpAtk: 0,
+            SpDef: 0,
+            Speed: 0
         };
 
         var enemy = {
@@ -36,8 +53,25 @@
             level: 99,
             maxhp: 100,
             hpleft: 100,
-            xp: 0
+            xp: 0,
+            moves: [{
+                name: "",
+                type: "",
+                cat: "",
+                pwr: 0,
+                acc: 0,
+                pp: 0,
+                prob: 0,
+                effect: ""}],
+            type: "",
+            id: "",
+            Attack: 0,
+            Defense: 0,
+            SpAtk: 0,
+            SpDef: 0,
+            Speed: 0
         };
+        
         var hptext;
         var hptext2;
         var playerDamage = 0;
@@ -56,12 +90,67 @@
             game.load.spritesheet('blastoiseF', 'images/sprites/blastoiseF.png', 88, 83, 79);
             game.load.spritesheet('blastoiseB', 'images/sprites/blastoiseB.png', 97, 83, 83);
             
-            player.name = "blastoise";
-            enemy.name = "blastoise";
+            game.load.json('pokelist', 'pokelist.json');
+            game.load.json('moveset', 'moveset.json');
+            
+            //player.name = "blastoise";
+            //enemy.name = "blastoise";
 
+        }
+        
+        function addMove(p, move, moveData) {
+            for (var i = 0; i < moveData.length; i++) {
+                if (moveData[i].move == move) {
+                    var moveT = {
+                        name: moveData[i].move,
+                        type: moveData[i].type,
+                        cat: moveData[i].cat,
+                        pwr: moveData[i].pwr,
+                        acc: moveData[i].acc,
+                        pp: moveData[i].pp,
+                        prob: moveData[i].prob,
+                        effect: moveData[i].effect
+                        }
+                    p.moves.push(moveT);
+                }
+            }
         }
 
         function create () {
+            
+            var pokeData = game.cache.getJSON('pokelist');
+            var moveData = game.cache.getJSON('moveset');
+            
+            player.id = 12;
+            enemy.id = 12;
+            
+            player.name = pokeData[player.id-1].Name.charAt(0).toLowerCase() + pokeData[player.id-1].Name.slice(1);
+            var basehp = pokeData[player.id-1].HP;
+            player.maxhp = Math.floor(((basehp+50)*player.level)/50 + 10);
+            player.hpleft = player.maxhp;
+            player.Attack = pokeData[player.id-1].Attack;
+            player.Defense = pokeData[player.id-1].Defense;
+            player.SpAtk = pokeData[player.id-1]["Sp. Atk"];
+            player.SpDef = pokeData[player.id-1]["Sp. Def"];
+            player.Speed = pokeData[player.id-1].Speed;
+            
+            enemy.name = pokeData[enemy.id-1].Name.charAt(0).toLowerCase() + pokeData[enemy.id-1].Name.slice(1);
+            basehp = pokeData[enemy.id-1].HP;
+            enemy.maxhp = Math.floor(((basehp+50)*enemy.level)/50 + 10);
+            enemy.hpleft = enemy.maxhp;
+            enemy.Attack = pokeData[enemy.id-1].Attack;
+            enemy.Defense = pokeData[enemy.id-1].Defense;
+            enemy.SpAtk = pokeData[enemy.id-1]["Sp. Atk"];
+            enemy.SpDef = pokeData[enemy.id-1]["Sp. Def"];
+            enemy.Speed = pokeData[enemy.id-1].Speed;
+            
+            addMove(player, "Hydro_Pump", moveData);
+            addMove(player, "Bite", moveData);
+            addMove(player, "Tackle", moveData);
+            addMove(player, "Protect", moveData);
+            
+            console.log(player);
+            console.log(enemy);
             
             var bgLayer = game.add.group();
             bgLayer.z = 10;
@@ -89,9 +178,13 @@
             var UIbg = game.add.sprite(game.world.centerX, game.world.centerY+150, 'UIbg');
             UIbg.anchor.setTo(.5, .5);
             var mButton1 = game.add.button(game.world.centerX - 145, game.world.centerY + 80, 'button', useMove, this, 2, 1, 0);
+            mButton1.move = 0;
             var mButton2 = game.add.button(game.world.centerX, game.world.centerY + 80, 'button', useMove, this, 2, 1, 0);
+            mButton2.move = 1;
             var mButton3 = game.add.button(game.world.centerX - 145, game.world.centerY + 130, 'button', useMove, this, 2, 1, 0);
+            mButton3.move = 2;
             var mButton4 = game.add.button(game.world.centerX, game.world.centerY + 130, 'button', useMove, this, 2, 1, 0);
+            mButton4.move = 3;
             
             var playerSprite = game.add.sprite(game.world.centerX-120, game.world.centerY-100+60, getSpriteName(player.name, "player"));
             spriteLayer.add(playerSprite);
@@ -117,11 +210,34 @@
             });
             hptext.anchor.setTo(0.5, 0.5);
             hptext2.anchor.setTo(0.5, 0.5);
+            
+            var moveText = game.add.text(game.world.centerX-135, game.world.centerY+85, player.moves[0].name, {
+                font: "14px Courier New",
+                fill: "#ffffff",
+                align: "center"
+            });
+            moveText = game.add.text(game.world.centerX+10, game.world.centerY+85, player.moves[1].name, {
+                font: "14px Courier New",
+                fill: "#ffffff",
+                align: "center"
+            });
+            moveText = game.add.text(game.world.centerX-135, game.world.centerY+135, player.moves[2].name, {
+                font: "14px Courier New",
+                fill: "#ffffff",
+                align: "center"
+            });
+            moveText = game.add.text(game.world.centerX+10, game.world.centerY+135, player.moves[3].name, {
+                font: "14px Courier New",
+                fill: "#ffffff",
+                align: "center"
+            });
 
         }
         
-        function useMove() {
-            
+        function useMove(x) {
+            var damage = player.moves[x.move].pwr;
+            enemyDamage = damage;
+            console.log("Deals " + damage + " damage.");
         }
         
         function update() {
