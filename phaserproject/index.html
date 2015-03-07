@@ -19,6 +19,14 @@
     window.onload = function() {
 
         var game = new Phaser.Game(800, 600, Phaser.AUTO, '', { preload: preload, create: create, update: update });
+        /*var game = new Phaser.Game(800, 600, Phaser.AUTO, "game");
+        game.state.add("Boot", boot);
+        game.state.add("Preload", preload);
+        game.state.add("Battle", battle);
+        game.state.add("BattleInput", battleInput);
+        game.state.add("BattlePlay", battlePlay);
+        game.state.start("Boot");*/
+        
         
         var playerLineup = [];
         var enemyLineup = [];
@@ -29,22 +37,15 @@
             maxhp: 100,
             hpleft: 100,
             xp: 0,
-            moves: [/*{
-                name: "",
-                type: "",
-                cat: "",
-                pwr: 0,
-                acc: 0,
-                pp: 0,
-                prob: 0,
-                effect: ""}*/],
+            moves: [],
             type: "",
             id: "",
             Attack: 0,
             Defense: 0,
             SpAtk: 0,
             SpDef: 0,
-            Speed: 0
+            Speed: 0,
+            selectedMove: ""
         };
 
         var enemy = {
@@ -54,22 +55,15 @@
             maxhp: 100,
             hpleft: 100,
             xp: 0,
-            moves: [{
-                name: "",
-                type: "",
-                cat: "",
-                pwr: 0,
-                acc: 0,
-                pp: 0,
-                prob: 0,
-                effect: ""}],
+            moves: [],
             type: "",
             id: "",
             Attack: 0,
             Defense: 0,
             SpAtk: 0,
             SpDef: 0,
-            Speed: 0
+            Speed: 0,
+            selectedMove: ""
         };
         
         var hptext;
@@ -77,9 +71,16 @@
         var playerDamage = 0;
         var enemyDamage = 0;
         
+        var buttons; //Group of buttons
+        
+        var combatText = 0; //State of combat text
+        
+        var tween; //tween player sprite when attacking
+        var tween2; //tween enemy sprite when attacking
+        
 
         function preload () {
-
+            game.load.image('map', 'images/Map002.png');
             game.load.image('bg', 'images/BG_grass.png');
             game.load.image('bg2', 'images/PF_grass.png');
             game.load.image('bar', 'images/bar.png');
@@ -148,10 +149,16 @@
             addMove(player, "Bite", moveData);
             addMove(player, "Tackle", moveData);
             addMove(player, "Protect", moveData);
+            addMove(enemy, "Hydro_Pump", moveData);
+            addMove(enemy, "Bite", moveData);
+            addMove(enemy, "Tackle", moveData);
+            addMove(enemy, "Protect", moveData);
             
             console.log(player);
             console.log(enemy);
             
+            var mapLayer = game.add.group();
+            mapLayer.z = 1;
             var bgLayer = game.add.group();
             bgLayer.z = 10;
             var bgLayer2 = game.add.group();
@@ -160,11 +167,18 @@
             uiLayer.z = 15;
             var spriteLayer = game.add.group();
             spriteLayer.z = 20;
+            buttons = game.add.group();
+            buttons.zIndex = 25;
             
+            var map = game.add.sprite(game.world.centerX, game.world.centerY, 'map');
+            mapLayer.add(map);
+            map.anchor.setTo(.5, .5);
             var bg = game.add.sprite(game.world.centerX, game.world.centerY-100, 'bg');
             bgLayer.add(bg);
             var bg2 = game.add.sprite(game.world.centerX, game.world.centerY-100, 'bg2');
             bgLayer2.add(bg2);
+            bg2.inputEnabled = true;
+            bg2.events.onInputDown.add(listener, this);
             var bar = game.add.sprite(game.world.centerX+100, game.world.centerY-100+95, 'bar');
             var bar2 = game.add.sprite(game.world.centerX-80, game.world.centerY-100-75, 'bar');
             uiLayer.add(bar);
@@ -177,6 +191,7 @@
             //build UI
             var UIbg = game.add.sprite(game.world.centerX, game.world.centerY+150, 'UIbg');
             UIbg.anchor.setTo(.5, .5);
+            bgLayer.add(UIbg);
             var mButton1 = game.add.button(game.world.centerX - 145, game.world.centerY + 80, 'button', useMove, this, 2, 1, 0);
             mButton1.move = 0;
             var mButton2 = game.add.button(game.world.centerX, game.world.centerY + 80, 'button', useMove, this, 2, 1, 0);
@@ -185,6 +200,10 @@
             mButton3.move = 2;
             var mButton4 = game.add.button(game.world.centerX, game.world.centerY + 130, 'button', useMove, this, 2, 1, 0);
             mButton4.move = 3;
+            buttons.add(mButton1);
+            buttons.add(mButton2);
+            buttons.add(mButton3);
+            buttons.add(mButton4);
             
             var playerSprite = game.add.sprite(game.world.centerX-120, game.world.centerY-100+60, getSpriteName(player.name, "player"));
             spriteLayer.add(playerSprite);
@@ -194,6 +213,9 @@
             spriteLayer.add(enemySprite);
             enemySprite.animations.add('idle');
             enemySprite.animations.play('idle', 45, true);
+            
+            tween = game.add.tween(playerSprite);
+            tween2 = game.add.tween(enemySprite);
             
             var playerName = createNames(0);
             var enemyName = createNames(1);
@@ -216,32 +238,102 @@
                 fill: "#ffffff",
                 align: "center"
             });
+            buttons.add(moveText);
             moveText = game.add.text(game.world.centerX+10, game.world.centerY+85, player.moves[1].name, {
                 font: "14px Courier New",
                 fill: "#ffffff",
                 align: "center"
             });
+            buttons.add(moveText);
             moveText = game.add.text(game.world.centerX-135, game.world.centerY+135, player.moves[2].name, {
                 font: "14px Courier New",
                 fill: "#ffffff",
                 align: "center"
             });
+            buttons.add(moveText);
             moveText = game.add.text(game.world.centerX+10, game.world.centerY+135, player.moves[3].name, {
                 font: "14px Courier New",
                 fill: "#ffffff",
                 align: "center"
             });
+            buttons.add(moveText);
 
         }
         
+        function hideMoves() {
+            buttons.setAll("visible", false);
+        }
+        
+        function showMoves() {
+            buttons.setAll("visible", true);
+        }
+        
         function useMove(x) {
-            var damage = player.moves[x.move].pwr;
-            enemyDamage = damage;
-            console.log("Deals " + damage + " damage.");
+            player.selectedMove = player.moves[x.move];
+            console.log("Selected " + player.selectedMove.name);
+            //hideMoves();
+            //var damage = Math.floor(Math.floor(Math.floor(2 * player.level / 5 + 2) * player.Attack * player.selectedMove.pwr / enemy.Defense) / 50) + 2;
+            //enemyDamage = damage;
+            //console.log("Deals " + damage + " damage.");
         }
         
         function update() {
             updateHp();
+            if(player.selectedMove != "") {
+                hideMoves();
+                enemy.selectedMove = enemy.moves[Math.floor((Math.random()*4))];
+                if(player.Speed >= enemy.Speed) {
+                    var combatMessage
+                    var c = Phaser.Math.chanceRoll(1/16);
+                    var damage = Math.floor(Math.floor(Math.floor(2 * player.level / 5 + 2) * player.Attack * player.selectedMove.pwr / enemy.Defense) / 50) + 2;
+                    if(c) {
+                        damage = damage * 1.5;
+                        console.log("Critical Hit!");
+                    }
+                    combatMessage = game.add.text(game.world.centerX-135, game.world.centerY+85, player.name + " uses " + player.selectedMove.name + "!", {
+                        font: "14px Courier New",
+                        fill: "#ffffff",
+                        align: "center"
+                    });
+                    game.time.events.add(700, tweenSprite, this).autoDestroy = true; //battle animations
+                    game.time.events.add(700, tweenHp, this).autoDestroy = true; //hp animations
+                    
+                    console.log("You use " + player.selectedMove.name + " .");
+                    console.log("You deal " + damage + " damage.");
+                    enemyDamage = damage;
+                    player.selectedMove = "";
+                    
+                    enemy.selectedMove = enemy.moves[Math.floor(Math.random()*4)];
+                    damage = Math.floor(Math.floor(Math.floor(2 * enemy.level / 5 + 2) * enemy.Attack * enemy.selectedMove.pwr / player.Defense) / 50) + 2;
+                    c = Phaser.Math.chanceRoll(1/16);
+                    if(c) {
+                        damage = damage * 1.5;
+                        console.log("Critical Hit!");
+                    }
+                    console.log("Enemy uses " + enemy.selectedMove.name + " .");
+                    console.log("Enemy deals " + damage + " damage.");
+                    playerDamage = damage;
+                    enemy.selectedMove = "";
+                }                
+                if(player.Speed < enemy.Speed) {
+                }
+                //showMoves();
+            }
+        }
+        
+        function tweenHp() {
+            
+        }
+        
+        function tweenSprite() {
+            tween.from({x:285, y:250} ,300);
+            tween.start();
+            tween2.to({alpha:0}, 80, Phaser.Easing.Default, false, 300, 0, false).to({alpha:1}, 80, Phaser.Easing.Default, false, 100, 0, false).repeat(3);
+            tween2.start();
+        }
+        
+        function listener() {
+            combatText++;   
         }
         
         function updateHp() {

@@ -216,3 +216,4 @@ pip-log.txt
 .mr.developer.cfg
 closure_compiler_test.html
 *.psd
+csgobetting/*
