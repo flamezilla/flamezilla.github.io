@@ -71,5 +71,5 @@ function showAnswers() {
 }
 
 function reset() {
-    window.location.replace("/index.html");
+    window.location.replace("quiz/index.html");
 }   
