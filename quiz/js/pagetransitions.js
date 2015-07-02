@@ -3,6 +3,7 @@ var PageTransitions = (function() {
 	var $main = $( '#pt-main' ),
 		$pages = $main.children( 'div.pt-page' ),
 		$iterate = $( '#iterateEffects' ),
+		$iterate2 = $( '#iterateEffects2' ),
 		animcursor = 1,
 		pagesCount = $pages.length,
 		current = 0,
@@ -30,6 +31,16 @@ var PageTransitions = (function() {
 		$pages.eq( current ).addClass( 'pt-page-current' );
 
 		$iterate.on( 'click', function() {
+			if( isAnimating ) {
+				return false;
+			}
+			if( animcursor > 67 ) {
+				animcursor = 1;
+			}
+			nextPage( animcursor );
+			++animcursor;
+		} );
+        $iterate2.on( 'click', function() {
 			if( isAnimating ) {
 				return false;
 			}
