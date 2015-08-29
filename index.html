@@ -1,471 +1,56 @@
 <!DOCTYPE html>
-<html lang="en-US">
-	<head>
-		<title>Clicker Quest</title>
-		<link rel="stylesheet" type="text/css" href="css/interface.css" />
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
-		<link rel="apple-touch-icon-precomposed" href="apple-touch-icon-precomposed.png">
-	</head>
-	<body onload="javascript:load()">
+<html >
+  <head>
+    <meta charset="UTF-8">
+    <title>A Pen by  Neel Patel</title>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    
+    
+    <link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css'>
 
-		<div class="container">
-			<h1 class="text-center">logo</h1>
-			<div class="row">
-				<div class="col-sm-6">
-					<ul id="tab1" class="nav nav-tabs">
-					   <li class="active">
-						  <a href="#character" data-toggle="tab">
-							 Character
-						  </a>
-						</li>
-						<li><a href="#stats" data-toggle="tab" onClick="checkClass()">Stats</a></li>
-						<li class="disabled"><a href="#">Party</a></li>
-						<li class="disabled"><a href="#">Pets</a></li>
-					</ul>
-					<div id="tab2Content" class="tab-content">
-						<div class="tab-pane fade in active" id="character">
-							<div class="well">
-								<h4>Character</h4>
-								<p>
-									Level: <span id="level"></span>
-									<span id="className"></span>
-									<br>
-									Gold: <span id="gold">0</span> (+<span id=gps></span> gold/s)
-									<br>
-									HP: <span id=hpCurr></span>/<span id=hpMax></span>
-									<br>
-									<meter id="hpBar" low=".25" optimum=".85" high=".75" value="0" max="0"></meter>
-									<span id="hp">0</span>% (Recover <span id="hpRate"></span>hp/s)
-									<br>
-									Exp: <span id=expCurr></span>/<span id=expMax></span>
-									<br>
-									<progress id="expBar" value="0" max="0"></progress>
-									<span id="exp"></span>%
-									<br>
-									Heroes: <span id="heroes">0</span>
-									<br>
-									Party: <span id="currPartySize"></span>/<span id="maxPartySize"></span>
-								</p>
-							</div>
-						</div>
-						<div class="tab-pane fade" id="stats">
-							<div class="well">
-								<h4>Stats</h4>
-								<ul class="list-group">
-									<li class="list-group-item">
-										Attack Power:
-										<span style="float:right;" id="atk">0</span>
-									</li>
-									<li class="list-group-item">
-										Magic Attack Power:
-										<span style="float:right;" id="matk">0</span>
-									</li>
-									<li class="list-group-item">
-										Defense:
-										<span style="float:right;" id="def">0</span>
-									</li>
-									<li class="list-group-item">
-										Magic Defense:
-										<span style="float:right;" id="mdef">0</span>
-									</li>
-									<li class="list-group-item">
-										Critical Hit Rate:
-										<span style="float:right;" id="crit">0</span>
-									</li>
-								</ul>
-								<ul class="list-group">
-									<li class="list-group-item">
-										STR:
-										<span style="float:right;" id="str">0</span>
-									</li>
-									<li class="list-group-item">
-										INT:
-										<span style="float:right;" id="int">0</span>
-									</li>
-									<li class="list-group-item">
-										AGI:
-										<span style="float:right;" id="agi">0</span>
-									</li>
-								</ul>
-								<span class="error" id="statText"></span>
-								Stat Points : <span id="statPoints">0</span>
-								<p>
-									<div class="btn-group btn-group-sm" id="statBox" data-toggle="buttons">
-										<button type="button" onClick="pickStat(1)" class="btn btn-warning">+ STR</button>
-										<button type="button" onClick="pickStat(2)" class="btn btn-warning">+ INT</button>
-										<button type="button" onClick="pickStat(3)" class="btn btn-warning">+ AGI</button>
-									</div>
-									<br>
-								</p>
-								<p>
-									<span class="error" id="classtext"></span>
-									<div class="btn-group btn-group-sm" id="classPick" data-toggle="buttons">
-										<button type="button" onClick="pickClass(1)" class="btn btn-success">Warrior</button>
-										<button type="button" onClick="pickClass(2)" class="btn btn-primary">Mage</button>
-										<button type="button" onClick="pickClass(3)" class="btn btn-danger">Assassin</button>
-									</div>
-									<br>
-								</p>
-							</div>
-						</div>
-						<div class="tab-pane fade" id="party">
-							<div class="well">
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-sm-6">
-					<ul id="tab2" class="nav nav-tabs">
-					   <li class="active">
-						  <a href="#train" data-toggle="tab">
-							 Train
-						  </a>
-						</li>
-						<li><a href="#battle" data-toggle="tab">Battle</a></li>
-						<li><a href="#market" data-toggle="tab">Market</a></li>
-						<li><a href="#ability" data-toggle="tab">Abilities</a></li>
-						<li><a href="#settings" data-toggle="tab">Settings</a></li>
-					</ul>
-					<div id="tab2Content" class="tab-content">
-						<div class="tab-pane fade in active" id="train">
-							<div class="well">
-								<span class="error" id="errHp"></span>
-								<div class="table-responsive">
-									<table class="table table-bordered table-striped table-condensed">
-										<thead>
-											<tr>
-												<th width="27px">#</th>
-												<th width="268px">Zone</th>
-												<th width="10px">Level</th>
-												<th width="150px">Fight</th>
-											</tr>
-										</thead>
-										<tbody>
-											<tr>
-												<td width="5%">1</td>
-												<td width="55%">Outskirts of Ironview Village</td>
-												<td width="10%">1</td>
-												<td width="30%"><button class="btn btn-danger btn-xs" onClick="kill(1)">Kill Minions</button></td>
-											</tr>
-											<tr>
-												<td width="5%">2</td>
-												<td width="55%">Raf's Farm</td>
-												<td width="10%">3</td>
-												<td width="30%"><button class="btn btn-danger btn-xs" onClick="kill(3)">Kill Minions</button></td>
-											</tr>
-											<tr>
-												<td width="5%">3</td>
-												<td width="55%">Deephurst Forest</td>
-												<td width="10%">5</td>
-												<td width="30%"><button class="btn btn-danger btn-xs" onClick="kill(5)">Kill Minions</button></td>
-											</tr>
-											<tr>
-												<td width="5%">4</td>
-												<td width="55%">Bandit Outpost</td>
-												<td width="10%">7</td>
-												<td width="30%"><button class="btn btn-danger btn-xs" onClick="kill(7)">Kill Minions</button></td>
-											</tr>
-											<tr>
-												<td width="5%">5</td>
-												<td width="55%">Silverbank Docks</td>
-												<td width="10%">10</td>
-												<td width="30%"><button class="btn btn-danger btn-xs" onClick="kill(10)">Kill Minions</button></td>
-											</tr>
-											<tr>
-												<td width="5%">6</td>
-												<td width="55%">Valhurt</td>
-												<td width="10%">15</td>
-												<td width="30%"><button class="btn btn-danger btn-xs" onClick="kill(15)">Kill Minions</button></td>
-											</tr>
-											<tr>
-												<td width="5%">7</td>
-												<td width="55%">Iron Bridge</td>
-												<td width="10%">20</td>
-												<td width="30%"><button class="btn btn-danger btn-xs" onClick="kill(20)">Kill Minions</button></td>
-											</tr>
-											<tr>
-												<td width="5%">8</td>
-												<td width="55%">Strongcastle</td>
-												<td width="10%">25</td>
-												<td width="30%"><button class="btn btn-danger btn-xs" onClick="kill(25)">Kill Minions</button></td>
-											</tr>
-											<tr>
-												<td width="5%">9</td>
-												<td width="55%">Strongcastle Barracks</td>
-												<td width="10%">30</td>
-												<td width="30%"><button class="btn btn-danger btn-xs" onClick="kill(30)">Kill Minions</button></td>
-											</tr>
-											<tr>
-												<td width="5%">10</td>
-												<td width="55%">Deathguard Passage</td>
-												<td width="10%">35</td>
-												<td width="30%"><button class="btn btn-danger btn-xs" onClick="kill(35)">Kill Minions</button></td>
-											</tr>
-											<tr>
-												<td width="5%">11</td>
-												<td width="55%">Century Tower</td>
-												<td width="10%">40</td>
-												<td width="30%"><button class="btn btn-danger btn-xs" onClick="kill(40)">Kill Minions</button></td>
-											</tr>
-											<tr>
-												<td width="5%">12</td>
-												<td width="55%">Iron Bank</td>
-												<td width="10%">45</td>
-												<td width="30%"><button class="btn btn-danger btn-xs" onClick="kill(45)">Kill Minions</button></td>
-											</tr>
-											<tr>
-												<td width="5%">13</td>
-												<td width="55%">Longpass Gate</td>
-												<td width="10%">50</td>
-												<td width="30%"><button class="btn btn-danger btn-xs" onClick="kill(50)">Kill Minions</button></td>
-											</tr>
-											<tr>
-												<td width="5%">14</td>
-												<td width="55%">Borough of the Mills</td>
-												<td width="10%">55</td>
-												<td width="30%"><button class="btn btn-danger btn-xs" onClick="kill(55)">Kill Minions</button></td>
-											</tr>
-											<tr>
-												<td width="5%">15</td>
-												<td width="55%">Fieldview Mill</td>
-												<td width="10%">60</td>
-												<td width="30%"><button class="btn btn-danger btn-xs" onClick="kill(60)">Kill Minions</button></td>
-											</tr>
-											<tr>
-												<td width="5%">16</td>
-												<td width="55%">Sage Stables</td>
-												<td width="10%">65</td>
-												<td width="30%"><button class="btn btn-danger btn-xs" onClick="kill(65)">Kill Minions</button></td>
-											</tr>
-											<tr>
-												<td width="5%">17</td>
-												<td width="55%">Faymill Landings</td>
-												<td width="10%">70</td>
-												<td width="30%"><button class="btn btn-danger btn-xs" onClick="kill(70)">Kill Minions</button></td>
-											</tr>
-											<tr>
-												<td width="5%">18</td>
-												<td width="55%">Waterways</td>
-												<td width="10%">75</td>
-												<td width="30%"><button class="btn btn-danger btn-xs" onClick="kill(75)">Kill Minions</button></td>
-											</tr>
-											<tr>
-												<td width="5%">19</td>
-												<td width="55%">Rivercliff Waterfalls</td>
-												<td width="10%">80</td>
-												<td width="30%"><button class="btn btn-danger btn-xs" onClick="kill(80)">Kill Minions</button></td>
-											</tr>
-											<tr>
-												<td width="5%">20</td>
-												<td width="55%">Norville</td>
-												<td width="10%">85</td>
-												<td width="30%"><button class="btn btn-danger btn-xs" onClick="kill(85)">Kill Minions</button></td>
-											</tr>
-											<tr>
-												<td width="5%">21</td>
-												<td width="55%">Highkeep Hall of Heroes</td>
-												<td width="10%">90</td>
-												<td width="30%"><button class="btn btn-danger btn-xs" onClick="kill(90)">Kill Minions</button></td>
-											</tr>
-											<tr>
-												<td width="5%">22</td>
-												<td width="55%">Fallen Triumph</td>
-												<td width="10%">95</td>
-												<td width="30%"><button class="btn btn-danger btn-xs" onClick="kill(95)">Kill Minions</button></td>
-											</tr>
-											<tr>
-												<td width="5%">23</td>
-												<td width="55%">Hundred Acre Pass</td>
-												<td width="10%">100</td>
-												<td width="30%"><button class="btn btn-danger btn-xs" onClick="kill(100)">Kill Minions</button></td>
-											</tr>
-											<tr>
-												<td width="5%">24</td>
-												<td width="55%">Glasslake Drop</td>
-												<td width="10%">105</td>
-												<td width="30%"><button class="btn btn-danger btn-xs" onClick="kill(105)">Kill Minions</button></td>
-											</tr>
-											<tr>
-												<td width="5%">25</td>
-												<td width="55%">Ground of Despair</td>
-												<td width="10%">110</td>
-												<td width="30%"><button class="btn btn-danger btn-xs" onClick="kill(110)">Kill Minions</button></td>
-											</tr>
-											<tr>
-												<td width="5%">26</td>
-												<td width="55%">Depths of Anguish</td>
-												<td width="10%">115</td>
-												<td width="30%"><button class="btn btn-danger btn-xs" onClick="kill(115)">Kill Minions</button></td>
-											</tr>
-											<tr>
-												<td width="5%">27</td>
-												<td width="55%">Newcrest Horizon</td>
-												<td width="10%">120</td>
-												<td width="30%"><button class="btn btn-danger btn-xs" onClick="kill(120)">Kill Minions</button></td>
-											</tr>
-											<tr>
-												<td width="5%">28</td>
-												<td width="55%">Aisle of Reparation </td>
-												<td width="10%">125</td>
-												<td width="30%"><button class="btn btn-danger btn-xs" onClick="kill(125)">Kill Minions</button></td>
-											</tr>
-											<tr>
-												<td width="5%">29</td>
-												<td width="55%">Trundant Hopeskeep</td>
-												<td width="10%">130</td>
-												<td width="30%"><button class="btn btn-danger btn-xs" onClick="kill(130)">Kill Minions</button></td>
-											</tr>
-											<tr>
-												<td width="5%">30</td>
-												<td width="55%">Blue Hollows</td>
-												<td width="10%">135</td>
-												<td width="30%"><button class="btn btn-danger btn-xs" onClick="kill(135)">Kill Minions</button></td>
-											</tr>
-										</tbody>
-									</table>
-								</div>
-							</div>
-						</div>
-						<div class="tab-pane fade" id="battle">
-							<div class="well">
-								<div id="battleTab">
-								</div>
-							</div>
-						</div>
-						<div class="tab-pane fade" id="market">
-							<div class="well">
-								<button type="button" onClick="buyHero()">Hire a Mercenary</button>
-								(Heroes increase your gold/s by 1) Cost: <span id="heroCost"></span> gold
-								<span class="error" id="errGold"></span>
-								<br>
-							</div>
-						</div>
-						<div class="tab-pane fade" id="ability">
-							<div class="well">
-								<button type="button" id="partyB" onClick="unlockAbility('party')">Unlock Party</button>
-								(Allows you to hire up to 4 Mercenaries)
-							</div>
-						</div>
-						<div class="tab-pane fade" id="settings">
-							<div class="well">
-							<button type="button" onClick="save(); printToLog('Saved Game!')">Save Game</button>
-							<button type="button" onClick="load()">Load Game</button>
-							<button type="button" onClick="deleteSave()">Reset Game</button>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-sm-6">
-					<ul id="tab3" class="nav nav-tabs">
-						<li class="active">
-						  <a href="#inv" data-toggle="tab" id="inventoryT">
-							 Inventory
-						  </a>
-						  
-						</li>
-						<li>
-							<a href="#equip" data-toggle="tab" id="equipment">Equipment</a>
-						</li>
-					</ul>
-					<div id="tab3Content" class="tab-content">
-						<div class="tab-pane fade in active" id="inv">
-							<div class="well">
-								<div id="inv_table">
-								</div>
-							</div>
-						</div>
-						<div class="tab-pane fade" id="equip">
-							<div class="well">
-								<div class="row">
-									<div class="col-sm-6">
-										<div class="container gear">
-											<img src="images/empty.png" alt="hand" class="img-rounded"></img>
-										</div>
-										<div class="container gear-over" id="equipHand">
-										</div>
-										<br>
-										<div class="container gear">
-											<img src="images/empty.png" alt="offhand" class="img-rounded"></img>
-										</div>
-										<div class="container gear-over" id="equipOffhand">
-										</div>
-										<br>
-										<div class="container gear">
-											<img src="images/empty.png" alt="neck" class="img-rounded"></img>
-										</div>
-										<div class="container gear-over" id="equipNeck">
-										</div>
-										<br>
-										<div class="container gear">
-											<img src="images/empty.png" alt="gloves" class="img-rounded"></img>
-										</div>
-										<div class="container gear-over" id="equipGloves">
-										</div>
-									</div>
-									<div class="col-sm-6">
-										<div class="container gear">
-											<img src="images/empty.png" alt="head" class="img-rounded"></img>
-										</div>
-										<div class="container gear-over" id="equipHead">
-										</div>
-										<br>
-										<div class="container gear">
-											<img src="images/empty.png" alt="torso" class="img-rounded"></img>
-										</div>
-										<div class="container gear-over" id="equipTorso">
-										</div>
-										<br>
-										<div class="container gear">
-											<img src="images/empty.png" alt="legs" class="img-rounded"></img>
-										</div>
-										<div class="container gear-over" id="equipLegs">
-										</div>
-										<br>
-										<div class="container gear">
-											<img src="images/empty.png" alt="feet" class="img-rounded"></img>
-										</div>
-										<div class="container gear-over" id="equipFeet">
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-sm-6">
-					<ul id="tab4" class="nav nav-tabs">
-						<li class="active">
-						  <a href="#logTab" data-toggle="tab">
-							 Log
-						  </a>
-						</li>
-					</ul>
-					<div id="tab4Content" class="tab-content">
-						<div class="tab-pane fade in active" id="logTab">
-							<div class="well">
-								<div class="panel panel-default" id="logPanel" style="max-height: 10">
-									<ul class="list-group" id="log">
-									<ul>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
+        <link rel="stylesheet" href="css/style.css">
 
-		<script src="chance.min.js"></script>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
-		<script type ="text/javascript" src="main.js"></script>
-		<script type ="text/javascript">
-			$(function () {
-			  $('[data-toggle="modal"]').modal();
-			});
-		</script>
-	</body>
+    
+    
+    
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-default navbar-new navbar-fixed-top" role="navigation">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-toggle" data-toggle="collapse" data-target="#navCollapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
+    </div>
+    <div class="collapse navbar-collapse" id="navCollapse">
+      <ul class="nav navbar-nav">
+        <li><a href="#"><h4>Home</h4></a></li>
+        <li><a href="#"><h4>About</h4></a></li>
+        <li><a href="#"><h4>Portfolio</h4></a></li>
+        <li><a href="#"><h4>Contact</h4></a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<section class="intro">
+  <h1 class="deepshadow">Neel Patel</h1>
+  <h4>.</h4>
+</section>
+<section class="gap">
+  
+</section>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    
+    
+    
+    
+    
+  </body>
 </html>
