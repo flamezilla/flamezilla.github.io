@@ -1,67 +1,73 @@
 .navbar-new {
-  background-color: #111;
-  opacity: .9;
-  margin-bottom: -75px;
-  margin-top: 5px;
-  border: 0;
-  text-align: center;
+    background-color: #111;
+    opacity: .9;
+    margin-bottom: -75px;
+    margin-top: 5px;
+    border: 0;
+    text-align: center;
 }
-
 .navbar .nav li {
-  width: 100px;
-  display: inline-block;
-  float: none;
+    width: 100px;
+    display: inline-block;
+    float: none;
 }
-
 .navbar .nav {
-  float: none;
-  text-align: center;
+    float: none;
+    text-align: center;
 }
-
 ul.nav > li {
-  font-family: 'Open Sans', 'Sans Serif';
+    font-family: 'Open Sans', 'Sans Serif';
 }
-
 ul.nav a:hover {
-  color: #fff !important;
+    color: #fff !important;
 }
-
 h1 {
-  font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
-  font-size: 92px;
-  padding: 80px 50px;
-  text-transform: uppercase;
-  text-rendering: optimizeLegibility;
+    font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
+    font-size: 92px;
+    padding: 80px 50px;
+    text-transform: uppercase;
+    text-rendering: optimizeLegibility;
 }
-
 h1.deepshadow {
-  color: #e0dfdc;
-  background-color: #333;
-  letter-spacing: .1em;
-  text-shadow: 0 -1px 0 #ffffff, 0 1px 0 #2e2e2e, 0 2px 0 #2c2c2c, 0 3px 0 #2a2a2a, 0 4px 0 #282828, 0 5px 0 #262626, 0 6px 0 #242424, 0 7px 0 #222222, 0 8px 0 #202020, 0 9px 0 #1e1e1e, 0 10px 0 #1c1c1c, 0 11px 0 #1a1a1a, 0 12px 0 #181818, 0 13px 0 #161616, 0 14px 0 #141414, 0 15px 0 #121212, 0 22px 30px rgba(0, 0, 0, 0.9);
+    color: #e0dfdc;
+    background-color: #333;
+    letter-spacing: .1em;
+    text-shadow: 0 -1px 0 #ffffff, 0 1px 0 #2e2e2e, 0 2px 0 #2c2c2c, 0 3px 0 #2a2a2a, 0 4px 0 #282828, 0 5px 0 #262626, 0 6px 0 #242424, 0 7px 0 #222222, 0 8px 0 #202020, 0 9px 0 #1e1e1e, 0 10px 0 #1c1c1c, 0 11px 0 #1a1a1a, 0 12px 0 #181818, 0 13px 0 #161616, 0 14px 0 #141414, 0 15px 0 #121212, 0 22px 30px rgba(0, 0, 0, 0.9);
 }
-
 section {
-  width: 100%;
-  padding: 0 7%;
-  display: table;
-  margin: 0;
-  max-width: none;
-  height: 100vh;
-  font-family: 'Open Sans', 'Sans Serif';
+    width: 100%;
+    padding: 3em;
+    display: table;
+    margin: 0;
+    max-width: none;
+    height: 100vh;
+    font-family: 'Open Sans', 'Sans Serif';
 }
-
 .intro {
-  background-color: #333;
-  padding-top: 200px;
-  height: 80vh;
-  text-align: center;
-  color: #fff;
+    background-color: #333;
+    padding-top: 200px;
+    height: 80vh;
+    text-align: center;
+    color: #fff;
 }
-
 .gap {
-  height: 80vh;
-  background-color: #18F;
-  font-size: 2em;
-  color: #FFF;
+    height: 80vh;
+    background-color: #EEE;
+    font-size: 2em;
+    color: #FFF;
+    padding: 3em 6em 0 6em;
+}
+.box {
+    background: #FFF;
+    border-radius: 6px;
+    margin: .5em;
+    padding: .5em;
+    box-shadow: inset 0px 0px 0px 1px rgba(0, 0, 0, 0.15), 0px 2px 3px 0px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    color: #333;
+    max-width: 450px;
+}
+h3 {
+    font-weight: Bold;
+    font-size: 1em;
 }
